@@ -101,7 +101,10 @@ controls the gradient, we can select different FOVs (slices).
     while random noise averages out \cite{westbrook2018mri}.}, and the
   \emph{size of the voxels}\footnote{Larger voxels contain more spins,
     which contribute to a higher signal and consequently increased SNR
-    \cite{westbrook2018mri}.}.
+    \cite{westbrook2018mri}.}.  In MRI, it depends on intrinsic signal
+  intensity (T1, T2, proton density), voxel volume, number of
+  excitations (NEX), receiver bandwidth, coil quality, magnetic field
+  strength, and reconstruction algorithms \cite{bushberg2011essential}.
 \item \textbf{Spatial resolution}: Defined as the ability to
   distinguish between two points as separate and distinct, is
   typically in the range of a fraction of milimeters (for example, 0.5
@@ -135,6 +138,10 @@ controls the gradient, we can select different FOVs (slices).
   transfer contrast, phase-contrast MR angiography, or the use of
   presaturation pulses) \cite{westbrook2018mri}.
 \end{enumerate}
+
+\section{Image quality}
+
+Detailed explanation of K-space filling methods (centric, keyhole, spiral, blade/propeller) and their impact on image acquisition and contrast. The diverse pulse sequences (Spin Echo, Inversion Recovery, Gradient Echo variants) are described for generating different tissue contrasts (T1, T2, proton density). Fast Spin Echo (FSE) and Echo Planar Imaging (EPI) are discussed for rapid acquisition. Parallel imaging techniques (e.g., SENSE) use multiple coils to reduce scan time or improve resolution by leveraging coil sensitivity profiles to correct aliasing. MR Angiography (MRA) using Time-of-Flight (TOF) and Phase Contrast (PC) techniques for vascular visualization. Functional MRI (fMRI) using BOLD sequences to map brain activity. Diffusion-Weighted Imaging (DWI) and Apparent Diffusion Coefficient (ADC) maps for assessing water mobility in tissues. Magnetic Resonance Spectroscopy (MRS) for "electronic biopsy" through spectral analysis of metabolites.
 
 \section{Resources}
 

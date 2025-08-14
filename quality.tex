@@ -1,2 +1,55 @@
 \chapter{Quality Metrics in Medical Imaging}
 
+In medical imaging, the most important image characteristics for
+improving diagnostic utility are those that directly enable the
+interpreting physician to make an accurate (correct) diagnosis, rather
+than focusing on aesthetic appeal. This involves a careful balance and
+optimisation of several key technical parameters
+\cite{bushberg2011essential}.
+
+\section{Spatial resolution}
+This refers to the level of detail visible on an image, or how small
+an object an imaging system can distinguish. Higher spatial resolution
+means the ability to detect smaller objects or finer anatomical
+details \cite{bushberg2011essential}.
+
+\section{Blur level}
+Even if the spatial resolution is high, blurring (or smoothing) produces
+a loss of high frequency information (the edges) in the image,
+dicreasing the accuracy the diagnosis.
+
+Blurring is due to several factors:
+\begin{enumerate}
+\item \textbf{Imperfections in the optical of the imaging system}, which can be
+  cuantified checking Point Spread Function (PSF)
+  \cite{bushberg2011essential}.
+\item \textbf{Patient motion}, that usually depends on the adquisition
+  time.
+\item \textbf{Reconstruction algorithms}, which must be implemented
+  with the required accuracy (probably requiring more computation
+  resources and time).a
+\end{enumerate}
+
+\section{Signal-to-Noise Ratio (SNR)}
+In the context of medical imaging, the SNR is a metric that compares
+how many useful information (which helps to the correctness of the
+diagnosis) there is in the image compared to how many noise (which
+difficults the diagnostic and therefore, affect to the accuracy of the
+diagnosis) there is in the image.
+
+Notice that to measure objectively the SNR, both, the signal and the
+noise must be known. In practice, in medical imaging, neither the
+signal nor the noise are usually known, only estimated. Therefore,
+when we speak about SNR we are using a perceived (subjective) metric.
+
+\section{Contrast}
+
+Contrast can be controller using Look-Up Tables (LUTs).
+
+\section{Depth}
+
+Depth refers to the number of bits/pixel (in the case of the images)
+and the number of bits/voxel (in the case of the volumes). This number
+usually ranges between 8 and 16 (per channel). To perceive a good
+contrast, the number of bits must be high enough (usually bigger than
+6 -- $2^6=64$ --).
