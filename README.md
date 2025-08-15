@@ -13,9 +13,9 @@
 9. Adaptación de dispositivos a las necesidades del usuario.
 10. Almacenamiento y seguridad de datos clínicos. 
 11. **Sistemas de almacenado y comunicación de imágenes médicas**. 
-12. Redes IP para aplicaciones médicas.
+12. **Redes IP para aplicaciones médicas**.
 13. Aplicaciones de la ingeniería informática en medicina.
-14. Acceso a bases de datos médicas a través de Internet Imágenes médicas en Internet .
+14. Acceso a bases de datos médicas a través de Internet.
 15. **Reconstrucción y visualización de imágenes tomográficas**. 
 16. Análisis cuantitativo de volúmenes biomédicos. 
 17. Periféricos avanzados aplicados al control y seguimiento de pacientes.
