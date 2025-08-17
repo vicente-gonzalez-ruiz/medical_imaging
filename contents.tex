@@ -23,6 +23,9 @@
 \makeglossaries
 % \newacronym{label}{acronym}{definition}
 
+\newacronym{TFT}{TFT}{Thin-Film Transistor}
+\newacronym{TFT}{TFT}{GastroIntestinal}
+
 \newacronym{LM}{LM}{Light Microscopy}
 \newacronym{EM}{EM}{Electron Microscopy}
 \newacronym{TEM}{TEM}{Transmission Electron Microscopy}
@@ -180,7 +183,27 @@
 
 \chapter{Image acquisition}
 \input{acquisition}
-\section{Ultrasound imaging}
+
+\section{Ultrasound}
+\input{ultrasound}
+
+\section{Radiography}
+\input{radiography}
+
+\section{Mamography}
+\input{mamography}
+
+\section{Fluoroscopy}
+\input{fluoroscopy}
+
+\section{Computed Tomography (CT)}
+\input{CT}
+
+\section{Single Photon Emission Computed Tomography (SPECT)}
+\input{SPECT}
+
+\section{Positron Emission Tomography (PET)}
+\input{PET}
 
 \chapter{Storage}
 \input{storage}
@@ -201,6 +224,8 @@
 \section{Denoising}
 \section{Sharping}
 \section{Contrast control}
+Dealing with underexposure and overexposure.
+
 \section{Tomography}
 Voxelization: Place each pixel from the slices into a 3D voxel array according to its recorded position. Used in 3D ultrasound imaging.
 \section{Interpolation}
@@ -208,6 +233,8 @@ Voxelization: Place each pixel from the slices into a 3D voxel array according t
 \input{segmentation}
 
 \printglossary[type=\acronymtype]
+
+\section*{Resources}
 
 \bibliographystyle{plain}
 \bibliography{tomography,MRI,denoising}

@@ -11,13 +11,25 @@ the body’s tissues also interacts with those tissues.\footnote{If
   energy would not contain any useful information regarding the
   internal anatomy, and thus it would not be possible to construct an
   image of the anatomy using that information
-  \cite{bushberg2011essential}.}
+  \cite{bushberg2011essential}.} The power, energy and time required
+to acquiring medical images require a compromise between patient
+safety and image quality.\footnote{Better x-ray images can be made
+  when the radiation dose to the patient is high, better magnetic
+  resonance images can be made when the image acquisition time is
+  long, and better ultrasound images result when the ultrasound power
+  levels are large \cite{bushberg2011essential}.}
 
-The power, energy and time required to acquiring medical images
-require a compromise between patient safety and image
-quality.\footnote{Better x-ray images can be made when the radiation
-  dose to the patient is high, better magnetic resonance images can be
-  made when the image acquisition time is long, and better ultrasound
-  images result when the ultrasound power levels are large
-  \cite{bushberg2011essential}.}
-
+Most modern medical imaging systems are digital, converting analogue
+signals from detectors into digital data. This conversion, known as
+digitization, involves two main steps: \emph{sampling} (selecting
+specific points in time for conversion) and \emph{quantization}
+(converting each analogue sample into a digital number). A
+band-limited signal can be sampled without loss of
+information. Quantization always loss some kind of information,
+generating the so called \emph{quantization noise}. However, if the
+number of bits/samples is high enought, we are replacing noise by
+quantization noise, and therefore, the impact of quantization is
+limited (or at least, controlled).\footnote{For instance, X-ray CT
+  requires 12 bits per pixel due to its high contrast resolution,
+  whereas ultrasound typically uses 8 bits due to its limited contrast
+  resolution \cite{bushberg2011essential}.}

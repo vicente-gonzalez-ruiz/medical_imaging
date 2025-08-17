@@ -1,18 +1,24 @@
 \chapter{Fluoroscopy}
 
-Fluoroscopy refers to the continuous acquisition of a sequence of x-ray images over
-time, essentially a real-time x-ray movie of the patient. It is a transmission projection
-imaging modality, and is, in essence, just real-time radiography. Fluoroscopic systems
-use x-ray detector systems capable of producing images in rapid temporal sequence.
-Fluoroscopy is used for positioning catheters in arteries, visualizing contrast agents
-in the GI tract, and for other medical applications such as invasive therapeutic proce-
-dures where real-time image feedback is necessary. It is also used to make x-ray movies
-of anatomic motion, such as of the heart or the esophagus \cite{bushberg2011essential}.
+Produces real-time X-ray images with high temporal resolution (e.g.,
+30 frames per second) but at a low dose (and therefore low \gls{SNR})
+per image compared to radiography. This allows for continuous motion
+viewing, useful for interventional procedures.\footnote{Fluoroscopy is
+  used for positioning catheters in arteries, visualizing contrast
+  agents in the \gls{GI} tract, and for other medical applications
+  such as invasive therapeutic proce- dures where real-time image
+  feedback is necessary. It is also used to make x-ray movies of
+  anatomic motion, such as of the heart or the esophagus
+  \cite{bushberg2011essential}.}
 
-\section{SNR}
-Low SNR is a characteristic of fluoroscopy due to low dose per image
-\cite{bushberg2011essential}.
-
-\section{Resources}
-
-\bibliography{tomography}
+When possible, frame averaging is used to increase the
+SNR.\footnote{Fluoroscopy systems provide excellent temporal
+  resolution, a feature that is the basis of their clinical
+  utility. However, fluoroscopy images are also relatively noisy, and
+  under certain circumstances it is appropriate and beneficial to
+  (reduce) temporal resolution for lower quantum noise. This can be
+  accomplished by averaging a series of images. Appreciable frame
+  averaging can cause notice-able image lag with reduced temporal
+  resolution. The compromise depends on the specific fluoroscopic
+  application and the preferences of the user
+  \cite{bushberg2011essential}.}
