@@ -3,7 +3,7 @@
 \documentclass{report}%{article}
 \usepackage{graphicx}
 %\usepackage[draft]{graphicx}
-\graphicspath{{figs}{notebooks}{.}}
+\graphicspath{{imgs}{figs}{notebooks}{.}}
 \usepackage{hyperref}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -24,7 +24,7 @@
 % \newacronym{label}{acronym}{definition}
 
 \newacronym{TFT}{TFT}{Thin-Film Transistor}
-\newacronym{TFT}{TFT}{GastroIntestinal}
+\newacronym{GI}{GI}{GastroIntestinal}
 
 \newacronym{LM}{LM}{Light Microscopy}
 \newacronym{EM}{EM}{Electron Microscopy}
@@ -113,9 +113,9 @@
 \newacronym{BM3D}{BM3D}{Block-Matching and 3D filtering}
 \newacronym{DnCNN}{DnCNN}{Denoising \acrshort{CNN}}
 
-\title{Denoising in Microscopy Imaging}
+\title{Medical Imaging}
 
-\author{Vicente González-Ruiz and José Jesús Fernández Rodríguez}
+\author{Vicente González Ruiz}
 
 \begin{document}
 \maketitle
@@ -184,47 +184,29 @@
 \input{acquisition}
 \input{ultrasound}
 \input{radiography}
-
-\section{Mamography}
 \input{mamography}
-
-\section{Fluoroscopy}
 \input{fluoroscopy}
-
-\section{Computed Tomography (CT)}
 \input{CT}
-
-\section{Single Photon Emission Computed Tomography (SPECT)}
 \input{SPECT}
-
-\section{Positron Emission Tomography (PET)}
 \input{PET}
 
-\chapter{Storage}
 \input{storage}
-\section{PNG}
-\section{JPEG}
-\section{JPEG2000}
-\section{DICOM}
+\input{PNG}
+\input{JPEG}
+\input{JPEG2000}
+\input{DICOM}
 
-\chapter{Transmission}
 \input{transmission}
-\section{TCP/IP}
-\section{WWW}
+\input{TCP_IP}
+\input{WWW}
 
-\chapter{Visualization and processing}
 \input{visualization}
-\section{Multiresolution}
-\section{Progressiveness}
-\section{Denoising}
-\section{Sharping}
-\section{Contrast control}
-Dealing with underexposure and overexposure.
-
-\section{Tomography}
-Voxelization: Place each pixel from the slices into a 3D voxel array according to its recorded position. Used in 3D ultrasound imaging.
-\section{Interpolation}
-\section{Segmentation}
+\input{multiresolution}
+\input{progressiveness}
+\input{denoising}
+\input{sharpening}
+\input{contrast} % Dealing with underexposure and overexposure.
+\input{interpolation}
 \input{segmentation}
 
 \printglossary[type=\acronymtype]
@@ -232,6 +214,6 @@ Voxelization: Place each pixel from the slices into a 3D voxel array according t
 \section*{Resources}
 
 \bibliographystyle{plain}
-\bibliography{tomography,MRI,denoising}
+\bibliography{tomography,MRI,denoising,image_formats}
 
 \end{document}
