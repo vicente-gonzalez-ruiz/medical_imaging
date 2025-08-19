@@ -1,8 +1,8 @@
 \chapter{Ultrasound}
 
-\section{Acquisition}
+\section{Properties of sound}
+
 \begin{itemize}
-  
 \item Mechanical energy in the form of \popup{high-frequency}{The
     higher the frequency the better resolution and image detail, but
     lower penetration.} (usually in the range of 2 to 18 MHz
@@ -10,18 +10,57 @@
     longitudinal preasure mechanical waves. They need a medium to
     propagate at a speed that depends on the rigidity and density of
     the medium. The typical speed in the tissue is 1540 m/s.} can be
-  used to generate images of the anatomy of a patient.
+  used to generate images of the anatomy of a patient (see Figure
+  \ref{fig:sound}).
+\end{itemize}
+\vspace{-2ex}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=8cm]{sound}
+  \caption{Mechanical movement of the particles with the sound
+    \cite{abdulla2025properties_sound}.\label{fig:sound}}
+\end{figure}
 
+\section{Echoes}
+\begin{itemize}
 \item (Ultra)Sound waves pass through tissues, get reflected, and the
   returning wave (echo) is detected and forms the image. In
   \popup{B-mode}{B for Brightness (the most common ultrasound imaging
     used in medicine). There is A-Mode (A for Amplitude) that is
-    mainly used in ophthalmology to investigate retinal
-    detachment.} imaging, the intensity of the returning wave (echo)
-  is represented as a level of brightness on the monitor to give a 2D
-  cross-sectional image on the monitor \cite{abdulla2025ultrasound}.
-
+    mainly used in ophthalmology to investigate retinal detachment.}
+  imaging, the intensity of the returning wave (echo) is represented
+  as a level of brightness on the monitor to give a 2D cross-sectional
+  image on the monitor \cite{abdulla2025ultrasound} (see Figure
+  \ref{fig:interactions}).
 \end{itemize}
+\vspace{-3ex}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=6cm]{sound_interactions}
+  \caption{Interactions of the ultrasound scan (USS) with tissue
+    \cite{abdulla2025properties_sound}.\label{fig:interactions}}
+\end{figure}
+
+\section{Ultrasound imaging with flow detection}
+
+\begin{itemize}
+\item The speed of the sound signal in the tissues are low enough to
+  use the Doppler effect to detect their motion
+  \cite{bushberg2011essential,abdulla2025ultrasound_machine}. Thus,
+  for example, using the M-Mode (M for Motion) we can measure the
+  blood flow displayed as color channels (see Figure~\ref{fig:doppler}
+  ).\footnote{Both the speed and direction of blood flow can be
+    measured, and within a subarea of the grayscale image, a color
+    flow display typically shows blood flow in one direction as red,
+    and in the other direction as blue \cite{bushberg2011essential}.}
+\end{itemize}
+\vspace{-3ex}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=8cm]{doppler}
+  \caption{An ultrasound image that shows the Doppler effect
+    \cite{abdulla2025ultrasound_imaging_doppler}.\label{fig:doppler}}
+\end{figure}
 
 \section{Acquisition details}
 The echoes returned are shown on screen in a grey-scale corresponding
@@ -33,22 +72,7 @@ internal structures in the body, creating echoes. The reflected sound
 waves then reach the transducer, which records the returning sound
 \cite{bushberg2011essential,abdulla2025ultrasound_machine}.
 
-\begin{figure}
-  \centering
-  \includegraphics{doppler}
-  \caption{An ultrasound image that shows the Doppler effect
-    \cite{abdulla2025ultrasound_imaging_doppler}.\label{fig:doppler}}
-\end{figure}
 
-The speed of the sound signal in the tissues are low enough to use the
-Doppler effect to detect their motion. Thus, for example, using the
-M-Mode (M for Motion) we can measure the blood flow displayed as color
-channels (see Figure~\ref{fig:}
-).\footnote{Both the speed
-  and direction of blood flow can be measured, and within a subarea of
-  the grayscale image, a color flow display typically shows blood flow
-  in one direction as red, and in the other direction as blue
-  \cite{bushberg2011essential}.}
 
 \section{Image content}
 Ultrasound imaging is basically a 2D technique (slices). However, 3D
