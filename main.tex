@@ -1,6 +1,7 @@
-%\documentclass{article}
-%\documentclass[draft]{report}%{article}
-\documentclass{report}%{article}
+\documentclass{report}
+
+
+
 \usepackage{graphicx}
 %\usepackage[draft]{graphicx}
 \graphicspath{{imgs}{figs}{notebooks}{.}}
@@ -8,17 +9,47 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage[margin=1in]{geometry}
-\usepackage{comment}
+%\usepackage[margin=1in]{geometry}
+%\usepackage{comment}
 \usepackage{color}
 \usepackage[acronym]{glossaries}
 %\usepackage{alphalph} % For extended alphabetical numbering
-\usepackage{appendix}
+%\usepackage{appendix}
 
 % \usepackage[%
 %filename ,%
 %content={no image available}
 %]{draftfigure}
+
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy} % for fancydr package
+%\fancyhf{}
+\pagenumbering{arabic} % Reseteamos las p'aginas
+% Cabeceras no todo en may'usculas
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+% Definici'on de las cabeceras
+\lhead{} \rhead{} \chead{}
+%\lfoot[\fancyplain{}{\sf\thepage}]{\color{blue}\fancyplain{}{\sf\rightmark}}
+%\lfoot[]{}
+%\rfoot[\fancyplain{}{\sf\leftmark}]{\color{red}\fancyplain{}{\sf\thepage}}
+%\rfoot[]{}
+\cfoot[]{}
+\rfoot{\colorbox{mybg}{\footnotesize\color{red}\thepage/\pageref{LastPage}}}
+
+\usepackage[screen,nopanel,sectionbreak]{pdfscreen}
+\margins{0.5 cm}{0.5 cm}{0.5 cm}{0.5 cm}
+%\screensize{15 cm}{20 cm} % Raz'on 3:4
+\screensize{12 cm}{16 cm}
+%\screensize{9 cm}{12 cm}
+\overlayempty
+%\overlay{overlay}
+%\definecolor{mybg}{rgb}{1,0.9,0.7}
+\definecolor{mybg}{rgb}{1.0,1.0,1.0}
+\backgroundcolor{mybg}
+
+\let\st\relax % Avoid -> LaTeX Error: Command \st already defined.
+\usepackage[final]{pdfcomment}
 
 \makeglossaries
 % \newacronym{label}{acronym}{definition}
