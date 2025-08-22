@@ -5,30 +5,53 @@
 \end{flushright}
 
 \section{History}
-Computed Tomography (CT) is a medical imaging modality that became
+\begin{itemize}
+\item Computed Tomography (CT) is a medical imaging modality that became
 clinically available in the early 1970s and was the first to be made
-possible by computers. CT can provide isotropic\footnote{Isotropic
-  spatial resolution is a characteristic of images where the
-  resolution is equal in all directions. In the case of 3D images,
-  this means that a voxel (a 3D pixel) is a perfect cube, with equal
-  dimensions on all sides.: along the X-axis (left-right), the Y-axis
-  (up-down), and the Z-axis (front-back). } 3D images (volumes),
-including axial\footnote{An axial view divides the body horizontally
-  into a top (superior) and bottom (inferior) section.},
-coronal\footnote{A coronal view divides the body vertically into a
-  front (anterior) and back (posterior) section.}, and
-sagittal\footnote{A sagittal view divides the body vertically into a
-  right and left section.} views. The images are obtained by X-ray
-transmission, moving an X-ray tube (the gantry, see
-Figure~\ref{fig:CT_equipment_machine}) and detector arrays around the
-patient(see Figure~\ref{fig:views_in_CT}).
-
-\begin{figure}
+possible by computers.
+\end{itemize}
+\vspace{-3ex}
+\begin{figure}[h!]
   \centering
-    \includegraphics{CT_equipment_machine}
+  \begin{tabular}{cc}
+    \includegraphics[width=6cm]{Emi1010} &
+                                           \includegraphics[width=4.5cm]{First_CT_scan_brain}
+  \end{tabular}
+  \caption{First CT scanner, and an example (80x80 pixels)
+    \cite{Wikipedia_CT_history,Wikipedia_CT_abdomen}.\label{fig:first_CT}}
+\end{figure}
+
+\section{The CT scanner}
+\begin{itemize}
+\item The images are obtained by X-ray transmission, moving an X-ray
+  tube (the \emph{gantry}, see Fig.~\ref{fig:CT_equipment_machine})
+  and detector arrays around the patient.
+\end{itemize}
+\vspace{-3ex}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=6cm]{CT_equipment_machine}
   \caption{ \cite{morin2025radiation}.\label{fig:CT_equipment_machine}}
 \end{figure}
 
+\section{Capabilities}
+\begin{itemize}
+\item CT can provide \popup{isotropic}{Isotropic spatial resolution is
+    a characteristic of images where the resolution is equal in all
+    directions. In the case of 3D images, this means that a voxel (a
+    3D pixel) is a perfect cube, with equal dimensions on all sides.:
+    along the X-axis (left-right), the Y-axis (up-down), and the
+    Z-axis (front-back).} 3D images (volumes), including
+  \popup{axial}{An axial view divides the body horizontally into a top
+    (superior) and bottom (inferior) section.}, \popup{coronal}{A
+    coronal view divides the body vertically into a front (anterior)
+    and back (posterior) section.}, and \popup{sagittal}{A sagittal
+    view divides the body vertically into a right and left section.}
+  views (see Fig.~\ref{fig:views_in_CT}).
+\item While CT is usually used for anatomic imaging, the use of
+  iodinated contrast injected intravenously allows the functional
+  assessment of various organs as well \cite{bushberg2011essential}.
+\end{itemize}
 \begin{figure}
   \centering
   \begin{tabular}{cc}
@@ -37,9 +60,6 @@ patient(see Figure~\ref{fig:views_in_CT}).
   \caption{Reference axis used in CT and type of views generated \cite{morin2025radiation}.\label{fig:views_in_CT}}
 \end{figure}
 
-While CT is usually used for anatomic imaging, the use of
-iodinated contrast injected intravenously allows the functional
-assessment of various organs as well \cite{bushberg2011essential}.
 
 \section{Acquisition}
 
