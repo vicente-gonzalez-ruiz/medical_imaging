@@ -188,6 +188,7 @@ attenuation measurements.
 \end{itemize}
 
 \section*{Filtered Back-Projection (FBP) (2/2)}
+\label{sec:FBP_example}
 \vspace{-2ex}
 \begin{figure}[!b]
   \centering
@@ -208,9 +209,13 @@ attenuation measurements.
   \item Update the guess to reduce the error.
   \item Repeat until convergence.
   \end{enumerate}
-\item Examples: ART (Algebraic Reconstruction Technique), SIRT
-  (Simultaneous Iterative Reconstruction Technique), and modern
-  statistical or model-based methods.
+\item Examples:
+  \href{https://en.wikipedia.org/wiki/Algebraic_reconstruction_technique}{ART
+    (Algebraic Reconstruction Technique)},
+  \href{https://tomroelandts.com/articles/the-sirt-algorithm}{SIRT
+    (Simultaneous Iterative Reconstruction Technique)}, and
+  \href{https://arxiv.org/pdf/1504.06889}{Maximum Likelihood
+    Expectation Maximization (MLEM)}.
 \end{itemize}
 
 \section{Radon transform}
@@ -245,55 +250,24 @@ attenuation measurements.
     \cite{wikipedia2025radom_transform}.\label{fig:inverse_Radon}}
 \end{figure}
 
-\section{Volume reconstruction}
+\section{(3D) Volume reconstruction}
 \begin{itemize}
-\item The 3D volume is form by the stacking of all 2D tomograms.
+\item The volume is form by the stacking of all 2D tomograms.
 \end{itemize}
-
-\section{Radon transform and Fourier transform}
-
-
-
-To generate the 3D reconstruction, the following tasks are usually done:
-
-
-\begin{enumerate}
-\item \textbf{Calibration}: A phantom patient (that we know exactly
-  its morphology) is used to test if the reconstructions have some
-  problem, such as for example, the detector sensitivity (affects to
-  the contrast), ``dead-pixels'' in the detector (that should be
-  interpolated), etc. This task should bezz performed periodically.
-\item \textbf{Denoising}: The sinograms used to be quite
-  smooth. Therefore, some technique for removing noise can be
-  useful. This task is performed in every scan.
-\item \textbf{Logarithmic transformation}: The X-rays are
-  exponentially attenuated when they travel across the tissues. This
-  step generates LACs (Linear Attenuation Coefficient), and allows to
-  suppose that the rest of tasks are using linear data.
-\item \textbf{Filtered BackProjection (FBP)}: 
-
-  Alternatively, instead of FBP an (usually ``heavier'') iterative
-  reconstruction algorithm can be used.\footnote{These algorithms
-    start with an initial guess of the image, calculate forward
-    projections, compare them to the actual measured projection data
-    to generate an "error matrix," and then use this error to update
-    the image in successive iterations until an accurate depiction of
-    the scanned object is achieved.}
-
-\end{enumerate}
+\vspace{-4ex}
+\begin{figure}[!b]
+  \centering
+  \includegraphics[height=5cm]{Stacking-2D-slices-to-create-a-3D-volume-24}
+  \caption{Tomogram stacking to generate a 3D structure
+    \cite{alzu2019multi}.\label{fig:stacking}}
+\end{figure}
 
 \section{Quantum noise}
-
-The processes by which radiation is emitted and interacts with matter
-are inherently random, making all radiation measurements, including
-medical imaging, subject to random error. The Poisson distribution is
-particularly relevant to quantum noise in radiological imaging. The
-noise per pixel ($\sigma$) is approximated by the square root of the
-mean number of photons ($N$) recorded in each detector element, i.e.,
-$\sigma = \sqrt{N}$ \cite{bushberg2011essential}.
-
-In CT, quantum noise tends to dominate at high spatial frequencies in
-the projection data, which can lead to unacceptably noisy
-reconstructed images if appropriate filtering is not applied
-\cite{bushberg2011essential}.
-
+\begin{itemize}
+\item In CT, as it does happen with all the X-rays-based imaging
+  systems, quantum noise tends to dominate at high spatial frequencies
+  in the projection data, which can lead to unacceptably noisy
+  reconstructed images if appropriate filtering is not applied
+  \cite{bushberg2011essential}.
+\item See Section~\ref{sec:radiography_quantum_noise}.
+\end{itemize}

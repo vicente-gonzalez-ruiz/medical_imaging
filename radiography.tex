@@ -39,6 +39,19 @@
     \cite{Attenuation_X-rays}.\label{fig:Attenuation-of-X-rays}}
 \end{figure}
 
+\section{Linear attenuacion coefficients (LACs)}
+\begin{itemize}
+\item The X-rays are
+  exponentially attenuated when they travel across the tissues.
+\item To simplify numerical analysis and processing, we don't work
+  directly with the attenuation coefficients but with the LACs, which
+  are obtained applitying a logarithm operation.
+\item For example, the numerical values used in
+  Section~\ref{sec:FBP_example} are the result of computing the
+  logarithm of the \popup{measured}{Returned by the detector.}
+  attenuation coefficients.
+\end{itemize}
+
 \section{Why we are ``transparent''?}
 \begin{itemize}
 \item The \popup{fast ondulatory movement of X-ray-photons}{From 30
@@ -181,7 +194,7 @@
     of varium} \cite{Wikipedia_Fluoroscopy}.
 \end{itemize}
 
-\section{Quantum noise}
+\section{Quantum noise (1/2)}
 \begin{itemize}
 \item Quantum noise is the most common noise in X-rays imaging.
 \item It is directly related to photon counting (fewer photons
@@ -194,4 +207,18 @@
     \includegraphics[width=10cm]{quantum_noise_X-rays}
     \caption{Quantum noise in radiology
       \cite{CHANDRA2020107426}.\label{fig:quantum_noise_X-rays}}
+\end{figure}
+
+\section{Quantum noise (2/2)}
+\label{sec:radiography_quantum_noise}
+\begin{itemize}
+\item The amplitude of quantum noise depends on the (clean) signal amplitude.  
+\item On average, quantum noise appears on all the frequencies and is typically \href{https://en.wikipedia.org/wiki/Colors_of_noise}{colored}.
+\end{itemize}
+\vspace{-4ex}
+\begin{figure}[!b]
+  \centering
+    \includegraphics[width=6cm]{quantum_noise_mammography}
+    \caption{Average quantum noise spectrum (up), some examples in mammograms (below) 
+      \cite{saunders2007does}.\label{fig:quantum_noise_X-rays_spectrum}}
 \end{figure}
