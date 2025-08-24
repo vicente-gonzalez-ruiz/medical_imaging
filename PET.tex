@@ -1,20 +1,46 @@
 \chapter{Positron Emission Tomography (PET)}
 
-Positrons are positively charged electrons, and are emitted by some radioactive
-isotopes such as fluorine-18 and oxygen-15. These radioisotopes are incorporated
-into metabolically relevant compounds, such as 18 F-fluorodeoxyglucose ( 18 FDG),
-which localize in the body after administration. The decay of the isotope produces
-a positron, which rapidly undergoes a very unique interaction: the positron 
-combines with an electron from the surrounding tissue, and the mass of both
-the  and the  is converted by annihilation into pure energy, following Einstein’s
-famous equation E = mc 2 . The energy that is emitted is called annihilation radiation.
-Annihilation radiation production is similar to gamma ray emission, except that
-two photons are produced, and they are emitted simultaneously in almost exactly
-opposite directions, that is, 180 degrees from each other. A positron emission
-tomography (PET) scanner utilizes rings of detectors that surround the patient, and
-has special circuitry that is capable of identifying the photon pairs produced during
-annihilation. When a photon pair is detected by two detectors on the scanner, it
-is assumed that the annihilation event took place somewhere along a straight line
-between those two detectors. This information is used to mathematically compute
-the 3D distribution of the PET agent, resulting in a set of tomographic emission
-images \cite{bushberg2011essential}. 
+\section{Acquisition}
+\begin{itemize}
+\item Such as SPECT, PET is a tomographic nuclear imaging system
+  \cite{abdulla2025PET}.
+\item Employs \popup{annihilation coincidence detection
+    (ACD)}{Positron-emitting radioisotopes decay and release a
+    positron. This positron travels a short distance, then annihilates
+    with an electron from the surrounding tissue, converting their
+    mass into two 511-keV photons. These two photons are emitted
+    simultaneously and in nearly opposite directions (approximately
+    180 degrees apart). PET scanners detect these coincident photon
+    pairs using rings of detectors and specialised circuitry. ACD is
+    significantly more efficient than collimation and avoids the
+    degradation of spatial resolution with increasing distance from
+    the detector.} instead of collimation to determine the procedence
+  of the radiation that reach the detector.
+\item Only uses \popup{positron-emitting radionuclides}{F-18
+    fluorodeoxyglucose (FDG) is the most widely used PET
+    radiopharmaceutical. Due to their generally short half-lives, PET
+    radionuclides often require a cyclotron to be located nearby or
+    on-site}.
+\item PET scanners are more ``open'' than SPECT scanners because the
+  resolution of the images is not so dependent on the distance of the
+  camera to the patiend.
+\item PET is \popup{more expensive}{A PET/CT system can cost
+    approximately twice that of a SPECT/CT system} than SPECT.
+\end{itemize}
+
+\section{Clinical applications}
+\begin{itemize}
+\item As SPECT, it is mainly used to \popup{visualise physiological
+    function}{The most common application of PET (especially with F-18
+    FDG) is in oncology for differentiating malignant neoplasms,
+    staging cancer, and monitoring treatment response.}
+  \cite{bushberg2011essential}.
+\end{itemize}
+
+\section{Image quality}
+\begin{itemize}
+\item Compared to SPECT, PET has much higher count rate sensitivity
+  and,generating less noise.
+\item Therefore, PET images can be reconstructed with much higher
+  spatial frequency \cite{abdulla2025NIQ}.
+\end{itemize}
