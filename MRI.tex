@@ -4,6 +4,15 @@
 \href{https://www.sciencephoto.com/media/728494/view/normal-brain-mri}{\includegraphics[width=6.5cm]{Normal_brain_MRI}}
 \end{flushright}
 
+\section{Clinical applications}
+\begin{itemize}
+\item \gls{MRI}
+  \cite{westbrook2018mri,Wu2022MRI_Physics,thePIRL2018NMR_basics,thePIRL2018SpinEcho,thePIRL2018Fourier,thePIRL2018GRE}
+  allows to obtain detailed views of (usually living) samples
+  (tissues, organs, and even a complete organism) without irradiate
+  them.
+\end{itemize}
+
 \section{MRI axes}
 \begin{itemize}
 \item A patient is placed in the bore of the MRI machine to be
@@ -54,8 +63,9 @@
   \item \textbf{Head coil} (transmit and receive): incorporated into a
     helmet and used for head scans.
   \item Surface (or local) coils (receive only): these are small coils
-    applied as close to the area being imaged as possible e.g. arm,
-    leg, orbits, lumbar spine coils etc.
+    applied \popup{as close to the area being imaged as possible}{This
+      increases the SNR.} e.g. arm, leg, orbits, lumbar spine coils
+    etc.
   \item Arrays of coils that only transmit or receive, and that are
     then combined to improve the SNR.
   \end{enumerate}
@@ -243,25 +253,6 @@
   (2D) slices are stacked.
 \item Notice that in MRI, the tomograms are in the Fourier domain.
 \end{itemize}
- 
-\section{Clinical applications}
-\begin{itemize}
-\item \gls{MRI}
-  \cite{westbrook2018mri,Wu2022MRI_Physics,thePIRL2018NMR_basics,thePIRL2018SpinEcho,thePIRL2018Fourier,thePIRL2018GRE}
-  allows to obtain detailed views of (usually living) samples
-  (tissues, organs, and even a complete organism) without irradiate
-  them.
-\item MR Angiography (MRA) using Time-of-Flight (TOF) and Phase Contrast (PC) techniques for vascular visualization. Functional MRI (fMRI) using BOLD sequences to map brain activity. Diffusion-Weighted Imaging (DWI) and Apparent Diffusion Coefficient (ADC) maps for assessing water mobility in tissues. Magnetic Resonance Spectroscopy (MRS) for "electronic biopsy" through spectral analysis of metabolites.
-\end{itemize}
-
-\section{Image quality}
-\begin{itemize}
-\item The contrast in \gls{MRI} is determined by the
-  time-varying relaxation properties (T1 recovery and T2 decay) of the
-  tissues within that slice.
-\item This analog signal is digitized (converted
-  into binary numbers) via analog-to-digital conversion (ADC). 
-\end{itemize}
 
 \section{Image quality in \gls{MRI}}
 \begin{enumerate}
@@ -297,7 +288,7 @@
   \cite{westbrook2018mri}, and reconstruction algorithms
   \cite{bushberg2011essential}.
 \item \textbf{Spatial resolution}: Depends fundamentally on the \emph{minimal
-    slice-thickness} provided by the internal coil, the
+    slice-thickness} provided by the internal coils, the
   resolution of the k-space, and on the magnetic field
     strength (B0) to provide a high enought \popup{SNR per voxel}{The SNR
     increases with B0 and the voxel size, so, to increase the
