@@ -2,46 +2,56 @@
 
 \chapter{Basic concepts}
 
-\section{Storage media charactaristics}
-\begin{enumerate}
-\item \textbf{Capacity}: This is the total amount of data that a
-  storage medium can hold. It's typically measured in \popup{B}{byte}s
-  (8 \popup{bits, where a bit represents a logical state with one of
-    two possible values.}), \popup{KB}{kilobyte}s
-  ($1\text{KB} = 2^{10}\text{B}$), \popup{MB}{megabytes}s
-  ($1\text{MB} = 2^{10}\text{KB}$), \popup{GB}{gigabyte}s
-  ($1\text{GB} = 2^{10}\text{MB}$), \popup{TB}{terabyte}s
-  ($1\text{TB} = 2^{10}\text{GB}$), and \popup{PB}{petabyte}s
-  ($1\text{PB} = 2^{10}\text{GB}$).
-\item \textbf{Volatility}: If the media need to connected to a current supply (for example, the \gls{RAM} memory of a computer), the media is said \emph{volatile}.
-\item \textbf{\gls{WORM}}: A \gls{CDROM}, for example.
-\end{enumerate}
+\section{Storage charactaristics}
 \begin{itemize}
-\item There are many storage media capable of storing digital images (some allow
-\begin{enumerate}
-\item 
-\item Common massive storage systems (not only used for medical images) are:
-\begin{enumerate}
-\item \textbf{Cloud Storage} (Google Drive, Microsoft One Drive,
-etc.): data is stored in remote servers accessed over the Internet.
-\item \textbf{NAS (Network-Attached Storage)}: data is stored in a
-\popup{specialized computer}{The computer rarely has a keyboard or
-monitor, and has many hard drive bays.} (connected to the
-\popup{LAN}{Local Area Network.}) that usually mounts several disks
-with some type of \popup{RAID}{Redundant Array of Independent Disks.}
-configuration.
-\end{enumerate}
+\item \textbf{Capacity}: This is the total amount of data that a
+  storage medium can hold. It's typically measured in:
+  \begin{tabular}{r|l}
+    Acronym & Amount of data \\
+    \hline
+    \popup{B}{byte}s & (8 \popup{bits, where a bit represents a logical state with one of two possible values.})\\
+    \popup{KB}{kilobyte}s & $1\text{KB} = 2^{10}\text{B}$\\
+    \popup{MB}{megabytes}s & $1\text{MB} = 2^{10}\text{KB}$\\
+    \popup{GB}{gigabyte}s & $1\text{GB} = 2^{10}\text{MB}$\\
+    \popup{TB}{terabyte}s & $1\text{TB} = 2^{10}\text{GB}$\\
+    \popup{PB}{petabyte}s & $1\text{PB} = 2^{10}\text{GB}$
+  \end{tabular}
+\item \textbf{Volatility}: If the storage media need to connected to a
+  current supply (for example, the \gls{RAM} memory of a computer),
+  the media is said \emph{volatile}.
+\item \textbf{\gls{WORM}}: A \gls{CDROM}, for example.
+\end{itemize}
+
+\section{The Cloud}
+\begin{itemize}
+\item Data is stored in remote data-centers accessed over the Internet.
+\item Fully scalable (more money, more space).
+\item We don't control where the data is.
+\item We don't control how has access to the data.
 \end{itemize}
 \vspace{-4ex}
-\begin{figure}[!b]
-  \centering
-  \includegraphics[height=3.5cm]{servidor-nas}
-  \caption{A NAS \cite{AURUM_NAS}.\label{fig:NAS}}
-\end{figure}
+\begin{center}
+  \includegraphics[height=3.5cm]{cloud-storage}
+\end{center}
 
-\section{Arrays of redundant disks}
+\section{\glsentrylong{NAS}}
 \begin{itemize}
-\item A \gls{RAID} is a logical disk that is able to work even when some of the \popup{physical disks}{That actually store the data.} fail. These are some of the existing configurations:
+\item Data is stored in a \popup{specialized computer}{The computer
+    rarely has a keyboard or monitor, and has many hard drive bays.}
+  connected to the \gls{LAN}.
+\item Usually mounts several \popup{disk}{Or disc.}s with some type of
+  \gls{RAID} configuration.
+\end{itemize}
+\vspace{-4ex}
+\begin{center}
+  \includegraphics[height=3.5cm]{servidor-nas}
+\end{center}
+
+\section{\glsentrylong{RAID}}
+\begin{itemize}
+\item A \gls{RAID} is a logical disk that is able to work even when
+  some of the \popup{physical disks}{That actually store the data.}
+  fail. These are some of the existing configurations:
   \begin{enumerate}
   \item RAID-0 (Striping): \popup{No redundancy}{To maximize capacity,
       splits data across drives. This means that if a physical disk
@@ -51,12 +61,93 @@ configuration.
       the same time.}.
   \item RAID-5 (Striping with Parity): \popup{One disk
       redundancy}{This configuration can only tolerate the failure of
-      one disk.}. When the broken disk is replaced, the RAID must rebuild the parity information. During this time, no other disk can fail.
+      one disk.}. When the broken disk is replaced, the RAID must
+    rebuild the parity information. During this time, no other disk
+    can fail.
   \item RAID-6 (Double Parity): \popup{Two disks
       redundancy}{Tolerate the failure of
       two disks at the same time.}.
   \end{enumerate}
 \end{itemize}
+
+\section{\glsentrylong{HDD}}
+\begin{itemize}
+\item Electro-mechanical data storage-persistent device that uses
+  magnetic storage to store and retrieve digital information.
+\end{itemize}
+\vspace{-4ex}
+\begin{center}
+  \includegraphics[height=3.5cm]{HDD}
+\end{center}
+
+\section{\glsentrylong{SSD}}
+\begin{itemize}
+\item Fully electronic storage device based on \popup{flash
+    memory}{Flash memory is a type of non-volatile computer memory
+    that can be electrically erased and reprogrammed. Unlike volatile
+    memory (like RAM), it retains data even when the power is turned
+    off.} chips.
+\item Compared to \gls{HHD}s, \gls{SSD}s are faster, more reliable and
+  power efficient, but for the same capacity, \gls{SSD}s are more
+  expensive.
+\end{itemize}
+\vspace{-4ex}
+\begin{center}
+  \includegraphics[height=3.5cm]{SSD}
+\end{center}
+
+\section{\glslongentry{CD-ROM}}
+\begin{itemize}
+\item Optical storage medium that uses a laser to read digital data
+  encoded on a spinning disc.
+\item The data is stored as a spiral track of microscopic depressions
+  genearted on a reflective aluminum layer encased in plastic.
+\item Typical capacity: 800 GB.
+\end{itemize}
+\vspace{-4ex}
+\begin{center}
+  \includegraphics[height=3.5cm]{CD-ROM}
+\end{center}
+  
+\section{\glslongentry{CD-R}}
+\begin{itemize}
+\item A \gls{CD} that can be written once.
+\end{itemize}
+\vspace{-4ex}
+\begin{center}
+  \includegraphics[height=3.5cm]{CD-R}
+\end{center}
+
+\section{\glslongentry{CD-RW}}
+\begin{itemize}
+\item A \gls{CD} that can be written several times.
+\end{itemize}
+\vspace{-4ex}
+\begin{center}
+  \includegraphics[height=3.5cm]{CD-RW}
+\end{center}
+
+\section{\glslongentry{DVD}}
+\begin{itemize}
+\item The same than a \gls{CD-ROM} but with a higher capacity.
+\item Typical capacity: 4.7 GB.
+\item As with \gls{CD}, there are -R and -RW versions.
+\end{itemize}
+\vspace{-4ex}
+\begin{center}
+  \includegraphics[height=3.5cm]{DVD-ROM}
+\end{center}
+
+\section{Blu-Ray}
+\begin{itemize}
+\item The same than a \gls{DVD-ROM} but with a higher capacity.
+\item Typical capacity: Up to 100 GB.
+\item As with \gls{DVD}, there are -R and -RW versions.
+\end{itemize}
+\vspace{-4ex}
+\begin{center}
+  \includegraphics[height=3.5cm]{Blu-ray}
+\end{center}
 
 \section{Files and streams}
 \begin{itemize}
