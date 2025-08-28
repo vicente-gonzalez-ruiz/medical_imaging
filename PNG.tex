@@ -1,4 +1,4 @@
-\chapter{PNG (Portable Network Graphics)}
+\chapter{\glsentrylong{PNG}}
 
 \section{Main characteristics}
 \begin{itemize}
@@ -14,7 +14,8 @@
 
 \section{\href{https://www.w3.org/}{W3C} international standard}
 \begin{itemize}
-\item Supported by all Web browsers, and most image viewers.
+\item \gls{PNG} \cite{roelofs1999png} is supported by all Web
+  browsers, and most image viewers.
 \end{itemize}
 %\vspace{-4ex}
 \begin{center}
@@ -24,12 +25,12 @@
 
 \section{Raster graphics file format}
 \begin{itemize}
-\item The image is a 2D array of pixels.
-\item Pixels can be gray-scale (1 channel) or color \popup{RGBA}{Red,
-    Green, Blue, and Alpha (transparency) channels. The alpha-channel
-    is optional.} (4 channels).
+\item Up to ($2^{32}-1$)x($2^{32}-1$) pixels, efficiently represented (lossless compression).
+\item Pixels can be gray-scale (1 channel) or color
+  \popup{\gls{RGBA}}{Red, Green, Blue, and Alpha (transparency)
+    channels. The alpha-channel is optional.} (4 channels).
 \end{itemize}
-%\vspace{-4ex}
+\vspace{-4ex}
 \begin{center}
   \href{https://en.wikipedia.org/wiki/Raster_graphics}{\includegraphics[width=5cm]{RGB-raster-image}}
 \end{center}
@@ -46,4 +47,37 @@
       16 & $2^{16}=65536$
     \end{tabular}
   \end{center}
+\item These pixel ``depth'' should be fine for most medical images.
 \end{itemize}
+
+\section{\popup{Animated}{Also called ``motion''.} PNG}
+\begin{itemize}
+\item A \gls{APNG} is sequence of images in a \gls{PNG} file.
+\end{itemize}
+\begin{center}
+  \href{https://commons.wikimedia.org/wiki/Category:Animated_PNG_files#/media/File:201805_human_skeleton_anim.png}{\includegraphics[width=5cm]{human_skeleton_anim}} \\
+  (Click in the image)
+\end{center}
+
+\section{Image metadata (1/3)}
+\begin{itemize}
+\item PNG images can store metadata:
+  \begin{center}
+    \begin{tabular}{l|l}
+      Keyword & Explain\\
+      \hline
+      Title & Short (one line) title or caption for image \\
+      Author & Name of image's creator \\
+      Description & Description of image (possibly long) \\
+      Copyright & Copyright notice \\
+      Creation Time & Time of original image creation \\
+      Software & Software used to create the image \\
+      Disclaimer & Legal disclaimer \\
+      Warning & Warning of nature of content \\
+      Source & Device used to create the image \\
+      Comment & Miscellaneous comment; conversion from GIF comment
+    \end{tabular}
+  \end{center}
+\end{itemize}
+
+\section*{Image metadata (2/3)}
