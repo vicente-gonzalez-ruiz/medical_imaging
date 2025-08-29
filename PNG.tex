@@ -13,7 +13,8 @@
 
 \section{Raster graphics file format}
 \begin{itemize}
-\item Up to ($2^{32}-1$)x($2^{32}-1$) pixels, efficiently represented (lossless compression).
+\item Up to ($2^{32}-1$)x($2^{32}-1$) pixels, efficiently represented
+  (lossless compression with DEFLATE \cite{deutsch1996deflate}).
 \item Pixels can be gray-scale (1 channel) or color
   \popup{\gls{RGBA}}{Red, Green, Blue, and Alpha (transparency)
     channels. The alpha-channel is optional.} (4 channels).
@@ -38,6 +39,15 @@
 \item These pixel ``depth'' should be fine for most medical images.
 \end{itemize}
 
+\section{Progressive rendering}
+\begin{itemize}
+\item Option. Pixels are displayed using the Adam7 algorithm.
+\end{itemize}
+\begin{center}
+  \href{https://upload.wikimedia.org/wikipedia/commons/2/27/Adam7_passes.gif}{\includegraphics[width=5cm]{Adam7_passes-0}} \\
+  (Click in the image)
+\end{center}
+  
 \section{\popup{Animated}{Also called ``motion''.} PNG}
 \begin{itemize}
 \item A \gls{APNG} is sequence of images in a \gls{PNG} file.
