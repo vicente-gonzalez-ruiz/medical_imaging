@@ -2,10 +2,9 @@
 
 \section{\glsentrylong{ITU} international standard}
 \begin{itemize}
-\item Developed by the
-  \href{https://www.itu.int}{ITU}, \gls{JPEG}
-  \cite{ccitt.t81} is
-  supported by all Web browsers, and most image viewers.
+\item Developed by the \gls{JPEG} (\href{https://www.itu.int}{ITU}),
+  the \gls{JPEG} standard \cite{ccitt.t81} in 1992, it is supported by
+  all Web browsers, and most image viewers.
 \end{itemize}
 \vspace{-2ex}
 \begin{center}
@@ -17,7 +16,7 @@
 \begin{itemize}
 \item Designed for achieve high compression ratios, but at the expense of reducing quality.
   \item Raster images with up to ($2^{16}-1$)x($2^{16}-1$) pixels.
-\item Pixels must be gray-scale or \gls{RGB}, 8 bits/channel.
+  \item Pixels must be gray-scale or \gls{RGB}, 8 bits/channel.
 \end{itemize}
 \vspace{-2ex}
 \begin{center}
@@ -29,7 +28,9 @@
 \item Convert from the \gls{RGB} color space to the \gls{YCrCb} color
   space. Only if the input image is in color.
 \item Subsample the crominance (Cr and Cb channels). /* Lossy step */
-\item Divide each channel in blocks of size 8x8.
+\item Divide each channel in blocks of size 8x8. \popup{The rest of
+    steps work by blocks}{This makes it possible to work at the block
+    level regardless of the image size.}.
 \item Transform each block using the \gls{DCT}.
 \item Quantize the \gls{DCT} coefficients. /* Lossy step */
 \item Entropy encode the quantized coefficients.
@@ -63,4 +64,35 @@
   \href{https://es.m.wikipedia.org/wiki/Archivo:Zigzag_scanning.jpg}{\includegraphics[width=8cm]{Zigzag_scanning}}
 \end{center}
 
-\section{Image metadata}
+\section{Metadata (1/2)}
+\begin{itemize}
+\item \gls{JPEG} images can store metadata as
+  \href{https://en.wikipedia.org/wiki/Exif}{Exif} data (see the \href{https://gitlab.com/TNThieding/exif/-/blob/master/docs/api_reference.rst?ref_type=heads}{Exif implementation}). Some fields are:
+  \vspace{-2ex}
+  \begin{center}
+    \begin{tabular}{l|l}
+      Keyword & Meaning\\
+      \hline
+      ImageWidth & Width of the image in pixels \\
+      ImageLength & Height of the image in pixels \\
+      BitsPerSample&  Number of bits per color \\
+      Make & Manufacturer of the camera or scanner \\
+      Model & Model of the camera or scanner \\
+      Software & Software used to process the image \\
+      Orientation & Of the camera when the image was taken \\
+      DateTimeOriginal & Date and time the image was originally captured \\
+      ExposureTime & hutter speed \\
+      FNumber & Lens aperture setting \\
+      FocalLength & Focal length of the lens \\
+      UserComment & User's comments about the image
+    \end{tabular}
+  \end{center}
+\end{itemize}
+
+\section*{Metadata (2/2)}
+\begin{itemize}
+\item
+  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/JPEG_add_metadata.ipynb}{Here}
+  there is an example that shows and modifies the metadata in a JPEG
+  image.
+\end{itemize}
