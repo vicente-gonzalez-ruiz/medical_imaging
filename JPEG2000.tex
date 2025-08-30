@@ -29,7 +29,7 @@
     difficult to increase the SNR above of 16 bits because basically
     we register noise when the amplitude of signal is small.}.
 \item Apart from gray-scale and \gls{RGB}, JPEG2000 supports
-  \gls{YCrCb}, \gls{sRGB} \cite{sRGB_wikipedia}, \gls{CIELAB}
+  \gls{YCbCr}, \gls{sRGB} \cite{sRGB_wikipedia}, \gls{CIELAB}
   \cite{CIELAB_wikipedia}, and \popup{custom}{It is posible to define
     a color transform.} \cite{houchin2001specification} color spaces.
 \end{itemize}
@@ -46,15 +46,100 @@
   \end{tabular}
 \end{center}
 
-\section{Algorithm}
+\section{Baseline algorithm (1/2)}
+\begin{enumerate}
+\item Convert from the \gls{RGB} color space to the \gls{YCbCr} color
+  space. Only if the input image is in color and not in \gls{YCbCr}.
+\item Transform each \gls{YCbCr} component using the 2D-\gls{DWT}.
+\item If we are using the irreversible mode, quantize the \gls{DWT}
+  coefficients. /* Lossy step */
+\item Entropy encode the quantized coefficients with \gls{EBCOT}.
+\end{enumerate}
 
-\section{Lossy artifacts}
+\section{Structure of an image in the DWT domain}
+\begin{itemize}
+\item The \gls{DWT} represents signals as a multiresolution structure
+  \cite{vruiz_J2K}.
+\end{itemize}
+\vspace{-2ex}
+\begin{center}
+  \includegraphics[width=6cm]{2-level_wavelet_transform-lichtenstein}
+\end{center}
 
-\section{Scalability}
-region of interest coding
+\section{Spatial scalability}
+\begin{itemize}
+\item When the image is rendered by resolution levels.
+\end{itemize}
+\vspace{-2ex}
+\begin{center}
+  \resizebox{11cm}{!}{
+    \begin{tabular}{ccc}
+      \includegraphics{lena_128x128_rgb} & \includegraphics{lena_256x256_rgb} & \includegraphics{lena_512x512_rgb}
+    \end{tabular}
+  }
+\end{center}
 
+\section{Quality scalability}
+\begin{itemize}
+\item When the image is rendered by \popup{coefficient amplitude}{DWT
+    coefficients are actually decoded based on their contribution to
+    the rate/distortion (R/D) curve. An R/D curve relates (X-axis) the
+    amount of decompressed data versus (Y-axis) the achieved
+    distortion. Depending on the distortion metric used, the curve may
+    decrease with increasing number of decompressed bits (e.g., when
+    measuring MSE) or increase with increasing number of decompressed
+    bits (e.g., when measuring SNR).} \cite{vruiz_J2K}.
+\end{itemize}
+\vspace{-2ex}
+\begin{center}
+  \begin{tabular}{ccc}
+    \includegraphics[width=4.0cm]{lena_01_jp2} & \includegraphics[width=4.0cm]{lena_02_jp2} & \includegraphics[width=4.0cm]{lena_05_jp2} \\
+    0.1 bits/pixel & 0.2 bits/pixel & 0.5 bits/pixel
+  \end{tabular}
+\end{center}
+
+\section{\acrshort{ROI} scalability}
+\begin{itemize}
+\item It is possible to dedicate more bit-rate to a \gls{ROI}, that
+  can be defined interactively \cite{vruiz_J2K}.
+\end{itemize}
+\vspace{-2ex}
+\begin{center}
+   \includegraphics[width=11cm]{ROI}
+\end{center}
+  
 \section{Error resilience}
+\begin{itemize}
+\item An error in JPEG 2000 tends to affect only localized image areas
+  rather than corrupting the entire picture, due to the entropy coding
+  of data in relatively small independent blocks
+  \cite{wikipedia_J2K,brahimi2021efficient}.
+\end{itemize}
+\vspace{-2ex}
+\begin{center}
+  \href{https://flylib.com/books/en/2.537.1.37/1}{\includegraphics[width=11cm]{J2K_error_resilience}}
+\end{center}
+
+\section{3D support}
+\begin{itemize}
+\item Based on the 3D-DWT \cite{Bruylants_J2K_3D}.
+\end{itemize}
+\vspace{-2ex}
+\begin{center}
+  \href{https://spie.org/images/Graphics/Newsroom/Imported/0779/0779_fig1.jpg}{\includegraphics[width=11cm]{J2K_3D}}
+\end{center}
 
 \section{Motion JPEG2000 (digital cinema)}
+\begin{itemize}
+\item The movies played in digital cinemas leverage the spatial
+  scalability provided by JPEG2000 to distribute a single DCP file
+  that can be played in different resolution-capability beamers
+  \cite{wikipedia_DCP}.
+\item Each piture of the movie is compressed independently
+  \cite{DigitalCinema}.
+\end{itemize}
+\begin{center}
+  \href{}{\includegraphics[width=8cm]{MJ2K}}
+\end{center}
 
 \section{Metadata}
