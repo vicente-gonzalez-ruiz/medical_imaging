@@ -1,1 +1,59 @@
-\chapter{TCP/IP}
+\chapter{\glsentrylong{TCP}/\glsentrylong{IP}}
+
+\section{\gls{TCP}}
+\begin{itemize}
+\item It is the core protocol of the Internet that provides
+  \popup{reliable}{Ordered and error-free.}, data delivery between
+  \popup{networked entities}{Computer applications, ...}.
+\end{itemize}
+
+\section{Bidirectional communication}
+\begin{itemize}
+\item Both entities can send and receive data during a given interval or time.
+\end{itemize}
+
+\section{Steps and timmings}
+\begin{itemize} 
+\item The entities must follow a sequence of steps and waitings to ensure the communication.
+\end{itemize}
+\vspace{-2ex}
+\begin{center}
+  \href{https://www.ibm.com/support/pages/flowchart-tcp-connections-and-their-definition}{\includegraphics[height=6.0cm]{Flowchart_TCP}}
+\end{center}
+
+\section{Transmission control}
+\begin{itemize} 
+\item The \popup{correct transmission of data is controlled}{Also
+    called ``flow control''.} by the receiver.
+\end{itemize}
+\vspace{-2ex}
+\begin{center}
+  \href{https://ieeexplore.ieee.org/document/8668433}{\includegraphics[height=6.0cm]{TCP_timeline}}
+\end{center}
+
+\section{\gls{IP}}
+\begin{itemize}
+\item Currently, coexist two different versions of the IP:
+  \begin{enumerate}
+  \item \textbf{Version 4}: Defined in the 70's. Uses 32-bits IP addresses.
+  \item \textbf{Version 6}: Defined in the 90's. Uses 128-bits IP addresses.
+  \end{enumerate}
+\item Responsible for the (\popup{``best effort''}{IP is classified as
+    an unreliable protocol because it does not solve the transmission
+    errors.} delivery of data packets.
+\item The length of the packets must be < 64 KB (including the header).
+\end{itemize}
+
+\section{Public and private IP addresses}
+\begin{itemize}
+\item
+\end{itemize}
+
+\section{Routers}
+\begin{itemize} 
+\item Routers use the IP headers to \popup{define ``on-the-fly'' the
+    transmission path of each packet}{Each router is responsible for
+    choosing which output link it will use to retransmit each packet
+    that arrives.}. This behaviour is known as the \textbf{datagram
+    transmission model}.
+\end{itemize}

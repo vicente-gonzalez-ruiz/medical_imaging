@@ -9,17 +9,64 @@ WWW technology is used for cost-effective image distribution to clinicians, ofte
 \item \textbf{Capacity}: This is the total amount of data that a
   data link can transmit per second (bit-rate). It's typically measured in:
   \begin{tabular}{r|l}
-    Acronym & Bit-rate \\
+    Acronym & Capacity in bits/second\\
     \hline
-    \popup{B}{byte}s & (8 \popup{bits, where a bit represents a logical state with one of two possible values.})\\
-    \popup{KB}{kilobyte}s & $1\text{KB} = 2^{10}\text{B}$\\
-    \popup{MB}{megabytes}s & $1\text{MB} = 2^{10}\text{KB}$\\
-    \popup{GB}{gigabyte}s & $1\text{GB} = 2^{10}\text{MB}$\\
-    \popup{TB}{terabyte}s & $1\text{TB} = 2^{10}\text{GB}$\\
-    \popup{PB}{petabyte}s & $1\text{PB} = 2^{10}\text{GB}$
+    1 Kbps & $10^3$\\
+    1 Mbps & $10^3$ Kbps\\
+    1 Gbps & $10^3$ Mbps\\
+    1 Tbps & $10^3$ Gbps
   \end{tabular}
-\item \textbf{Reliability}: If the storage media need to connected to a
-  current supply (for example, the \gls{RAM} memory of a computer),
-  the media is said \emph{volatile}.
-\item \textbf{Wired VS wireless}: A \gls{CD-ROM}, for example.
+\item \textbf{Reliability}: Wired networks are more reliable
+(have less \popup{\gls{BER}}{Ratio of the number of bits received in
+error to the total number of bits transmitted over a specific time
+interval.}) than wireless networks.
+\item \textbf{Security}: Wired networks are more secure than wireless
+networks.
+\end{itemize}
+
+\section{Networks, links, and channels}
+\begin{itemize}
+\item A \textbf{channel} is a available transmission capacity in a communication link.
+\item A \textbf{link} is a point-to-point (wired) or multipoint
+(wireless) physical medium that is able to transmit data. A link can have several channels.
+\item A \textbf{network} is a collection of links and devices to
+interconnect them (usually routers).
+\end{itemize}
+
+\section{Internet and internet}
+\begin{itemize}
+\item A \textbf{internet} is a network of networks.
+\item \textbf{Internet} is the network of networks that we use every day.
+\end{itemize}
+
+\section{Web and web}
+\begin{itemize}
+\item A \textbf{web} is a communication system based on the
+server/client model that use the \gls{HTTP} protocol.
+\item The \textbf{Web} is the communication system (called \gls{WWW})
+that runs at \popup{the Internet level}{You can run a local web at
+home, only for your eyes.}. \gls{WWW} and Web are synonyms.
+\end{itemize}
+
+\section{Communication protocol}
+\begin{itemize}
+\item Define the steps and timmings that two (or more) networked
+entities must use to communicate.
+\item In the Internet, the name of the protocol \popup{suite}{There
+are several protocols.} is \acrshort{TCP}/\acrshort{IP}.
+\item \gls{HTTP} is the protocol used in the Web (and any web).
+\end{itemize}
+
+\section{Packets}
+\begin{itemize}
+\item At the sender side, the data are splitted into packets.
+\item Most of the links are \popup{multiplexed in time}{In an instant
+of time, all the capacity of the link is used to transmit a packet.}.
+\item Packets have two different parts:
+\begin{enumerate}
+\item A \textbf{header} that stores information for the \popup{correct
+delivery}{Depending on the protocolo, even to solve the transmission
+errors.}.
+\item A \textbf{payload} that contains the data to transmit.
+\end{enumerate}
 \end{itemize}
