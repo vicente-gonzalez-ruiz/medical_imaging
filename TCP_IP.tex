@@ -44,11 +44,6 @@
 \item The length of the packets must be < 64 KB (including the header).
 \end{itemize}
 
-\section{Public and private IP addresses}
-\begin{itemize}
-\item
-\end{itemize}
-
 \section{Routers}
 \begin{itemize} 
 \item Routers use the IP headers to \popup{define ``on-the-fly'' the
@@ -57,3 +52,17 @@
     that arrives.}. This behaviour is known as the \textbf{datagram
     transmission model}.
 \end{itemize}
+
+\section{Public and private IP addresses}
+\begin{itemize}
+\item Public IP addresses are used for public servers, such as the IP
+  address of the Web server of the UAL.
+\item Private IP addresses are used the rest of computers connected to
+  the Internet. These addresses only are accesible from the local
+  (private) network.
+\item The router that interconnect a private network with the rest of
+  the Internet is a \gls{NAT} device. All the private hosts use the
+  public IP address of the \popup{NAT}{... device. It is common to say
+    only ``NAT'' instead of ``NAT device'' or ``NAT box''}.
+\end{itemize}
+
