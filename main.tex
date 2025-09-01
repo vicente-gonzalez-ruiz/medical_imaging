@@ -47,6 +47,7 @@
 \newacronym{GI}{GI}{GastroIntestinal}
 \newacronym{SNR}{SNR}{Signal-to-Noise Ratio}
 \newacronym{PNI}{PNI}{Planar Nuclear Imaging}
+\newacronym{CT}{CT}{\href{https://en.wikipedia.org/wiki/CT_scan}{Computed Tomography}}
 \newacronym{SPECT}{SPECT}{Single Photon Emission Computed Tomography}
 \newacronym{MRI}{MRI}{Magnetic Resonance Imaging}
 \newacronym{RF}{RF}{Radio Frequency}
@@ -98,13 +99,17 @@
 \newacronym{EBCOT}{EBCOT}{Embedded Block Coding with Optimal Truncation}
 
 \newacronym{BER}{BER}{\href{https://en.wikipedia.org/wiki/Bit_error_rate}{Bit Error Rate}} 
-\newacronym{HTTP}{HTTP}{Hypertext Transfer Protocol} 
-\newacronym{WWW}{WWW}{World Wide Web} 
-\newacronym{TCP}{TCP}{Transmission Control Protocol}
-\newacronym{IP}{IP}{Internet Protocol}
-\newacronym{NAT}{NAT}{Network Address Translator}
+\newacronym{HTTP}{HTTP}{\href{https://en.wikipedia.org/wiki/HTTP}{Hypertext Transfer Protocol}}
+\newacronym{HTTPS}{HTTPS}{\href{https://en.wikipedia.org/wiki/HTTPS}{Hypertext Transfer Protocol Secure}}
+\newacronym{WWW}{WWW}{\href{https://en.wikipedia.org/wiki/World_Wide_Web}{World Wide Web}} 
+\newacronym{TCP}{TCP}{\href{https://en.wikipedia.org/wiki/Transmission_Control_Protocol}{Transmission Control Protocol}}
+\newacronym{UDP}{UDP}{\href{https://en.wikipedia.org/wiki/User_Datagram_Protocol}{User Datagram Protocol}}
+\newacronym{IP}{IP}{\href{https://en.wikipedia.org/wiki/Internet_Protocol}{Internet Protocol}}
+\newacronym{NAT}{NAT}{\href{https://en.wikipedia.org/wiki/Network_address_translation}{Network Address Translation}}
+\newacronym{SSL}{SSL}{\href{https://en.wikipedia.org/wiki/Transport_Layer_Security\#SSL\_1\.0,\_2.0,\_and\_3.0}{Secure Sockets Layer}}
+\newacronym{TLS}{TLS}{\href{https://en.wikipedia.org/wiki/Transport_Layer_Security}{Transport Layer Security}}
 
-\newacronym{CERN}{CERN}{Conseil Européen pour la Recherche Nucléaire}
+\newacronym{CERN}{CERN}{\href{https://home.cern/}{Conseil Européen pour la Recherche Nucléaire}}
 \newacronym{URL}{URL}{Uniform Resource Locator}
 \newacronym{HTML}{HTML}{\href{https://en.wikipedia.org/wiki/HTML}{Hypertext Markup Language}}
 \newacronym{GIF}{GIF}{\href{https://en.wikipedia.org/wiki/GIF}{Graphics Interchange Format}}
@@ -120,7 +125,13 @@
 \newacronym{AV1}{AV1}{\href{https://en.wikipedia.org/wiki/AV1}{AOMedia Video 1}}
 \newacronym{VP9}{VP9}{\href{https://en.wikipedia.org/wiki/VP9}{VP9}}
 
-\newacronym{DICOM}{DICOM}{Digital Imaging and Communications in Medicine}
+\newacronym{DICOM}{DICOM}{\href{https://en.wikipedia.org/wiki/DICOM}{Digital Imaging and Communications in Medicine}}
+\newacronym{NEMA}{NEMA}{\href{https://www.nema.org/}{National Electrical Manufacturers Association}}
+\newacronym{ECG}{ECG}{\href{https://en.wikipedia.org/wiki/Electrocardiography}{ElectroCardioGram}}
+\newacronym{PCG}{PCG}{\href{https://en.wikipedia.org/wiki/Phonocardiogram}{PhonoCardioGram}}
+\newacronym{ACR}{ACR}{\href{https://www.acr.org/}{American College of Radiology}}
+\newacronym{GSDF}{GSDF}{\href{https://dicom.nema.org/medical/dicom/current/output/html/part14.html\#PS3.14}{Grayscale Standard Display Function}}
+\newacronym{PCM}{PCM}{\href{https://en.wikipedia.org/wiki/Pulse-code_modulation}{Pulse-code modulation}}
 
 \title{Medical Imaging}
 \author{Vicente González Ruiz}
@@ -141,10 +152,10 @@
 %\input{JPEG}
 %\input{JPEG2000}
 
-\input{transmission}
-\input{TCP_IP}
-\input{WWW}
-%\input{DICOM}
+%\input{transmission}
+%\input{TCP_IP}
+%\input{WWW}
+\input{DICOM}
 
 %\input{visualization}
 %\input{multiresolution}
@@ -161,6 +172,6 @@
 %\section*{Resources}
 
 \bibliographystyle{plain}
-\bibliography{tomography,MRI,denoising,image_formats,X-rays,ultrasound,CT,radiology,storage,JPEG,JPEG2000,color_spaces}
+\bibliography{tomography,MRI,denoising,image_formats,X-rays,ultrasound,CT,radiology,storage,JPEG,JPEG2000,color_spaces,DICOM}
 
 \end{document} 

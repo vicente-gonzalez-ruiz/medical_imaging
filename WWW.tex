@@ -47,6 +47,39 @@
   \end{enumerate}
 \end{itemize}
 
+\section{Secure transmissions: \gls{HTTPS}}
+\begin{itemize}
+\item \gls{HTTPS} secures data in transit through \gls{TLS}:
+  \begin{enumerate}
+  \item \textbf{Authentication}: HTTPS verifies that your browser is
+    communicating with the correct server and not a fraudulent
+    one. This is achieved through an \gls{SSL}
+    \popup{certificate}{Which is a digital certificate issued by a
+      trusted Certificate Authority (CA).}. The browser checks this
+    certificate to \popup{confirm the identity of the Web site}{If the
+      certificate is not valid, the browser will display a security
+      warning.}.
+  \item \textbf{Encryption}: Data between the server and the client is
+    scrambled. This is performed in two steps:
+    \begin{enumerate}
+    \item \textbf{Handshake}:
+      \begin{enumerate}
+      \item The server sends its \popup{public key}{An SSL/TLS
+          certificate.} to the client.
+      \item The client uses this public key to encrypt a shared
+        session key and sends it back to the server, which is the only
+        one who can decrypt this message, using its corresponding
+        private key.
+      \end{enumerate}
+    \item \textbf{Encripted data transfer}: A single, shared secret
+      key is used for both encrypting and decrypting data (symmetric
+      encryption).
+    \item \textbf{Data integrity}: Special codes are interleaved with
+      the data to allow the recipient to verify that the message is
+      complete and unchanged.
+  \end{enumerate}
+\end{itemize}
+
 \section{Some medical-imaging related Web sites}
 \begin{enumerate}
 \item \href{https://openi.nlm.nih.gov/}{Open Access Biomedical Image Search Engine}.
@@ -54,4 +87,18 @@
 \item The Visible Human Project:
   \href{https://www.nlm.nih.gov/research/visible/visible_human.html}{(description)},
   \href{https://visiblehumanproject.com/}{(viewer)}.
+\item
+  \href{https://www.flickr.com/photos/euthman/albums/72057594114099781/}{Specimens
+    at flickr}.
+\item
+  \href{https://lane.stanford.edu/biomed-resources/bassett/index.html}{Bassett
+    Collection of Stereoscopic Images of Human Anatomy}.
+\item \href{https://dermnetnz.org/images}{DermNet}.
+\item \href{http://imagebank.hematology.org/}{American Society of
+    Hematology Image Bank}.
+\item \href{http://www.med.harvard.edu/AANLIB/home.html}{The Whole
+    Brain Atlas}.
+\item \href{https://medpics.ucsd.edu/index.cfm}{MedPics - UC San Diego
+    School of Medicine}.
+\item \href{https://radiopaedia.org/}{Radiopaedia}.
 \end{enumerate}
