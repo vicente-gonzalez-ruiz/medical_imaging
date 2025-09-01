@@ -17,7 +17,7 @@
   is used by clients to retrieve the object (from the server).
 \end{itemize}
 
-\section{The \acrentrylong{HTTP}}
+\section{The \glsentrylong{HTTP}}
 \begin{itemize}
 \item The client/server interaction is controlled by the \gls{HTTP}.
 \item It is an application-layer protocol that runs over the \gls{TCP}.
@@ -28,10 +28,30 @@
 \item Most Web clients also implemen an objects-browser that \popup{can}{When the browser is not able to process an object (content), it usually offers to save the object.} render
   some standard Web contents, such as:
   \begin{enumerate}
-  \item \href{}{\gls{MP3}}, \gls{AAC}, and \href{}{Ogg Vorbis} audio.
-  \item \gls{PNG}, \gls{GIF}, \gls{PDF}, \gls{SVG}, \gls{JPEG}, and \gls{WebP} images.
-  \item \href{}{H.264} and \href{}{VP9} encapsulated in a \gls{MP4}
-    containers, and \href{}{Ogg Theora} videos.
-  \item \gls{HTML}, \gls{CSS}, and \popup{\gls{JavaScript}}{} codes.
+  \item \gls{MP3}, \gls{AAC}, and \href{https://en.wikipedia.org/wiki/Vorbis}{Vorbis} audio.
+  \item \gls{PNG}, \gls{GIF}, \gls{PDF}, \gls{SVG}, \gls{JPEG}, and
+    \popup{\gls{WebP}}{That also is a container for other image
+      codecs.} images.
+  \item H.264/\gls{AVC} (\popup{\gls{MP4}}{Usually encapsulated in a MP4
+      container.}), and \popup{VP9}{Usually encapsulated in WebM or
+      Matroska containers.}, \popup{\gls{AV1}}{Inside Matroska.},
+    \popup{\gls{VC-1}}{Encaptulated in MP4.} and
+    \popup{\href{https://en.wikipedia.org/wiki/Theora}{Theora}}{Encapsulated
+      in Ogg files. videos.}.
+  \item \gls{HTML}, \gls{CSS}, and
+    \href{https://en.wikipedia.org/wiki/JavaScript}{JavaScript}
+    \popup{source codes}{In computer science, a source code is any
+      file that contains editable data that a computer can process. In
+      this case, all these type of source codes are used for
+      controlling the behaviour of the rendering of the Web objects.}.
   \end{enumerate}
 \end{itemize}
+
+\section{Some medical-imaging related Web sites}
+\begin{enumerate}
+\item \href{https://openi.nlm.nih.gov/}{Open Access Biomedical Image Search Engine}.
+\item \href{https://medpix.nlm.nih.gov/home}{MedPix}.
+\item The Visible Human Project:
+  \href{https://www.nlm.nih.gov/research/visible/visible_human.html}{(description)},
+  \href{https://visiblehumanproject.com/}{(viewer)}.
+\end{enumerate}
