@@ -1,4 +1,5 @@
 \chapter{\glsentrylong{MPEG}}
+\label{cha:MPEG}
 
 \section{A collection of standards}
 \begin{itemize}
@@ -47,10 +48,9 @@
 \item Divide each MC in 8x8 blocks.
 \item Transform each block using the \gls{DCT}.
 \item Quantize the \gls{DCT} coefficients. /* Lossy */
-\item \popup{Entropy encode}{Using a combinatio of RLE and Huffman
-    Coding (VLC = Variable Length Coding).} the quantized coefficients
-  and the motion compensation data (motion vectors and reference
-  frames).
+\item \popup{Entropy encode}{Using a combination of RLE and Huffman
+    coding.} the quantized coefficients and the motion compensation
+  data (motion vectors and reference frames).
 \end{enumerate}
 
 \section*{Algorithm (2/2)}
