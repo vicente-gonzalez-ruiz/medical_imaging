@@ -9,7 +9,9 @@
   \gls{TCP} or \gls{UDP}), storage (filenames, structure of the
   filesystem, etc.), processing, display (such as \gls{GSDF}),
   perception, and use of information in medicine
-  \cite{bushberg2011essential}.
+  \cite{bushberg2011essential}, allowing devices and systems from
+  different manufacturers to communicate and share medical image data
+  seamlessly.
 \end{itemize}.
 
 \section{What is DICOM file?}
@@ -78,27 +80,45 @@
 \item \gls{HEVC} (see Chapter~\ref{cha:HEVC}).
 \end{enumerate}
 
+\section{Storage (example) (1/2)}
+\begin{verbatim}
+[USB Drive Root]          <- We are using an USB drive
++-- DICOMDIR              <- Binary File
++-- DICOM                 <- Folder
+    +-- STUDY01           <- Folder
+    |   +-- SERIES01      <- Folder
+    |   |   +-- IMAG0001  <- Binary file
+    |   |   +-- IMAG0002  <- Binary file
+    |   |   +-- IMAG0003  <- Binary file
+    |   |-- SERIES02      <- Folder
+    |   |   |-- IMAG0004  :
+    |   |   |-- IMAG0005
+    +-- STUDY02
+        +-- SERIES01
+            +-- IMAG0006
+            +-- IMAG0007
+            +-- IMAG0008
+\end{verbatim}
+
+\section*{Storage (example) (2/2)}
+Where the file \texttt{DICOMDIR} defines the content of the rest of the file system:
+\begin{verbatim}
+(0004,1130) DICOMDIR FILE
+    (0004,1200) Patient Record: John Doe
+        (0004,1200) Study Record: CT Brain 2025-09-02
+            (0004,1200) Series Record: CT Scout
+                (0004,1500) Image File Record: DICOM/STUDY01/SERIES01/IMAG0001
+            (0004,1200) Series Record: CT Axial
+                (0004,1500) Image File Record: DICOM/STUDY01/SERIES02/IMAG0002
+                (0004,1500) Image File Record: DICOM/STUDY01/SERIES02/IMAG0003
+            :
+\end{verbatim}
+
 \section{Transmission}
-  
-DICOM is a technical standard for the digital storage and transmission
-of medical images and related information.[1] It includes a file
-format definition, which specifies the structure of a DICOM file, as
-well as a network communication protocol that uses TCP/IP to
-communicate between systems \cite{wikipedia2025DICOM}.
-
-allowing devices and systems from different manufacturers to communicate and share medical image data seamlessly.
-
-combines the image data with a wealth of metadata (name, ID, age, the type of imaging modality used (e.g., MRI, CT, X-ray), and acquisition parameters)
-
 Strategies for image storage (hierarchical, prefetching, on-demand)
 are covered \cite{bushberg2011essential}.
 
-Standardisation of Display: The DICOM Grayscale Standard Display Function (GSDF) is highlighted as a critical standard for ensuring predictable transformation of pixel values to luminance and similar contrast display across devices, aiming for perceptual linearization \cite{bushberg2011essential}.
-
-DICOM ULP
-TCP
-IP
-
+The DICOM ULP essentially provides a "language" for medical devices to negotiate, send, and receive data, abstracting away the complexities of the underlying network and ensuring that different vendors' equipment can communicate effectively.
 
 UPL (Upper Layer Protocol) operates on a client-server model, where devices, known as Application Entities (AEs), communicate with each other. The protocol defines a set of Protocol Data Units (PDUs), which are the messages exchanged during these steps:
 
@@ -108,4 +128,20 @@ Data Transfer (P-DATA-TF PDU): Once the association is established, the actual D
 
 Association Termination (A-RELEASE-RQ/RP/ABORT PDU): After the data transfer is complete, the association is properly released. This ensures an orderly end to the communication session. An "abort" PDU is used to terminate a session abruptly in case of an error.
 
-The DICOM ULP essentially provides a "language" for medical devices to negotiate, send, and receive data, abstracting away the complexities of the underlying network and ensuring that different vendors' equipment can communicate effectively.
+DICOM ULP
+TCP
+
+\section{Display standarization}
+The DICOM Grayscale Standard Display Function (GSDF) is highlighted as a critical standard for ensuring predictable transformation of pixel values to luminance and similar contrast display across devices, aiming for perceptual linearization \cite{bushberg2011essential}.
+
+DICOM is a technical standard for the digital storage and transmission
+of medical images and related information.[1] It includes a file
+format definition, which specifies the structure of a DICOM file, as
+well as a network communication protocol that uses TCP/IP to
+communicate between systems \cite{wikipedia2025DICOM}.
+
+combines the image data with a wealth of metadata (name, ID, age, the type of imaging modality used (e.g., MRI, CT, X-ray), and acquisition parameters)
+
+
+
+
