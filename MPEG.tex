@@ -1,106 +1,55 @@
 \chapter{\glsentrylong{MPEG}}
 
-\section{\glsentrylong{ISO}/\glsentrylong{IEC} standards}
+\section{A collection of standards}
 \begin{itemize}
 \item Developed by the \gls{MPEG} (\href{https://www.itu.int}{ITU}),
   in 1992.
-\item Define how to compress sequences of raster images (videos) and the
-  corresponding audio.
+\item Define different algorithms to compress sequences of raster
+  images (videos) and the corresponding audio.
 \item All are lossy encoders.
 \end{itemize}
 
 \section{Versions}
 \begin{enumerate}
 \item \href{https://en.wikipedia.org/wiki/MPEG-1}{\textbf{MPEG-1}}
-  (1993): Designed to store a movie in a \gls{CD}.
+  (1993): Designed to store a movie in a \gls{CD} (\gls{VCD}).
 \item \href{https://en.wikipedia.org/wiki/MPEG-2}{\textbf{MPEG-2}}
   (1996): Used in \glspl{DVD}, \href{https://en.wikipedia.org/wiki/Satellite_television}{satellite TV} and \href{https://en.wikipedia.org/wiki/Digital_television}{terrestial TV} (\gls{DVB}).
 \item \href{https://en.wikipedia.org/wiki/MPEG-4}{\textbf{MPEG-4}}
-  (1998): Used in media streaming on the Internet.
+  (1998): Used mainly in media streaming on the Internet.
 \end{enumerate}
-
-\section{Lossy compression of color natural images}
-\begin{itemize}
-\item Designed for achieve high compression ratios, but at the expense of reducing quality.
-  \item Raster images with up to ($2^{16}-1$)x($2^{16}-1$) pixels.
-  \item Pixels must be gray-scale or \gls{RGB}, 8 bits/channel.
-\end{itemize}
-\vspace{-2ex}
-\begin{center}
-  \href{https://www.thewebmaster.com/jpeg-definitive-guide/}{\includegraphics[width=8.5cm]{JPEG_Quality_vs_Size}}
-\end{center}
 
 \section{Algorithm (1/2)}
 \begin{enumerate}
 \item Convert to the \gls{YCbCr} color space, and
   \href{https://en.wikipedia.org/wiki/Chroma_subsampling}{subsample to
-    4:2:0} (if the input is not yet in this format).
-\item Subsample the crominance (Cr and Cb channels). /* Lossy step */
-\item Divide each channel in blocks of size 8x8. \popup{The rest of
-    steps work by blocks}{This makes it possible to work at the block
-    level regardless of the image size.}.
+    4:2:0} (if the input is not yet in this format). /* Lossy */
+\item Divide each channel in macro-blocks (MCs) of size 16x16. \popup{The
+    rest of steps work by MCs}{This makes it possible to work
+    at the MC level regardless of the image size.}.
+\item Compensate the motion of each MC using MCs of the adjacent
+  images. This step generates \popup{residue}{Residue MCs follow a
+    Laplace distribution with mean 0, and its entropy is smaller than
+    the original MCs (this means that a residue MCs is more
+    compressible than an original MC, on average).} MCs and a motion
+  vector per MC.
+\item Divide each MC in 8x8 blocks.
 \item Transform each block using the \gls{DCT}.
-\item Quantize the \gls{DCT} coefficients. /* Lossy step */
-\item Entropy encode the quantized coefficients.
+\item Quantize the \gls{DCT} coefficients. /* Lossy */
+\item Entropy encode the quantized coefficients and the motion
+  vectors.
 \end{enumerate}
 
 \section*{Algorithm (2/2)}
 \begin{itemize}
-\item A graphic description of a compression of a gray-scale image.
+\item A graphic description of a compression of a gray-scale sequence of images.
 \end{itemize}
 \vspace{-2ex}
 \begin{center}
-  \href{https://link.springer.com/article/10.1007/s40799-019-00358-4}{\includegraphics[width=8.5cm]{JPEG}}
+  \href{https://w3.ual.es/~vruiz/Docencia/Apuntes/Coding/Video/02-MPEG1/index.html}{\includegraphics[width=8.5cm]{MPEG-1_compressor}}
 \end{center}
 
-\section{Artifacts}
-\begin{itemize}
-\item The human eye is sensitive to the 8x8-blockiness.
-\end{itemize}
-\vspace{-2ex}
+\section{Blocking artifacts}
 \begin{center}
-  \href{https://thesai.org/Publications/ViewPaper?Volume=6&Issue=4&Code=ijacsa&SerialNo=16}{\includegraphics[width=10cm]{JPEG_blocking}}
+  \href{https://filmora.wondershare.com/video-editing/video-compression-artifacts.html}{\includegraphics[width=8.5cm]{MPEG_artifacts}}
 \end{center}
-
-\section{Progressive rendering}
-\begin{itemize}
-\item Optinal. Blocks are reconstructed coefficient-by-coefficient following the Zig-Zag ordering.
-\item During a progressive visualization, blocks display higher
-  spatial frequencies.
-\end{itemize}
-\begin{center}
-  \href{https://es.m.wikipedia.org/wiki/Archivo:Zigzag_scanning.jpg}{\includegraphics[width=8cm]{Zigzag_scanning}}
-\end{center}
-
-\section{Metadata (1/2)}
-\begin{itemize}
-\item \gls{JPEG} images can store metadata as
-  \href{https://en.wikipedia.org/wiki/Exif}{Exif} data (see the \href{https://gitlab.com/TNThieding/exif/-/blob/master/docs/api_reference.rst?ref_type=heads}{Exif implementation}). Some fields are:
-  \vspace{-2ex}
-  \begin{center}
-    \begin{tabular}{l|l}
-      Keyword & Meaning\\
-      \hline
-      ImageWidth & Width of the image in pixels \\
-      ImageLength & Height of the image in pixels \\
-      BitsPerSample&  Number of bits per color \\
-      Make & Manufacturer of the camera or scanner \\
-      Model & Model of the camera or scanner \\
-      Software & Software used to process the image \\
-      Orientation & Of the camera when the image was taken \\
-      DateTimeOriginal & Date and time the image was originally captured \\
-      ExposureTime & hutter speed \\
-      FNumber & Lens aperture setting \\
-      FocalLength & Focal length of the lens \\
-      UserComment & User's comments about the image
-    \end{tabular}
-  \end{center}
-\end{itemize}
-
-\section*{Metadata (2/2)}
-\begin{itemize}
-\item
-  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/JPEG_add_metadata.ipynb}{Here}
-  there is an example that shows and modifies the metadata in a JPEG
-  image.
-\end{itemize}
