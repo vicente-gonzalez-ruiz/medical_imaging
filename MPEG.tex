@@ -20,6 +20,7 @@
 \end{enumerate}
 
 \section{Algorithm (1/2)}
+\label{sec:MPEG-1_algo}
 \begin{enumerate}
 \item Convert to the \gls{YCbCr} color space, and
   \href{https://en.wikipedia.org/wiki/Chroma_subsampling}{subsample to
@@ -27,17 +28,29 @@
 \item Divide each channel in macro-blocks (MCs) of size 16x16. \popup{The
     rest of steps work by MCs}{This makes it possible to work
     at the MC level regardless of the image size.}.
-\item Compensate the motion of each MC using MCs of the adjacent
-  images. This step generates \popup{residue}{Residue MCs follow a
-    Laplace distribution with mean 0, and its entropy is smaller than
-    the original MCs (this means that a residue MCs is more
-    compressible than an original MC, on average).} MCs and a motion
-  vector per MC.
+\item \popup{Performing \gls{RDO}}{RDO implies that the video codec
+    selects the optimal encoding decissions from a rate/distortion
+    perspective. For example, if for the same quality (or distortion)
+    a MB requires less bits if it is not motion compensated, then the
+    codec does not compensate it. Thus, some MBs can be compensated
+    while others not.},
+  \href{https://en.wikipedia.org/wiki/Motion_compensation#Block_motion_compensation}{compensate
+    the motion of each MC} using MCs of the \popup{adjacent
+    images}{The MCs of the frame N, are compensated using the MCs of
+    the frames N-1 and N+1.}. This step generates
+  \popup{residue}{Residue MCs follow a Laplace distribution with mean
+    0, and its entropy is smaller than the original MCs (this means
+    that a residue MCs is more compressible than an original MC, on
+    average).} MCs and a motion vector per MC, at
+  \href{https://en.wikipedia.org/wiki/Motion_compensation}{half-pel
+    accuracy}.
 \item Divide each MC in 8x8 blocks.
 \item Transform each block using the \gls{DCT}.
 \item Quantize the \gls{DCT} coefficients. /* Lossy */
-\item Entropy encode the quantized coefficients and the motion
-  vectors.
+\item \popup{Entropy encode}{Using a combinatio of RLE and Huffman
+    Coding (VLC = Variable Length Coding).} the quantized coefficients
+  and the motion compensation data (motion vectors and reference
+  frames).
 \end{enumerate}
 
 \section*{Algorithm (2/2)}
