@@ -1,17 +1,23 @@
-\chapter{\glsentrylong{JPEG}}
+\chapter{\glsentrylong{MPEG}}
 
-\section{\glsentrylong{ITU} standard}
+\section{\glsentrylong{ISO}/\glsentrylong{IEC} standards}
 \begin{itemize}
-\item Supported by all Web browsers, and most image viewers, define
-  how to compress raster images \cite{ccitt.t81}.
-\item Developed by the \gls{JPEG} (\href{https://www.itu.int}{ITU}),
+\item Developed by the \gls{MPEG} (\href{https://www.itu.int}{ITU}),
   in 1992.
+\item Define how to compress sequences of raster images (videos) and the
+  corresponding audio.
+\item All are lossy encoders.
 \end{itemize}
-\vspace{-2ex}
-\begin{center}
-  \href{https://en.wikipedia.org/wiki/Magnetic_resonance_imaging_of_the_brain#/media/File:MRI_of_Human_Brain.jpg}{\includegraphics[width=4.0cm]{MRI_of_Human_Brain}}\\
-  (click on the image)
-\end{center}
+
+\section{Versions}
+\begin{enumerate}
+\item \href{https://en.wikipedia.org/wiki/MPEG-1}{\textbf{MPEG-1}}
+  (1993): Designed to store a movie in a \gls{CD}.
+\item \href{https://en.wikipedia.org/wiki/MPEG-2}{\textbf{MPEG-2}}
+  (1996): Used in \glspl{DVD}, \href{https://en.wikipedia.org/wiki/Satellite_television}{satellite TV} and \href{https://en.wikipedia.org/wiki/Digital_television}{terrestial TV} (\gls{DVB}).
+\item \href{https://en.wikipedia.org/wiki/MPEG-4}{\textbf{MPEG-4}}
+  (1998): Used in media streaming on the Internet.
+\end{enumerate}
 
 \section{Lossy compression of color natural images}
 \begin{itemize}
@@ -26,8 +32,9 @@
 
 \section{Algorithm (1/2)}
 \begin{enumerate}
-\item Convert from the \gls{RGB} color space to the \gls{YCbCr} color
-  space. Only if the input image is in color.
+\item Convert to the \gls{YCbCr} color space, and
+  \href{https://en.wikipedia.org/wiki/Chroma_subsampling}{subsample to
+    4:2:0} (if the input is not yet in this format).
 \item Subsample the crominance (Cr and Cb channels). /* Lossy step */
 \item Divide each channel in blocks of size 8x8. \popup{The rest of
     steps work by blocks}{This makes it possible to work at the block
