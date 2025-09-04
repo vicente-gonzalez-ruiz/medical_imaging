@@ -7,7 +7,7 @@ set terminal fig color textspecial
 set output "GSDF.fig"
 
 #set title "DICOM GSDF: Luminance vs JND Index"
-set xlabel "JND Index ($j$)"
+set xlabel "Index $j$ (JND steps)"
 set ylabel "Luminance $L$ (cd/m$^2$)"
 set logscale y
 set grid

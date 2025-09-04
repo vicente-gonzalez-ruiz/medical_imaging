@@ -34,7 +34,7 @@
 \rfoot{\colorbox{mybg}{\footnotesize\color{red}\thepage/\pageref{LastPage}}}
 
 \usepackage{graphicx}
-\graphicspath{{imgs}{figs}{notebooks}{.}{gnuplot}}
+\graphicspath{{imgs}{figs}{notebooks}{.}{gnuplot}{modules}}
 
 \usepackage{caption}
 \captionsetup[figure]{skip=1pt}
@@ -52,7 +52,7 @@
 \newacronym{MRI}{MRI}{Magnetic Resonance Imaging}
 \newacronym{RF}{RF}{Radio Frequency}
 \newacronym{EM}{EM}{Electro Magnetic}
-\newacronym{CSF}{CSF}{CerebroSpinal Fluid}
+%\newacronym{CSF}{CSF}{CerebroSpinal Fluid}
 \newacronym{PD}{PD}{Proton Density}
 \newacronym{FOV}{FOV}{field of view}
 
@@ -149,6 +149,8 @@
 \newacronym{ULP}{ULP}{\href{https://dicom.nema.org/medical/dicom/current/output/html/part08.html\#chapter_9}{Upper Layer Protocol}}
 \newacronym{JND}{JND}{\href{https://dicom.nema.org/medical/dicom/current/output/html/part14.html\#PS3.14}{Just-Noticeable Difference}}
 
+\newacronym{CSF}{CSF}{\href{https://en.wikipedia.org/wiki/Contrast_(vision)\#Contrast_sensitivity}{Contrast Sensitivity Function}}
+
 \title{Medical Imaging}
 \author{Vicente González Ruiz}
 
@@ -176,10 +178,10 @@
 %\input{TCP_IP}
 %\input{WWW}
 
-%\input{visualization}
+\input{visualization}
 %\input{multiresolution}
 %\input{progressiveness}
-\input{DICOM}
+%\input{DICOM}
 
 %\input{processing}
 %\input{denoising}
