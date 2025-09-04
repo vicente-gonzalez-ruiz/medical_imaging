@@ -34,7 +34,7 @@
 \rfoot{\colorbox{mybg}{\footnotesize\color{red}\thepage/\pageref{LastPage}}}
 
 \usepackage{graphicx}
-\graphicspath{{imgs}{figs}{notebooks}{.}}
+\graphicspath{{imgs}{figs}{notebooks}{.}{gnuplot}}
 
 \usepackage{caption}
 \captionsetup[figure]{skip=1pt}
@@ -146,7 +146,8 @@
 \newacronym{GSDF}{GSDF}{\href{https://dicom.nema.org/medical/dicom/current/output/html/part14.html\#PS3.14}{Grayscale Standard Display Function}}
 \newacronym{PCM}{PCM}{\href{https://en.wikipedia.org/wiki/Pulse-code_modulation}{Pulse-code modulation}}
 \newacronym{RLE}{RLE}{\href{https://en.wikipedia.org/wiki/Run-length_encoding}{Run-Length Encoding}}
-
+\newacronym{ULP}{ULP}{\href{https://dicom.nema.org/medical/dicom/current/output/html/part08.html\#chapter_9}{Upper Layer Protocol}}
+\newacronym{JND}{JND}{\href{https://dicom.nema.org/medical/dicom/current/output/html/part14.html\#PS3.14}{Just-Noticeable Difference}}
 
 \title{Medical Imaging}
 \author{Vicente González Ruiz}
@@ -174,11 +175,11 @@
 %\input{transmission}
 %\input{TCP_IP}
 %\input{WWW}
-\input{DICOM}
 
 %\input{visualization}
 %\input{multiresolution}
 %\input{progressiveness}
+\input{DICOM}
 
 %\input{processing}
 %\input{denoising}

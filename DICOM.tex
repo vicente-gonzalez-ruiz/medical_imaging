@@ -60,7 +60,7 @@
     (reversible path).
   \item \href{https://en.wikipedia.org/wiki/JPEG_XL}{JPEG XL}
     (reversible path).
-  \item \href{https://en.wikipedia.org/wiki/Deflate}{DEflate}. Similar
+  \item \href{https://en.wikipedia.org/wiki/Deflate}{Deflate}. Similar
     to \gls{PNG}.
   \end{enumerate}
 \item Lossy:
@@ -114,34 +114,80 @@ Where the file \texttt{DICOMDIR} defines the content of the rest of the file sys
             :
 \end{verbatim}
 
-\section{Transmission}
-Strategies for image storage (hierarchical, prefetching, on-demand)
-are covered \cite{bushberg2011essential}.
+\section{Transmission using the \gls{ULP}}
+\begin{itemize}
+\item A pair of \gls{DICOM} devices communicate using a client-server
+  model based on the \popup{DICOM \gls{ULP}}{An application-layer
+    protocol.} which runs on top of standard TCP/IP.
+\item Steps:
+  \begin{enumerate}
+  \item \textbf{Association establishment (handshake)}: the
+    application entities agree about the \popup{task to be
+      performed}{For example, sending an image.}, and the
+    \popup{transfer syntax}{The compression method (e.g., JPEG, RLE)
+      and byte order that will be used for the data.}.
+  \item \textbf{Data Exchange (conversation)}: The sender sends the
+    image using a C-STORE-RQ (Request) message (which the DICOM image,
+    including the DICOM header) and, if the message has been
+    successfully, the receiver send a C-STORE-RSP (Response).
+  \item \textbf{Association Release (Hanging Up)}: After all data has
+    been successfully sent and acknowledged, the devices terminate the
+    association.
+  \end{enumerate}
+\end{itemize}
 
-The DICOM ULP essentially provides a "language" for medical devices to negotiate, send, and receive data, abstracting away the complexities of the underlying network and ensuring that different vendors' equipment can communicate effectively.
+\section{Display (brightness) standarization (1/2)}
+\begin{itemize}
+\item To ensure \emph{visual consistency}, that image looks the same
+  regardless of which monitor or display device it's viewed on.
+\item This is achieved through the \gls{GSDF}, that expresses the
+  \popup{luminance}{Luminosity, usually measures in candelas per
+    square meter (cd/m2).} that a display should produce as a function
+  of the pixels values. Thus, the luminance that a pixel with with
+  \popup{value}{P-Value in terms of the standard notation.} $x$ (the
+  should have is
+  \begin{equation}
+    L(j) = \exp\left(\sum_{i=0}^{9}a_i\big(\ln j(x)\big)^i\right),
+  \end{equation}
+  where
+  \begin{center}
+  \begin{tabular}{l}
+    $a_0 = -1.3011877$, \\
+    $a_1 = -2.5840191E-2$, \\
+    $a_2 = 8.0242636E-2$, \\
+    $a_3 = -1.0320229E-1$, \\
+    $a_4 = 1.3646699E-1$, \\
+  \end{tabular}
+  \begin{tabular}{l}
+    $a_5 = 2.8745620E-2$, \\
+    $a_6 = -2.5468404E-2$,\\
+    $a_7 = -3.1978977E-3$, \\
+    $a_8 = 1.2992634E-4$, \\
+    $a_9 = 1.3635334E-3$,
+  \end{tabular}
+  \end{center}
+  and where
+  \begin{equation}
+    j(x) = j_{\text{min}} + \frac{j_{\text{max}} - j_{\text{min}}}{n(x)},
+  \end{equation}
+  being $j_{\text{min}}$ and $j_{\text{max}}$ are the \popup{minimum
+    and maximum \gls{JND} index within the luminance range of the
+    display}{That a normal human being can recognize in the display
+    which is being standardized.}, and where
+  \begin{equation}
+    n(x) = \frac{x}{2^N-1},
+  \end{equation}
+  where $N$ is thee number of bits/pixel.
+\end{itemize}
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{DICOM_GSDF}
+\end{center}
 
-UPL (Upper Layer Protocol) operates on a client-server model, where devices, known as Application Entities (AEs), communicate with each other. The protocol defines a set of Protocol Data Units (PDUs), which are the messages exchanged during these steps:
-
-    Association Establishment (A-ASSOCIATE-RQ/AC/RJ PDU): Before any data is sent, two AEs must establish an "association." This is like a handshake where they negotiate and agree on the types of information and services they will exchange. This includes details like image compression, transfer syntax (byte ordering), and the specific DICOM services they will use (e.g., C-STORE for storing an image).
-
-Data Transfer (P-DATA-TF PDU): Once the association is established, the actual DICOM messages, containing both command sets and image data, are transferred using this PDU. This is where the bulk of the medical image and patient data is transmitted.
-
-Association Termination (A-RELEASE-RQ/RP/ABORT PDU): After the data transfer is complete, the association is properly released. This ensures an orderly end to the communication session. An "abort" PDU is used to terminate a session abruptly in case of an error.
-
-DICOM ULP
-TCP
-
-\section{Display standarization}
-The DICOM Grayscale Standard Display Function (GSDF) is highlighted as a critical standard for ensuring predictable transformation of pixel values to luminance and similar contrast display across devices, aiming for perceptual linearization \cite{bushberg2011essential}.
-
-DICOM is a technical standard for the digital storage and transmission
-of medical images and related information.[1] It includes a file
-format definition, which specifies the structure of a DICOM file, as
-well as a network communication protocol that uses TCP/IP to
-communicate between systems \cite{wikipedia2025DICOM}.
-
-combines the image data with a wealth of metadata (name, ID, age, the type of imaging modality used (e.g., MRI, CT, X-ray), and acquisition parameters)
-
-
-
-
+\section*{Display standarization (2/2)}
+\begin{itemize}
+\item This way, equal steps in pixel values correspond to equal
+  perceptual differences (\glspl{JND}), in other words, a
+  \popup{step}{An increment in one in the integer value of ...} in
+  \gls{JND} corresponds as the smallest brightness change detectable
+  by the average human eye.
+\end{itemize}

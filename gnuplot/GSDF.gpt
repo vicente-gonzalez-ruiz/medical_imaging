@@ -1,0 +1,33 @@
+# DICOM GSDF (PS3.14 Eq. 7-1)
+# Plot luminance L(j) vs JND index j
+
+#set terminal pdfcairo size 5in,3.5in font "Latin Modern Roman,12"
+#set terminal epslatex size 5in,3.5in
+set terminal fig color textspecial
+set output "GSDF.fig"
+
+#set title "DICOM GSDF: Luminance vs JND Index"
+set xlabel "JND Index ($j$)"
+set ylabel "Luminance $L$ (cd/m$^2$)"
+set logscale y
+set grid
+
+# Coefficients from DICOM PS 3.14 Eq. 7-1
+a = -1.3011877
+b = -2.5840191e-2
+c =  8.0242636e-2
+d = -1.0320229e-1
+e =  1.3646699e-1
+f =  2.8745620e-2
+g = -2.5468404e-2
+h = -3.1978977e-3
+k =  1.2992634e-4
+m =  1.3635334e-3
+
+# Eq. 7-1: log10(L) = num/den
+num(x) = a + c*x + e*x**2 + g*x**3 + m*x**4
+den(x) = 1 + b*x + d*x**2 + f*x**3 + h*x**4 + k*x**5
+log10L(j) = num(log(j)) / den(log(j))
+L(j) = 10**(log10L(j))
+
+plot [j=1:1023] L(j) with lines title "" lw 3
