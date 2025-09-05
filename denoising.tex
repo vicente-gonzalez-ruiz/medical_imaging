@@ -59,10 +59,23 @@
 
 \section{Gaussian filtering}
 \begin{itemize}
-\item Spatial filter using Gaussian \popup{kernels}{Filters.}.
-\item Isotropic (it \popup{blurs equally in all directions}{Which
+\item Spatial (2D) filter \popup{using 1D Gaussian}{The filter is
+    separable, which means that the image can be filtered by rows and
+    columns, using always 1D kernels.} \popup{kernels}{Filter is
+    another name for the filter structure.}.
+\end{itemize}
+\vspace{-4ex}
+\begin{center}
+  \includegraphics[width=6cm]{Gaussian_kernels}
+\end{center}
+\vspace{-4ex}
+\begin{itemize}
+\item Isotropic (it \popup{blurs pixel values equally in all directions}{Which
     softens noise but also destroys important edges.}).
 \end{itemize}
+\begin{center}
+    \href{https://www.cloudfactory.com/blog/gaussian-noise-medical-ai}{\includegraphics[width=\textwidth]{GF_example}}
+\end{center}
 
 \section{\gls{AND}}
 \begin{itemize}
@@ -76,9 +89,9 @@
 % Include also filtering in the wavelet domain because can be useful for removing specke noise.
 
 
-%\section{\gls{NLM}}
+\section{\gls{NLM}}
 
-%\section{\gls{AI}-based denoising}
+\section{\gls{AI}-based denoising}
 How They Work
 
 Unlike traditional methods that rely on fixed mathematical algorithms (like Gaussian filters or wavelet transforms), deep learning models learn how to denoise.
