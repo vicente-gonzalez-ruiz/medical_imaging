@@ -83,11 +83,34 @@
   gradient, i.e., the edged are preserved).
 \end{itemize}
 \begin{center}
-    \href{https://dsp.stackexchange.com/questions/14606/anisotropic-diffusion}{\includegraphics[width=6cm]{anisotropic_diffusion}}
+  \href{https://dsp.stackexchange.com/questions/14606/anisotropic-diffusion}{\includegraphics[width=8cm]{anisotropic_diffusion}}\\
+  (The kernel is longer in the direction of the edge.)
+\end{center}
+\begin{center}
+    \href{https://es.mathworks.com/help/images/ref/imdiffusefilt.html}{\includegraphics[width=\textwidth]{AD_example}}
 \end{center}
 
-\section{Wiener filtering}
+\section{Wiener denoising}
 % Include also filtering in the wavelet domain because can be useful for removing specke noise.
+\begin{itemize}
+\item The \popup{power-spectrum}{The magnitude of the Fourier
+    (complex) coefficients.} of natural (included medical) images
+  decays with the frequency.
+\end{itemize}
+\begin{center}
+  \href{https://developer.nvidia.com/gpugems/gpugems2/part-vi-simulation-and-numerical-algorithms/chapter-48-medical-image-reconstruction}{\includegraphics[width=8cm]{power_spectrum}}\\
+  ((a) is the \popup{power-spectrum}{The module of the Fourier coefficients.} of the image (b).)
+\end{center}
+\begin{itemize}
+\item Adapts the frequency response of the filter to the spectrum of the noisy image.
+\end{itemize}
+\begin{center}
+  \href{https://dsp.stackexchange.com/questions/14606/anisotropic-diffusion}{\includegraphics[width=8cm]{anisotropic_diffusion}}\\
+  (The kernel is longer in the direction of the edge.)
+\end{center}
+\begin{center}
+    \href{https://www.cloudfactory.com/blog/gaussian-noise-medical-ai}{\includegraphics[width=\textwidth]{AD_example}}
+\end{center}
 
 
 \section{\gls{NLM}}
