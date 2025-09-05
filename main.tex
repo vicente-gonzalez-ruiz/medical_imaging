@@ -151,6 +151,8 @@
 
 \newacronym{CSF}{CSF}{\href{https://en.wikipedia.org/wiki/Contrast_(vision)\#Contrast_sensitivity}{Contrast Sensitivity Function}}
 
+\newacronym{AND}{AND}{\href{https://en.wikipedia.org/wiki/Anisotropic_diffusion}{Anisotropic (Non-linear) Diffusion}}
+
 \title{Medical Imaging}
 \author{Vicente González Ruiz}
 
@@ -183,11 +185,13 @@
 %\input{visualization}
 %\input{DICOM_visualization}
 
+\part{Medical Image Processing}
 %\input{processing}
-%\input{denoising}
-%\input{sharpening}
+\input{denoising}
+%\input{sharpening} % Enhancement: shapering, histogram equalization, normalization
 %\input{contrast} % Dealing with underexposure and overexposure.
-%\input{interpolation}
+%\input{registration}
+%\input{interpolation} % Super-resolution
 %\input{segmentation}
 
 \printglossary[type=\acronymtype]
