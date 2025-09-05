@@ -77,13 +77,14 @@
     \href{https://www.cloudfactory.com/blog/gaussian-noise-medical-ai}{\includegraphics[width=\textwidth]{GF_example}}
 \end{center}
 
-\section{\gls{AND}}
+\section{Anisotropic diffusion filtering}
 \begin{itemize}
-\item Adative spatial filtering based on the local image gradient.
-\item Anisotropic (or non-linear, because encourages smoothing in
-  flat, uniform regions but restricts or stops the filtering when it
-  encounters an edge).
+\item Anisotropic (only blurs in the direction of the minimum
+  gradient, i.e., the edged are preserved).
 \end{itemize}
+\begin{center}
+    \href{https://dsp.stackexchange.com/questions/14606/anisotropic-diffusion}{\includegraphics[width=6cm]{anisotropic_diffusion}}
+\end{center}
 
 \section{Wiener filtering}
 % Include also filtering in the wavelet domain because can be useful for removing specke noise.
