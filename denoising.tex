@@ -130,9 +130,92 @@
 }
 
 \section{\gls{NLM}}
+\vbox{
+  \begin{itemize}
+  \item Most images are redundant in terms of the different local
+    textures and patterns that define them.
+    \begin{center}
+      \href{https://docs.opencv.org/3.4/d5/d69/tutorial_py_non_local_means.html}{\includegraphics[width=8cm]{NLM_opencv}}\\
+      (Patch averaging.)
+    \end{center}
+  \end{itemize}
+}
+\vbox{
+  \begin{itemize}
+  \item The mean of the noise \popup{is usually zero}{And if the mean
+      ins not zero, we can substract the mean of the noise.}, i.e.,
+    the average of different instances of the same signal tends to the
+    clean signal logarithmically.
+    \begin{center}
+      \href{https://www.umbjournal.org/article/S0301-5629(17)30201-6/fulltext}{\includegraphics[width=10cm]{NLM_example}}\\
+      (Patch averaging.)
+    \end{center}
+  \end{itemize}
+}
+\vbox{
+  \begin{itemize}
+  \item An \gls{NLM} denoising
+    \href{https://imagej.net/plugins/non-local-means-denoise/}{example}:
+    \begin{center}
+      \begin{tabular}{cc}
+        \includegraphics[width=6cm]{clown-noise-25} & \includegraphics[width=6cm]{NLM_clown}
+      \end{tabular}
+    \end{center}
+  \end{itemize}
+}
 
 \section{\gls{AI}-based denoising}
+\vbox{
+  \begin{itemize}
+  \item \gls{AI} denoisers are adaptive filters that learn by
+    (thousands of) example(s). In each iteration, at the input you put
+    a noisy image and at the output a noise-free version of such
+    image.
+  \item Most of them are based in \glspl{CNN}. A \gls{CNN} is a
+    \popup{feed-forward}{The data flows fron the input to the output
+      without loops.} \gls{ANN} in which the
+    \popup{neurons}{Convolutional.} (that are organized in
+    \popup{layers}{Convolutional.}) have a local (spatial)
+    relationship with the neurons of the next layer.
+    \begin{center}
+      \href{https://en.wikipedia.org/wiki/Convolutional_neural_network#/media/File:1D_Convolutional_Neural_Network_feed_forward_example.png}{\includegraphics[width=8cm]{1D_Convolutional_Neural_Network_feed_forward_example}}\\
+      (A 1D \gls{CNN} where the connection degree (kernel size) is 3.)
+    \end{center}
+  \end{itemize}
+}
+
+\vbox{
+  \begin{itemize}
+  \item Using
+    \href{https://en.wikipedia.org/wiki/Backpropagation}{back-propagation}
+    the neurons learn which must be the weights between them to
+    minimize the \popup{error}{Some definition of the error, for
+      example, the MSE.} between the input and the output.
+  \item There can be several \popup{channels}{In the previous example
+      there is only one channel per layer.} per layer.
+  \item A feature map is the array with the output of each neuron in a
+    channel.
+    \begin{center}
+      \href{}{\includegraphics[width=8cm]{1D_Convolutional_Neural_Network_feed_forward_example}}\\
+      (A 1D \gls{CNN} where the connection degree (kernel size) is 3.)
+    \end{center}
+  \end{itemize}
+}
+
+\vbox{
+  \begin{itemize}
+  \item When the number of neurons per layer decreases from the input to the output.
+    \begin{center}
+      \href{}{\includegraphics[width=8cm]{1D_Convolutional_Neural_Network_feed_forward_example}}\\
+      (A 1D \gls{CNN} where the connection degree (kernel size) is 3.)
+    \end{center}
+  \end{itemize}
+}
+
 How They Work
+
+Contracting
+path (left side) and an expansive path (right side
 
 Unlike traditional methods that rely on fixed mathematical algorithms (like Gaussian filters or wavelet transforms), deep learning models learn how to denoise.
 
