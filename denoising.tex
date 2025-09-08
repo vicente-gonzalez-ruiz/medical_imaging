@@ -164,21 +164,48 @@
   \end{itemize}
 }
 
-\section{\gls{AI}-based denoising}
+\section{U-Net denoising}
 \vbox{
   \begin{itemize}
-  \item \gls{AI} denoisers are adaptive filters that learn by
-    (thousands of) example(s). In each iteration, at the input you put
-    a noisy image and at the output a noise-free version of such
-    image.
-  \item Most of them are based in \glspl{CNN}. A \gls{CNN} is a
+  \item An U-Net denoiser is an \popup{\gls{ANN}}{An ANN is a
+      computational structure that is inspired in the real neurons of
+      the brain, and how they interact. ANNs is only a type of this
+      kind of structures. In a more global context of machine, we use
+      the word ``model'' to refer to the structure.} trained for the
+    removal of noise in images.
+  \item Training is an iterative process, where a
+    \popup{collection}{In general, very large (millions).} of
+    \popup{convolutional neurons}{The word convolution comes from the
+      name of the mathematical operation (convolution) that in the
+      context of signal processing describes a filtering process.}
+    (organized in 2D \popup{layers}{Convolutional layers.}) optimize
+    the weights of their interconnections to transform an input into a
+    \popup{desired}{In general, only approximated.} output. In the
+    case of an U-Net for denoising, in each iteration, at the input we
+    put a noisy \popup{image}{When, during the learning, we input to
+      the model the raw data (instead of a preprocesed version of it)
+      we use the concept of deep learing.}, and at the output the
+    corresponding clean image.
+  \item Therefore, an U-Net can be defined as a
     \popup{feed-forward}{The data flows fron the input to the output
-      without loops.} \gls{ANN} in which the
-    \popup{neurons}{Convolutional.} (that are organized in
-    \popup{layers}{Convolutional.}) have a local (spatial)
-    relationship with the neurons of the next layer.
+      without loops.} \popup{\gls{CNN}}{In a CNN, the convolutional
+      neurons of the i-th layer only are directly connected a limited
+      number of neurons of the (i+1)-th layer: those neurons that are
+      spatially close. We we deal with images, we organize the neurons
+      by small square reguions. The size of these regions define the
+      size of the 2D kernels used for the filtering process. During
+      the learning, for an output channel, the neurons of a layer
+      found those filtering coefficients (weights) that allow to
+      approximate the input to the output. All the neurons of this
+      layer use the same kernel (share the same weights), for a given
+      output channel. Notice that in the following example only one
+      output channel per convolutional layer has been used. In
+      general, at least in an U-Net, we work with several (dozens of)
+      channels.}.
     \begin{center}
+      \vspace{-2ex}
       \href{https://en.wikipedia.org/wiki/Convolutional_neural_network#/media/File:1D_Convolutional_Neural_Network_feed_forward_example.png}{\includegraphics[width=8cm]{1D_Convolutional_Neural_Network_feed_forward_example}}\\
+      \vspace{-2ex}
       (A 1D \gls{CNN} where the connection degree (kernel size) is 3.)
     \end{center}
   \end{itemize}
@@ -190,61 +217,43 @@
     \href{https://en.wikipedia.org/wiki/Backpropagation}{back-propagation}
     the neurons learn which must be the weights between them to
     minimize the \popup{error}{Some definition of the error, for
-      example, the MSE.} between the input and the output.
-  \item There can be several \popup{channels}{In the previous example
-      there is only one channel per layer.} per layer.
-  \item A feature map is the array with the output of each neuron in a
-    channel.
+      example, the MSE.} between the input and the output. In our
+    case, the \popup{error}{The difference between the input and the
+      output.} is the noisy image. Therefore, the neurons learn how to
+    get rid of the noise.
+  \item Therefore, in a U-Net denoiser, the popup{output}{Of the last
+      layer.} \popup{feature map}{The 2D array (image) with the
+      output of each neuron in a channel.} is the denoised image.
+  \item
+    \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/U_Net.ipynb}{Here}
+    you have a toy example of an U-Net that can help to understand all
+    these concepts and the potential of the \gls{AI}-based denoising
+    techniques.
+  \end{itemize}
+}
+
+\vbox{
+  \begin{itemize}
+  \item U-shaped.
     \begin{center}
-      \href{}{\includegraphics[width=8cm]{1D_Convolutional_Neural_Network_feed_forward_example}}\\
-      (A 1D \gls{CNN} where the connection degree (kernel size) is 3.)
+      \vspace{-2ex}
+      \href{https://www.linkedin.com/pulse/14-coding-u-net-architecture-from-scratch-riya-chhikara-xbvte}{\includegraphics[width=12cm]{U-Net}}\\
+      \vspace{-2ex}
+      (Example of the architecture of an U-Net for patches of 128x128.)
     \end{center}
   \end{itemize}
 }
 
 \vbox{
   \begin{itemize}
-  \item When the number of neurons per layer decreases from the input to the output.
+  \item Patching.
     \begin{center}
-      \href{}{\includegraphics[width=8cm]{1D_Convolutional_Neural_Network_feed_forward_example}}\\
-      (A 1D \gls{CNN} where the connection degree (kernel size) is 3.)
+      \vspace{-2ex}
+      \href{https://www.linkedin.com/pulse/attention-guided-u-net-model-improved-residual-blocks-gokmen}{\includegraphics[width=10cm]{U-Net_example}}\\
+      (Filtering of a image with more resolution than the U-Net input.)
     \end{center}
   \end{itemize}
 }
 
-How They Work
-
-Contracting
-path (left side) and an expansive path (right side
-
-Unlike traditional methods that rely on fixed mathematical algorithms (like Gaussian filters or wavelet transforms), deep learning models learn how to denoise.
-
-The typical process involves training a neural network on a massive dataset of paired data:
-
-    Clean Data: The original, noise-free image or signal.
-
-    Noisy Data: The same data with noise artificially added.
-
-    The network's goal is to learn the complex mapping required to transform any noisy input back into its clean, original state. By doing this, it learns the underlying structure of the signal and can distinguish it from the characteristics of the noise.
-
-Key Architectures Used
-
-Several types of neural networks are particularly effective for this task:
-
-    Denoising Autoencoders: A classic approach where a network learns to compress a noisy image into a compact representation (encoding) and then reconstruct a clean version from it (decoding).
-
-Convolutional Neural Networks (CNNs): The most popular and powerful method for image denoising. Architectures like DnCNN (Denoising CNN) and U-Net are specifically designed to process images, effectively learning to identify and remove noise while preserving important details like edges and textures.
-
-Generative Adversarial Networks (GANs): These models use a "generator" network to create clean images and a "discriminator" network to distinguish them from real clean images. This adversarial process pushes the generator to produce extremely realistic, high-quality denoised results.
-
-AI vs. Traditional Denoising
-
-Feature	Traditional Denoising	AI-Based Denoising
-Principle	Relies on fixed mathematical models (e.g., averaging, transforms).	Learns from data to distinguish signal from noise.
-Adaptability	Not very adaptable; optimized for specific noise types.	Highly adaptable; can handle complex and mixed noise.
-Data	Requires no training data.	Requires a large dataset of noisy/clean pairs for training.
-Performance	Can cause blurring and loss of fine details.	Excels at preserving details and texture, often achieving superior results.
-
 Singh, P. (2025). Understanding Medical Image Denoising, Enhancement, and Reconstruction. Biomedical Informatics and Smart Healthcare, 1(1), 35–39. https://doi.org/10.62762/BISH.2025.966762
 
-Gaussian,  or non-local means
