@@ -191,11 +191,24 @@
 %\input{DICOM_visualization}
 
 \part{Medical Image Processing}
+
+\section*{A word of warning}
+\begin{itemize}
+\item Someting, we will deal with \popup{ill-posed problems}{Problem that
+    does not have a finite number of solutions.}.
+\item Examples (related with computer vision applications):
+  \begin{enumerate}
+  \item \href{https://en.wikipedia.org/wiki/Super-resolution_imaging}{Image super-resolution}.
+  \item \href{https://en.wikipedia.org/wiki/Noise_reduction\#In_images}{Image denoising}.
+  \item \href{https://en.wikipedia.org/wiki/Stereoscopy}{Stereoscopy using a single image}.
+  \end{enumerate}
+\end{itemize}
+  
 %\input{contrast_enhancement} % Dealing with underexposure and overexposure.
 %\input{denoising}
-\input{registration}
-%\input{interpolation} % Super-resolution
+\input{super-resolution}
 %\input{segmentation}
+%\input{registration}
 
 %\input{sharpening} % Enhancement: shapering, histogram equalization, normalization
 %\input{processing}
