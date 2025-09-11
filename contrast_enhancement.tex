@@ -7,18 +7,17 @@ observe and interpret critical details. Enhancements such as
 brightness adjustment, contrast optimization, edge sharpening, and
 other visual refinements can significantly aid in this process.
 
-\section{Contrast stretching (normalization}
-\begin{equation}
-s = \frac{(r - r_{\min})}{(r_{\max} - r_{\min})} \times (s_{\max} - s_{\min}) + s_{\min}
-\end{equation}
-where $r$ = input pixel intensity
-
-$r_{\text{min}},r_{\text{max}}$  = minimum and maximum input intensity values
-
-$s_{\text{min}},s_{\text{max}}$
- = desired output range (often 0 - 255)
-
-$s$ = output pixel intensity
+\section{Contrast stretching (normalization)}
+\begin{itemize}
+\item Pixel-wise linear transformation that enhance the contrast by spreading out the
+  intensity values over the full available range of pixel values (usually [0, 255]).
+\item Let $x_i$ the input pixel intensity, the new value is
+  \begin{equation}
+    y_i = \frac{(x_i - x_{\min})}{(x_{\max} - x_{\min})} \times 255
+  \end{equation}
+  where $r_{\text{min}}$ and $r_{\text{max}}$ are the minimum and
+  maximum input intensity values.
+\end{itemize}
 
 \section{Gamma correction}
 
