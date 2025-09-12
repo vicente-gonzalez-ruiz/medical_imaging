@@ -1,0 +1,24 @@
+\chapter{\gls{DICOM} data transmission}
+
+\section{Transmission using the \gls{ULP}}
+\begin{itemize}
+\item A pair of \gls{DICOM} devices communicate using a client-server
+  model based on the \popup{DICOM \gls{ULP}}{An application-layer
+    protocol.} which runs on top of standard TCP/IP.
+\item Steps:
+  \begin{enumerate}
+  \item \textbf{Association establishment (handshake)}: the
+    application entities agree about the \popup{task to be
+      performed}{For example, sending an image.}, and the
+    \popup{transfer syntax}{The compression method (e.g., JPEG, RLE)
+      and byte order that will be used for the data.}.
+  \item \textbf{Data Exchange (conversation)}: The sender sends the
+    image using a C-STORE-RQ (Request) message (which the DICOM image,
+    including the DICOM header) and, if the message has been
+    successfully, the receiver send a C-STORE-RSP (Response).
+  \item \textbf{Association Release (Hanging Up)}: After all data has
+    been successfully sent and acknowledged, the devices terminate the
+    association.
+  \end{enumerate}
+\end{itemize}
+

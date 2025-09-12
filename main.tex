@@ -170,6 +170,7 @@
 \listoffigures
 \listoftables
 
+\part{Acquisition of medical images}
 \input{acquisition}
 \input{ultrasound}
 \input{radiography}
@@ -179,6 +180,7 @@
 \input{PET}
 \input{MRI}
 
+\part{Storage of medical Images}
 \input{storage}
 \input{PNG}
 \input{JPEG}
@@ -189,29 +191,19 @@
 \input{VVC}
 %\input{DICOM_formats}
 
+\part{Transmission of medical images}
 \input{transmission}
 \input{TCP_IP}
 \input{WWW}
 %\input{DICOM_transmission}
 
+\part{Visualization of medical images}
+\input{perception}
 \input{visualization}
 %\input{DICOM_visualization}
 
-\part{Medical Image Processing}
-
-\section*{A word of warning}
-\begin{itemize}
-\item Someting, we will deal with \popup{ill-posed problems}{Problem that
-    does not have a finite number of solutions.}.
-\item Examples (related with computer vision applications):
-  \begin{enumerate}
-  \item \href{https://en.wikipedia.org/wiki/Super-resolution_imaging}{Image super-resolution}.
-  \item \href{https://en.wikipedia.org/wiki/Noise_reduction\#In_images}{Image denoising}.
-  \item \href{https://en.wikipedia.org/wiki/Stereoscopy}{Stereoscopy using a single image}.
-  \end{enumerate}
-\end{itemize}
-  
-\input{contrast_enhancement} % Dealing with underexposure and overexposure.
+\part{Processing of medical images}
+  \input{contrast_enhancement} % Dealing with underexposure and overexposure.
 \input{denoising}
 \input{super-resolution}
 \input{segmentation}
