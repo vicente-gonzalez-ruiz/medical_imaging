@@ -7,10 +7,12 @@ observe and interpret critical details. Enhancements such as
 brightness adjustment, contrast optimization, edge sharpening, and
 other visual refinements can significantly aid in this process.
 
-\section{Contrast stretching (normalization)}
+\section{Pixel normalization}
 \begin{itemize}
-\item Pixel-wise linear transformation that enhance the contrast by spreading out the
-  intensity values over the full available range of pixel values (usually [0, 255]).
+\item Also called contrast stretching, is a pixel-wise linear
+  transformation that enhance the contrast by spreading out the
+  intensity values over the full available range of pixel values
+  (usually [0, 255]).
 \item Let $x_i$ the input pixel intensity, the new value is
   \begin{equation}
     y_i = \frac{(x_i - x_{\min})}{(x_{\max} - x_{\min})} \times 255
@@ -18,6 +20,9 @@ other visual refinements can significantly aid in this process.
   where $r_{\text{min}}$ and $r_{\text{max}}$ are the minimum and
   maximum input intensity values.
 \end{itemize}
+\begin{center}
+  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/pixel_normalization.ipynb}{\includegraphics[width=12cm]{pixel_normalization}}
+\end{center}
 
 \section{Gamma correction}
 
@@ -34,6 +39,9 @@ Where:
     \item $c$ = normalization constant (often $1$)
     \item $\gamma$ = gamma value (controls brightness/contrast)
 \end{itemize}
+\begin{center}
+  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/gamma_correction.ipynb}{\includegraphics[width=12cm]{gamma_correction}}
+\end{center}
 
 
 \section{Histogram equalization}
@@ -67,6 +75,10 @@ where
     \item $r_k$ = original intensity
     \item $s_k$ = new intensity after histogram equalization
 \end{itemize}
+
+\begin{center}
+  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/equalized_histogram.ipynb}{\includegraphics[width=12cm]{equalized_histogram}}
+\end{center}
 
 %section{Sharpening}
 
@@ -110,3 +122,8 @@ s(x, y) = \mathcal{F}^{-1}\{S(u, v)\}
 \[
 f_{\text{enhanced}}(x, y) = \exp(s(x, y))
 \]
+
+\begin{center}
+  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/homomorphic_filtering.ipynb}{\includegraphics[width=12cm]{homomorphic_filtering}}
+\end{center}
+
