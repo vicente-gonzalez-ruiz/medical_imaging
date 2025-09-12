@@ -1,4 +1,4 @@
-\chapter{Computed\\Tomography (CT)}
+\chapter[\gls{CT}]{Computed\\Tomography (CT)}
 \vspace{-43ex}
 \begin{flushright}
 \includegraphics[width=4.5cm]{CT_of_a_normal_abdomen_and_pelvis} % https://upload.wikimedia.org/wikipedia/commons/2/2b/CT_of_a_normal_abdomen_and_pelvis%2C_thumbnail.png
@@ -65,7 +65,7 @@ possible by computers.
     \cite{morin2025radiation}.\label{fig:views_in_CT}}
 \end{figure}
 
-\section{Acquisition (1/3)}
+\section{Acquisition}
 \begin{itemize}
 \item The 2D data collected from each angle is called a \emph{projection}
 (see Fig.~\ref{fig:projection}), consisting of multiple individual
@@ -80,7 +80,6 @@ attenuation measurements.
     the detector.\label{fig:projection}}
 \end{figure}
 
-\section{Acquisition (2/3)}
 \begin{itemize}
 \item The acquisition process can be classified as
 (see Fig.~\ref{fig:CT_geometries}):
@@ -100,7 +99,6 @@ attenuation measurements.
   \caption{Acquisition geometries used in CT \cite{takase2025CT}.\label{fig:CT_geometries}}
 \end{figure}
 
-\section{Acquisition (3/3)}
 \begin{itemize}
 \item Depending on how the scanning is performed, we can distinguish between
 (see Fig.~\ref{fig:scannings}):
@@ -121,7 +119,7 @@ attenuation measurements.
   \caption{Types of scanning used in CT \cite{abdulla2025acquiring1}.\label{fig:scannings}}
 \end{figure}
 
-\section{Sinogram (1/2)}
+\section{Sinogram}
 \begin{itemize}
 \item In parallel- and fan-beam scaners, the projections
   are (1D) lines and the set of all projections for the same Z-plane
@@ -140,7 +138,6 @@ attenuation measurements.
     \cite{abdulla2025acquiring2}.\label{fig:sinogram_generation}}
 \end{figure}
 
-\section{Sinogram (2/2)}
 \begin{itemize}
 \item The CT scaner generates a \popup{collection}{usually thousands}
   of projections that need to be processed to obtain the 3D
@@ -168,7 +165,7 @@ attenuation measurements.
   the frequency domain (using the Radon transform).
 \end{itemize}
 
-\section{Filtered Back-Projection (FBP) (1/2)}
+\section{Filtered Back-Projection (FBP)}
 \begin{itemize}
 \item The tomogram structure accumulates in each voxel the
   constribution of each projection \cite{abdulla2025acquiring2} (see
@@ -187,7 +184,6 @@ attenuation measurements.
   filter to sharpen the textures of the reconstruction.
 \end{itemize}
 
-\section*{Filtered Back-Projection (FBP) (2/2)}
 \label{sec:FBP_example}
 \vspace{-2ex}
 \begin{figure}[!b]
@@ -228,7 +224,7 @@ attenuation measurements.
   and outpus the original image.
 \end{itemize}
 
-\section{FFT-based inverse Radon transform (1/2)}
+\section{FFT-based inverse Radon transform}
 \begin{itemize}
 \item The reconstruction of a tomogram using the Radon transform can
   run faster (using the \popup{FFT}{The FFT (Fast Fourier Transform)

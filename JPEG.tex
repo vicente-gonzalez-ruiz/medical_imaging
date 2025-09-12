@@ -1,6 +1,6 @@
-\chapter{\glsentrylong{JPEG}}
+\chapter{\gls{JPEG}}
 
-\section{\glsentrylong{ITU} standard}
+\section{\gls{ITU} standard}
 \begin{itemize}
 \item Supported by all Web browsers, and most image viewers, define
   how to compress raster images \cite{ccitt.t81}.
@@ -24,7 +24,7 @@
   \href{https://www.thewebmaster.com/jpeg-definitive-guide/}{\includegraphics[width=8.5cm]{JPEG_Quality_vs_Size}}
 \end{center}
 
-\section{Algorithm (1/2)}
+\section{Algorithm}
 \begin{enumerate}
 \item Convert from the \gls{RGB} color space to the \gls{YCbCr} color
   space. Only if the input image is in color.
@@ -37,7 +37,7 @@
 \item Entropy encode the quantized coefficients.
 \end{enumerate}
 
-\section*{Algorithm (2/2)}
+\section*{}
 \begin{itemize}
 \item A graphic description of a compression of a gray-scale image.
 \end{itemize}
@@ -65,7 +65,7 @@
   \href{https://es.m.wikipedia.org/wiki/Archivo:Zigzag_scanning.jpg}{\includegraphics[width=8cm]{Zigzag_scanning}}
 \end{center}
 
-\section{Metadata (1/2)}
+\section{Metadata}
 \begin{itemize}
 \item \gls{JPEG} images can store metadata as
   \href{https://en.wikipedia.org/wiki/Exif}{Exif} data (see the \href{https://gitlab.com/TNThieding/exif/-/blob/master/docs/api_reference.rst?ref_type=heads}{Exif implementation}). Some fields are:
@@ -90,7 +90,7 @@
   \end{center}
 \end{itemize}
 
-\section*{Metadata (2/2)}
+\section*{}
 \begin{itemize}
 \item
   \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/JPEG_add_metadata.ipynb}{Here}
