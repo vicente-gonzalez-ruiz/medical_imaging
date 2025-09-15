@@ -1,0 +1,33 @@
+\chapter{\gls{HEVC} (H.265)}
+\label{cha:HEVC}
+
+\section{Basics}
+\begin{itemize}
+\item Lossy and \popup{lossless}{Although by a large margin, it is
+    mainly used as a lossy video codec.}.
+\item Standarized by the \gls{MPEG} and the \gls{VCEG} in 2013.
+\item Is another (like \gls{MPEG}) video compression standard based on
+  block-oriented, motion-compensated coding.
+\end{itemize}
+
+\section{Algorithm}
+\label{sec:HEVC_algo}
+\begin{itemize}
+\item Similar to a \gls{AVC} codec (see Section~\ref{sec:MPEG-4_AVC_algo}),
+  but \gls{HEVC}:
+\begin{enumerate}
+\item Larger MB (\gls{CTU}) sizes (up to 64x64).
+\item 32x32 \gls{DCT}.
+\item 1/8 pel motion compensation accuracy.
+\item Larger prediction neighborhoods.
+\item 35 intra prediction modes (directions).
+\item Improved context modeling in \gls{CABAC}.
+\item Improved motion vectors entropy coding.
+\item Better deblocking filters.
+\end{enumerate}
+\end{itemize}
+
+\section{HEVC vs AVC}
+\begin{center}
+  \href{https://www.epiphan.com/blog/h264-vs-h265/}{\includegraphics[width=\textwidth]{AVC-vs-HEVC}}
+\end{center}

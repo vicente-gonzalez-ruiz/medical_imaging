@@ -1,0 +1,108 @@
+\chapter{The \gls{WWW}}
+
+\section{What is the Web?}
+\begin{itemize}
+\item The Web \popup{was created}{By Tim Berners-Lee who envisioned a
+    system for automated information sharing among scientists
+    worldwide. He wrote the first web server, the first web browser,
+    and the first web page, and released the technology to the public
+    in 1993. This decision to make the technology royalty-free and
+    open was crucial to its explosive growth.} in the late 80 at the
+  \gls{CERN} to share documentation.
+\item It is based on the client/server model, where Web clients request
+  \popup{Web objects}{A Web object is any resource (usually, a file)
+    that is at the server side.} to a Web server.
+\item Each object has an \popup{\gls{URL}{A unique identifier that
+      specifies the Web server and the file within the server.}} that
+  is used by clients to retrieve the object (from the server).
+\item WWW technology is used for cost-effective image distribution to
+  clinicians, often via a thin client paradigm
+  \cite{bushberg2011essential}.
+\end{itemize}
+
+\section{The \glsentrylong{HTTP}}
+\begin{itemize}
+\item The client/server interaction is controlled by the \gls{HTTP}.
+\item It is an application-layer protocol that runs over the \gls{TCP}.
+\end{itemize}
+
+\section{Web browsers}
+\begin{itemize}
+\item Most Web clients also implemen an objects-browser that \popup{can}{When the browser is not able to process an object (content), it usually offers to save the object.} render
+  some standard Web contents, such as:
+  \begin{enumerate}
+  \item \gls{MP3}, \gls{AAC}, and \href{https://en.wikipedia.org/wiki/Vorbis}{Vorbis} audio.
+  \item \gls{PNG}, \gls{GIF}, \gls{PDF}, \gls{SVG}, \gls{JPEG}, and
+    \popup{\gls{WebP}}{That also is a container for other image
+      codecs.} images.
+  \item H.264/\gls{AVC} (\popup{\gls{MP4}}{Usually encapsulated in a MP4
+      container.}), and \popup{VP9}{Usually encapsulated in WebM or
+      Matroska containers.}, \popup{\gls{AV1}}{Inside Matroska.},
+    \popup{\gls{VC-1}}{Encaptulated in MP4.} and
+    \popup{\href{https://en.wikipedia.org/wiki/Theora}{Theora}}{Encapsulated
+      in Ogg files. videos.}.
+  \item \gls{HTML}, \gls{CSS}, and
+    \href{https://en.wikipedia.org/wiki/JavaScript}{JavaScript}
+    \popup{source codes}{In computer science, a source code is any
+      file that contains editable data that a computer can process. In
+      this case, all these type of source codes are used for
+      controlling the behaviour of the rendering of the Web objects.}.
+  \end{enumerate}
+\end{itemize}
+
+\section{Secure transmissions: \gls{HTTPS}}
+\begin{itemize}
+\item \gls{HTTPS} secures data in transit through \gls{TLS}:
+  \begin{enumerate}
+  \item \textbf{Authentication}: HTTPS verifies that your browser is
+    communicating with the correct server and not a fraudulent
+    one. This is achieved through an \gls{SSL}
+    \popup{certificate}{Which is a digital certificate issued by a
+      trusted Certificate Authority (CA).}. The browser checks this
+    certificate to \popup{confirm the identity of the Web site}{If the
+      certificate is not valid, the browser will display a security
+      warning.}.
+  \item \textbf{Encryption}: Data between the server and the client is
+    scrambled. This is performed in two steps:
+    \begin{enumerate}
+    \item \textbf{Handshake}:
+      \begin{enumerate}
+      \item The server sends its \popup{public key}{An SSL/TLS
+          certificate.} to the client.
+      \item The client uses this public key to encrypt a shared
+        session key and sends it back to the server, which is the only
+        one who can decrypt this message, using its corresponding
+        private key.
+      \end{enumerate}
+    \item \textbf{Encripted data transfer}: A single, shared secret
+      key is used for both encrypting and decrypting data (symmetric
+      encryption).
+    \item \textbf{Data integrity}: Special codes are interleaved with
+      the data to allow the recipient to verify that the message is
+      complete and unchanged.
+    \end{enumerate}
+  \end{enumerate}
+\end{itemize}
+
+\section{Some medical-imaging related Web sites}
+\begin{enumerate}
+\item \href{https://openi.nlm.nih.gov/}{Open Access Biomedical Image Search Engine}.
+\item \href{https://medpix.nlm.nih.gov/home}{MedPix}.
+\item The Visible Human Project:
+  \href{https://www.nlm.nih.gov/research/visible/visible_human.html}{(description)},
+  \href{https://visiblehumanproject.com/}{(viewer)}.
+\item
+  \href{https://www.flickr.com/photos/euthman/albums/72057594114099781/}{Specimens
+    at flickr}.
+\item
+  \href{https://lane.stanford.edu/biomed-resources/bassett/index.html}{Bassett
+    Collection of Stereoscopic Images of Human Anatomy}.
+\item \href{https://dermnetnz.org/images}{DermNet}.
+\item \href{http://imagebank.hematology.org/}{American Society of
+    Hematology Image Bank}.
+\item \href{http://www.med.harvard.edu/AANLIB/home.html}{The Whole
+    Brain Atlas}.
+\item \href{https://medpics.ucsd.edu/index.cfm}{MedPics - UC San Diego
+    School of Medicine}.
+\item \href{https://radiopaedia.org/}{Radiopaedia}.
+\end{enumerate}

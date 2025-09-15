@@ -1,0 +1,70 @@
+\chapter{Basic concepts}
+
+\section{Communication link characteristics}
+\begin{itemize}
+\item \textbf{Capacity}: This is the total amount of data that a
+  data link can transmit per second (bit-rate). It's typically measured in:
+  \begin{tabular}{r|l}
+    Acronym & Capacity in bits/second\\
+    \hline
+    1 Kbps & $10^3$\\
+    1 Mbps & $10^3$ Kbps\\
+    1 Gbps & $10^3$ Mbps\\
+    1 Tbps & $10^3$ Gbps
+  \end{tabular}
+\item \textbf{Reliability}: Wired networks are more reliable
+(have less \popup{\gls{BER}}{Ratio of the number of bits received in
+error to the total number of bits transmitted over a specific time
+interval.}) than wireless networks.
+\item \textbf{Security}: Wired networks are more secure than wireless
+networks.
+\end{itemize}
+
+\section{Networks, links, and channels}
+\begin{itemize}
+\item A \textbf{channel} is a available transmission capacity in a communication link.
+\item A \textbf{link} is a point-to-point (wired) or multipoint
+(wireless) physical medium that is able to transmit data. A link can have several channels.
+\item A \textbf{network} is a collection of links and devices to
+interconnect them (usually routers).
+\end{itemize}
+
+\section{Internet and internet}
+\begin{itemize}
+\item A \textbf{internet} is a network of networks.
+\item \textbf{Internet} is the network of networks that we use every day.
+\end{itemize}
+
+\section{Web and web}
+\begin{itemize}
+\item A \textbf{web} is a communication system based on the
+server/client model that use the \gls{HTTP} protocol.
+\item The \textbf{Web} is the communication system (called \gls{WWW})
+that runs at \popup{the Internet level}{You can run a local web at
+home, only for your eyes.}. \gls{WWW} and Web are synonyms.
+\end{itemize}
+
+\section{Communication protocols}
+\begin{itemize}
+\item Define the steps and timmings that two (or more) networked
+entities must use to communicate.
+\item In the Internet, the name of the protocol \popup{suite}{There
+are several protocols.} is \acrshort{TCP}/\acrshort{IP}.
+\item For real-time transmissions, the suite also defines the
+\gls{UDP}.
+\item \gls{HTTP} is the protocol used in the Web (and any web).
+\end{itemize}
+
+\section{Packets}
+\begin{itemize}
+\item At the sender side, the data are splitted into packets.
+\item Most of the links are \popup{multiplexed in time}{In an instant
+of time, all the capacity of the link is used to transmit a packet.}.
+\item Packets have two different parts:
+\begin{enumerate}
+\item A \textbf{header} that stores information for the \popup{correct
+delivery}{Depending on the protocolo, even to solve the transmission
+errors.}.
+\item A \textbf{payload} that contains the data to transmit.
+\end{enumerate}
+\end{itemize}
