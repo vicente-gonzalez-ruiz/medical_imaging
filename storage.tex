@@ -3,17 +3,24 @@
 \section{Storage charactaristics}
 \begin{itemize}
 \item \textbf{Capacity}: This is the total amount of data that a
-  storage medium can hold. It's typically measured in:
-  \begin{tabular}{r|l}
-    Acronym & Amount of data \\
-    \hline
-    \popup{B}{byte}s & (8 \popup{bits, where a bit represents a logical state with one of two possible values.})\\
-    \popup{KB}{kilobyte}s & $1\text{KB} = 2^{10}\text{B}$\\
-    \popup{MB}{megabytes}s & $1\text{MB} = 2^{10}\text{KB}$\\
-    \popup{GB}{gigabyte}s & $1\text{GB} = 2^{10}\text{MB}$\\
-    \popup{TB}{terabyte}s & $1\text{TB} = 2^{10}\text{GB}$\\
-    \popup{PB}{petabyte}s & $1\text{PB} = 2^{10}\text{GB}$
-  \end{tabular}
+  storage medium can hold (see Table~\ref{tab:memory_caps}).
+  \begin{table}[!h]
+    \begin{center}
+      \begin{tabular}{r|l}
+        Acronym & Amount of data \\
+        \hline
+        \popup{B}{byte}s & (8 \popup{bits}{where a bit represents a logical state with one of two possible values.})\\
+        \popup{KB}{kilobyte}s & $1\text{KB} = 2^{10}\text{B}$\\
+        \popup{MB}{megabyte}s & $1\text{MB} = 2^{10}\text{KB}$\\
+        \popup{GB}{gigabyte}s & $1\text{GB} = 2^{10}\text{MB}$\\
+        \popup{TB}{terabyte}s & $1\text{TB} = 2^{10}\text{GB}$\\
+        \popup{PB}{petabyte}s & $1\text{PB} = 2^{10}\text{GB}$
+      \end{tabular}
+      \caption{Memory capacity measures \cite{wikipedia_KB}.}
+      \label{tab:memory_caps}
+    \end{center}
+  \end{table}
+  %\newpage
 \item \textbf{Volatility}: If the storage media need to connected to a
   current supply (for example, the \gls{RAM} memory of a computer),
   the media is said \emph{volatile}.
@@ -21,15 +28,19 @@
 \end{itemize}
 
 \section{The Cloud}
+\begin{center}
+  \vspace{-4ex}
+  \includegraphics[height=3.5cm]{cloud-storage}
+\end{center}
 \begin{itemize}
 \item Data is stored in remote data-centers accessed over the Internet.
 \item Fully scalable (more money, more space).
 \item We don't control where the data is.
-\item We don't control how has access to the data.
+\item We don't control who has access to the data.
 \end{itemize}
-\vspace{-4ex}
 \begin{center}
-  \includegraphics[height=3.5cm]{cloud-storage}
+  \vspace{-1ex}
+  \includegraphics[width=3.5cm]{oracle}
 \end{center}
 
 \section{\glsentrylong{NAS} (\glsentryshort{NAS})}
@@ -38,7 +49,7 @@
     rarely has a keyboard or monitor, and has many hard drive bays.}
   connected to the \gls{LAN} \cite{wikipedia_NAS}.
 \item Usually mounts several \popup{disk}{Or disc.}s with some type of
-  \gls{RAID} configuration.
+  \glsentryshort{RAID} (\glsentrylong{RAID}) configuration.
 \end{itemize}
 \vspace{-4ex}
 \begin{center}
