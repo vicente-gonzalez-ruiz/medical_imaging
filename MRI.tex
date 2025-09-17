@@ -142,20 +142,25 @@
 
 \begin{itemize}
 \item Relaxation times depends on the tissue and the strength of
-  $B_0$. Some examples (for 1 Tesla) \cite{abdulla2025MRI_T1T2}:
-\begin{center}
-  \begin{tabular}{r|rr}
-    Tissue & $T_1$ (ms) & $T_2$ (ms) \\
-    \hline
-    Fat & 250 & 80 \\
-    Kidney & 550 &  60 \\
-    White matter & 650 & 90 \\
-    Grey matter & 800 & 100 \\
-    CSF & 2000 & 150 \\
-    Water & 3000 & 3000 \\
-    Bone, teeth & Very long & Very short
-  \end{tabular}
-\end{center}
+  $B_0$. Some examples (for 1 Tesla) (see Fig.\ref{tab:relaxation_times})):
+  \begin{table}
+    \begin{center}
+      \begin{tabular}{r|rr}
+        Tissue & $T_1$ (ms) & $T_2$ (ms) \\
+        \hline
+        Fat & 250 & 80 \\
+        Kidney & 550 &  60 \\
+        White matter & 650 & 90 \\
+        Grey matter & 800 & 100 \\
+        CSF & 2000 & 150 \\
+        Water & 3000 & 3000 \\
+        Bone, teeth & Very long & Very short
+      \end{tabular}
+      \caption{Typical relaxation times for different tissues
+        \cite{abdulla2025MRI_T1T2}.}
+      \label{tab:relaxation_times}
+    \end{center}
+  \end{table}
 \item $T_1$ is always longer than $T_2$ except in pure water in which
   $T_1=T_2$.
 \end{itemize}

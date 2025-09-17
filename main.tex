@@ -41,6 +41,10 @@
 \captionsetup[figure]{skip=1pt}
 \captionsetup[table]{skip=1pt}
 \setlength{\textfloatsep}{0pt}
+\setlength{\floatsep}{0pt}
+\setlength{\intextsep}{0pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{0pt}
 
 \usepackage[acronym]{glossaries}
 \makeglossaries
@@ -184,7 +188,7 @@
 %\input{MRI}
 
 \part{Storage of medical Images}
-%\input{storage}
+\input{storage}
 %\input{PNG}
 %\input{JPEG}
 %\input{JPEG2000}
@@ -201,9 +205,9 @@
 %\input{DICOM_transmission}
 
 \part{Visualization of medical images}
-\input{perception}
-\input{visualization}
-\input{DICOM_visualization}
+%\input{visualization}
+%\input{perception}
+%\input{DICOM_visualization}
 
 \part{Processing of medical images}
 %\input{contrast_enhancement} % Dealing with underexposure and overexposure.
@@ -216,9 +220,6 @@
 %\input{processing}
 
 \printglossary[type=\acronymtype]
-
-
-%\section*{Resources}
 
 \bibliographystyle{plain}
 \bibliography{tomography,MRI,denoising,image_formats,X-rays,ultrasound,CT,radiology,storage,JPEG,JPEG2000,color_spaces,DICOM,vruiz,local}

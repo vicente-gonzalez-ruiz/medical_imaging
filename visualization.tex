@@ -1,23 +1,37 @@
 \chapter{Visualization}
-Medical image visualization encompasses the entire process of displaying and presenting medical images and related information to facilitate diagnosis and clinical decision-making. It's a multidisciplinary field drawing on science and engineering, including computer sciences, medical physics, and perceptual psychology
 
-Visualization should allow a physician to the interpret the images for accurate diagnosis
+\section{Keypoints}
+\begin{itemize}
+\item Visualization should allow a physician to the interpret the
+  images for accurate diagnosis.
+\item Nowadays, the previous statement should be also true for
+  algorithms (including IAs).
+\item Visualization should allow zooming, panning, windowing, and
+  annotation.
+\end{itemize}
 
-Contrast Resolution: This is the ability to detect very subtle changes in grayscale and distinguish them from image noise. It's primarily characterized by the signal-to-noise ratio (SNR) in an image
+\section{Display characteristics}
+\begin{enumerate}
+\item \textbf{(Spatial) resolution}: Although zooming can help, the
+  higher the resolution, the better.
+\item \textbf{Brightness}: Again, the higher, the better, although
+  this is a feature that depends on the ambient light
+  conditions. Brightness (luminance) is measured with a photometer.
+\item \textbf{Contrast ratio}: Defined by
+  \begin{equation}
+    \text{CR} = \frac{\text{Intensity~of~the~pure~white}}{\text{Intensity~of~the~pure~black}},
+  \end{equation}
+  the higher, the better. OLED/MicroLED technology is better than TFT/LCD.
+\item \textbf{Color depth}: Medical displays should be able to display
+  at least $2^{10}$ different shades of gray.
+\item \textbf{Viewing angle}: The higher, the better. OLED is better than TFT/LCD. 
+\item \textbf{Refresh rate}: This feature is important if the image is
+  not static (for example, in interventional imaging). Notice,
+  however, that none of the current technologies (LED or LCD) generate
+  flickering.
+\item \textbf{Pixel size}: Large displays can be viewed from a greater distance.
+\item \textbf{Stereo} \cite{wikipedia_stereoscopy}: Necessary if the
+  display is used in remote interventions.
+\item \textbf{Calibrated and DICOM compliant}.
+\end{enumerate}
 
-Quantum noise is common in X-ray or gamma ray images because relatively few quanta are used to limit patient radiation dose
-
-Display should be calibrated.
-
-The human eye perceives brightness differences non-linearly.
-
-At low luminance, the eye is very sensitive → small changes in brightness are perceptually big.
-
-At high luminance, the eye is less sensitive → bigger brightness jumps are needed to recognize a change in the luminance.
-
-Luminance is measured with a photometer
-
-The Barten model of human visual contrast sensitivity
-
-
-\href{https://en.wikipedia.org/wiki/Stereoscopy}{Stereoscopy using a single image}.
