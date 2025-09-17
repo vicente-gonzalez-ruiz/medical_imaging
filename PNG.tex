@@ -20,26 +20,34 @@
   \popup{\gls{RGBA}}{Red, Green, Blue, and Alpha (transparency)
     channels. The alpha-channel is optional.} (4 channels).
 \end{itemize}
-\vspace{-4ex}
+\vspace{-3ex}
 \begin{center}
-  \href{https://en.wikipedia.org/wiki/Raster_graphics}{\includegraphics[width=5cm]{RGB-raster-image}}
+  \href{https://en.wikipedia.org/wiki/Raster_graphics}{\includegraphics[width=4cm]{RGB-raster-image}}
 \end{center}
 
 \section{8 and 16 bits/channel}
 \begin{itemize}
-\item In gray-scale image:
+\item In gray-scale image (see Table~\ref{tab:gray_levels}):
+  \begin{table}[!h]
+    \vspace{2ex}
+    \begin{center}
+      \begin{tabular}{c|c}
+        & Number of \\
+        Bits/channel & gray-scale values \\
+        \hline
+        8 & $2^8=256$ \\
+        16 & $2^{16}=65536$
+      \end{tabular}
+    \vspace{2ex}
+    \end{center}
+    \caption{Number of gray levels VS the number of bits/pixel.}
+    \label{tab:gray_levels}
+  \end{table}
+  \newpage
+\item These pixel ``depthshould be igh enough to avoid visual artifacts.
+  \vspace{-2ex}
   \begin{center}
-    \begin{tabular}{c|c}
-      & Number of \\
-      Bits/channel & gray-scale values \\
-      \hline
-      8 & $2^8=256$ \\
-      16 & $2^{16}=65536$
-    \end{tabular}
-  \end{center}
-\item These pixel ``depth'' should be fine for most medical images.
-  \begin{center}
-    \href{https://www.fastcompression.com/blog/jpeg2000-applications-part1.htm}{\includegraphics[width=8cm]{8bit_vs_12bit}}
+    \href{https://www.fastcompression.com/blog/jpeg2000-applications-part1.htm}{\includegraphics[width=0.9\textwidth]{8bit_vs_12bit}}
   \end{center}
 \end{itemize}
 
@@ -65,25 +73,26 @@
 \section{Image metadata}
 \begin{itemize}
 \item \gls{PNG} images can store metadata:
-  \begin{table}
-  \begin{center}
-    \begin{tabular}{l|l}
-      Keyword & Meaning\\
-      \hline
-      Title & Short (one line) title or caption for image \\
-      Author & Name of image's creator \\
-      Description & Description of image (possibly long) \\
-      Copyright & Copyright notice \\
-      Creation Time & Time of original image creation \\
-      Software & Software used to create the image \\
-      Disclaimer & Legal disclaimer \\
-      Warning & Warning of nature of content \\
-      Source & Device used to create the image \\
-      Comment & Miscellaneous comment; conversion from GIF comment
-    \end{tabular}
-  \end{center}
-  \caption{Metadata in PNG.}
-  \label{tab:meta_PNG}
+  \begin{table}[!h]
+    \vspace{2ex}
+    \begin{center}
+      \begin{tabular}{l|l}
+        Keyword & Meaning\\
+        \hline
+        Title & Short (one line) title or caption for image \\
+        Author & Name of image's creator \\
+        Description & Description of image (possibly long) \\
+        Copyright & Copyright notice \\
+        Creation Time & Time of original image creation \\
+        Software & Software used to create the image \\
+        Disclaimer & Legal disclaimer \\
+        Warning & Warning of nature of content \\
+        Source & Device used to create the image \\
+        Comment & Miscellaneous comment; conversion from GIF comment
+      \end{tabular}
+    \end{center}
+    \caption{Metadata in PNG.}
+    \label{tab:meta_PNG}
   \end{table}
 \end{itemize}
 
