@@ -8,27 +8,24 @@
   \gls{JPEG}.
 \item Mainly used in medical imaging and digital cinema.
 \end{itemize}
-\vspace{-2ex}
-\begin{center}
-  \href{https://en.wikipedia.org/wiki/Magnetic_resonance_imaging_of_the_brain#/media/File:MRI_of_Human_Brain.jpg}{\includegraphics[width=4.0cm]{MRI_of_Human_Brain}}\\
-  (click on the image)
-\end{center}
 
 \section{Lossless and lossy compression}
 \begin{itemize}
 \item Two different compression modes:
-\item \textbf{Reversible}: Allows a perfect reconstruction of the raster image (like \gls{PNG}).
-\item \textbf{Irreversible}: Unable to recover all the visual
-  information, but offers a better rate/distortion performance than
-  the reversible mode for the same bit-rate.
+  \begin{enumerate}
+  \item \textbf{Reversible}: Allows a perfect reconstruction of the raster image (like \gls{PNG}).
+  \item \textbf{Irreversible}: Unable to recover all the visual
+    information, but offers a better rate/distortion performance than
+    the reversible mode for the same bit-rate.
+  \end{enumerate}
 \end{itemize}
 
 \section{16-bit per channel and several color spaces support}
 \begin{itemize}
 \item \popup{16 bits/pixel offers enough quality for specialized
-    applications such as medicine, atronomy, etc.}{It is quite
-    difficult to increase the SNR above of 16 bits because basically
-    we register noise when the amplitude of signal is small.}.
+  applications such as medicine, astronomy, etc}{It is quite difficult
+  to increase the SNR above of 16 bits because basically we register
+  noise when the amplitude of signal is small.}.
 \item Apart from gray-scale and \gls{RGB}, JPEG2000 supports
   \gls{YCbCr}, \gls{sRGB} \cite{sRGB_wikipedia}, \gls{CIELAB}
   \cite{CIELAB_wikipedia}, and \popup{custom}{It is posible to define
