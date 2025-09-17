@@ -2,16 +2,24 @@
 
 \section{Communication link characteristics}
 \begin{itemize}
-\item \textbf{Capacity}: This is the total amount of data that a
-  data link can transmit per second (bit-rate). It's typically measured in:
-  \begin{tabular}{r|l}
-    Acronym & Capacity in bits/second\\
-    \hline
-    1 Kbps & $10^3$\\
-    1 Mbps & $10^3$ Kbps\\
-    1 Gbps & $10^3$ Mbps\\
-    1 Tbps & $10^3$ Gbps
-  \end{tabular}
+\item \textbf{Capacity}: This is the total amount of data that a data
+  link can transmit per second (bit-rate). Table~\ref{tab:BR_measures}
+  shows different ``transmission speeds''.
+  \begin{table}[!h]
+    \vspace{2ex}
+    \begin{center}
+      \begin{tabular}{r|l}
+        Acronym & Capacity in bits/second\\
+        \hline
+        1 Kbps & $10^3$\\
+        1 Mbps & $10^3$ Kbps\\
+        1 Gbps & $10^3$ Mbps\\
+        1 Tbps & $10^3$ Gbps
+      \end{tabular}
+    \end{center}
+    \caption{Data transmission measurements.}
+    \label{tab:BR_measures}
+  \end{table}
 \item \textbf{Reliability}: Wired networks are more reliable
 (have less \popup{\gls{BER}}{Ratio of the number of bits received in
 error to the total number of bits transmitted over a specific time
