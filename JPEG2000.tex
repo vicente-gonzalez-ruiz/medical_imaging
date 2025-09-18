@@ -36,13 +36,18 @@
 \begin{itemize}
 \item Better quality at the same bitrate compared to JPEG \cite{vruiz_J2K}.
 \end{itemize}
-\begin{center}
+
+\begin{figure}[H]
+  \vspace{-2ex}
+  \centering
   \begin{tabular}{cc}
     \multicolumn{2}{c}{Lena at 0.1 bits/pixel} \\
     \includegraphics[width=5cm]{lena_01} & \includegraphics[width=5cm]{lena_01_jp2} \\
     JPEG & JPEG2000
   \end{tabular}
-\end{center}
+  \caption{\gls{JPEG} VS JPEG2000.}
+  \label{fig:J2K_JPEG}
+\end{figure}
 
 \section{Baseline algorithm}
 \begin{enumerate}
@@ -59,23 +64,31 @@
 \item The \gls{DWT} represents signals as a multiresolution structure
   \cite{vruiz_J2K}.
 \end{itemize}
-\vspace{-2ex}
-\begin{center}
+
+\begin{figure}[H]
+  \vspace{-2ex}
+  \centering
   \includegraphics[width=6cm]{2-level_wavelet_transform-lichtenstein}
-\end{center}
+  \caption{A 2-levels decomposition of an image.}
+  \label{fig:J2K_DWT}
+\end{figure}
 
 \section{Spatial scalability}
 \begin{itemize}
 \item When the image is rendered by resolution levels.
 \end{itemize}
-\vspace{-2ex}
-\begin{center}
+
+\begin{figure}[H]
+  \vspace{-2ex}
+  \centering
   \resizebox{11cm}{!}{
     \begin{tabular}{ccc}
       \includegraphics{lena_128x128_rgb} & \includegraphics{lena_256x256_rgb} & \includegraphics{lena_512x512_rgb}
     \end{tabular}
   }
-\end{center}
+  \caption{Spatial scalability provided by JPEG2000.}
+  \label{fig:J2K_spatial}
+\end{figure}
 
 \section{Quality scalability}
 \begin{itemize}
@@ -88,23 +101,33 @@
     measuring MSE) or increase with increasing number of decompressed
     bits (e.g., when measuring SNR).} \cite{vruiz_J2K}.
 \end{itemize}
-\vspace{-2ex}
-\begin{center}
-  \begin{tabular}{ccc}
+
+\begin{figure}[H]
+  \vspace{-2ex}
+  \centering
+  \resizebox{11cm}{!}{
+    \begin{tabular}{ccc}
     \includegraphics[width=4.0cm]{lena_01_jp2} & \includegraphics[width=4.0cm]{lena_02_jp2} & \includegraphics[width=4.0cm]{lena_05_jp2} \\
     0.1 bits/pixel & 0.2 bits/pixel & 0.5 bits/pixel
-  \end{tabular}
-\end{center}
+    \end{tabular}
+  }
+  \caption{Quality scalability provided by JPEG2000.}
+  \label{fig:J2K_quality}
+\end{figure}
 
 \section{\acrshort{ROI} scalability}
 \begin{itemize}
 \item It is possible to dedicate more bit-rate to a \gls{ROI}, that
   can be defined interactively \cite{vruiz_J2K}.
 \end{itemize}
-\vspace{-2ex}
-\begin{center}
-   \includegraphics[width=11cm]{ROI}
-\end{center}
+
+\begin{figure}[H]
+  \vspace{-2ex}
+  \centering
+  \includegraphics[width=11cm]{ROI}
+  \caption{\gls{ROI} scalability provided by JPEG2000.}
+  \label{fig:J2K_ROI}
+\end{figure}
   
 \section{Error resilience}
 \begin{itemize}
@@ -113,19 +136,28 @@
   of data in relatively small independent blocks
   \cite{wikipedia_J2K,brahimi2021efficient}.
 \end{itemize}
-\vspace{-2ex}
-\begin{center}
+
+\begin{figure}[H]
+  \vspace{-2ex}
+  \centering
   \href{https://flylib.com/books/en/2.537.1.37/1}{\includegraphics[width=11cm]{J2K_error_resilience}}
-\end{center}
+  \caption{Error ``correction'' provided by JPEG2000. A comparison
+    with \gls{SPIHT} \cite{wikipedia_SPIHT}.}
+  \label{fig:J2K_error}
+\end{figure}
 
 \section{3D support}
 \begin{itemize}
 \item Based on the 3D-DWT \cite{Bruylants_J2K_3D}.
 \end{itemize}
-\vspace{-2ex}
-\begin{center}
+
+\begin{figure}[H]
+  \vspace{-2ex}
+  \centering
   \href{https://spie.org/images/Graphics/Newsroom/Imported/0779/0779_fig1.jpg}{\includegraphics[width=11cm]{J2K_3D}}
-\end{center}
+  \caption{Processing of 3D images in JPEG2000.}
+  \label{fig:J2K_3D}
+\end{figure}
 
 \section{Motion JPEG2000 (digital cinema)}
 \begin{itemize}
@@ -136,9 +168,16 @@
 \item Each piture of the movie is compressed independently
   \cite{DigitalCinema}.
 \end{itemize}
-\begin{center}
+
+\begin{figure}[H]
+  \vspace{-2ex}
+  \centering
   \href{https://vicente-gonzalez-ruiz.github.io/JPEG2000/}{\includegraphics[width=8cm]{MJ2K}}
-\end{center}
+  \caption{In motion JPEG2000 the code-stream scalabiliy allow to
+    adapt it to the context (for example, to the resolution of the
+    display).}
+  \label{fig:J2K_motion}
+\end{figure}
 
 \section{\glsentrylong{JPIP} ({\glsentryshort{JPIP})}}
 \begin{itemize}
@@ -155,14 +194,22 @@
   \popup{bandwidth}{In computer networks, bandwidth is a synonym of
     transmission capacity of the communication channel.}.
 \end{itemize}
-\begin{center}
-  \href{http://www.hpca.ual.es/~vruiz/papers/ORTIZ04c.pdf}{\includegraphics[width=10cm]{JPIP}}
-\end{center}
 
-\section{\glsentryshort{JPIP} example}
-\begin{center}
+\begin{figure}[H]
+  \vspace{-1ex}
+  \centering
+  \href{http://www.hpca.ual.es/~vruiz/papers/ORTIZ04c.pdf}{\includegraphics[width=10cm]{JPIP}}
+  \caption{A desciption of \gls{JPIP}.}
+  \label{fig:J2K_JPIP}
+\end{figure}
+
+\begin{figure}[H]
+  \vspace{-1ex}
+  \centering
   \href{https://ieeexplore.ieee.org/document/7214293}{\includegraphics[width=\textwidth]{JPIP_example}}
-\end{center}
+  \caption{An example of an interaction with a JPEG2000 server using \gls{JPIP}.}
+  \label{fig:J2K_motion}
+\end{figure}
 
 \section{Metadata}
 \begin{itemize}

@@ -6,11 +6,13 @@
   \cite{roelofs1999png} is supported by all Web browsers, and most
   image viewers \cite{wikipedia_PNG}.
 \end{itemize}
-%\vspace{-4ex}
-\begin{center}
+\begin{figure}[H]
+  \vspace{-2ex}
+  \centering
   \href{https://upload.wikimedia.org/wikipedia/commons/0/05/CT_of_a_normal_abdomen_and_pelvis%2C_coronal_plane_79.png}{\includegraphics[width=6cm]{CT_example}}\\
-     (click on the image)
-\end{center}
+  \caption{A \gls{PNG} image (click on it).}
+  \label{fig:PNG_example}
+\end{figure}
 
 \section{Raster graphics file format}
 \begin{itemize}
@@ -20,10 +22,13 @@
   \popup{\gls{RGBA}}{Red, Green, Blue, and Alpha (transparency)
     channels. The alpha-channel is optional.} (4 channels).
 \end{itemize}
-\vspace{-3ex}
-\begin{center}
+\begin{figure}[H]
+  \vspace{-3ex}
+  \centering
   \href{https://en.wikipedia.org/wiki/Raster_graphics}{\includegraphics[width=4cm]{RGB-raster-image}}
-\end{center}
+  \caption{\gls{PNG} only represents raster images.}
+  \label{fig:PNG_raster}
+\end{figure}
 
 \section{8 and 16 bits/channel}
 \begin{itemize}
@@ -44,31 +49,40 @@
     \label{tab:gray_levels}
   \end{table}
   \newpage
-\item These pixel ``depthshould be igh enough to avoid visual artifacts.
-  \vspace{-2ex}
-  \begin{center}
-    \href{https://www.fastcompression.com/blog/jpeg2000-applications-part1.htm}{\includegraphics[width=0.9\textwidth]{8bit_vs_12bit}}
-  \end{center}
+\item These pixel ``depth'' should be igh enough to avoid visual artifacts.
 \end{itemize}
+\begin{figure}[H]
+  \vspace{-2ex}
+  \centering
+    \href{https://www.fastcompression.com/blog/jpeg2000-applications-part1.htm}{\includegraphics[width=0.8\textwidth]{8bit_vs_12bit}}
+  \caption{\gls{PNG} is able to use up to $2^{24}$ colors.}
+  \label{fig:PNG_colors}
+\end{figure}
 
 \section{Progressive rendering}
 \begin{itemize}
 \item Optional. Pixels are displayed using the Adam7 algorithm.
 \end{itemize}
-\begin{center}
-  \href{https://upload.wikimedia.org/wikipedia/commons/2/27/Adam7_passes.gif}{\includegraphics[width=5cm]{Adam7_passes-0}} \\
-  (Click in the image)
-\end{center}
+\begin{figure}[H]
+  \vspace{-2ex}
+  \centering
+  \href{https://upload.wikimedia.org/wikipedia/commons/2/27/Adam7_passes.gif}{\includegraphics[width=5cm]{Adam7_passes-0}}
+  \caption{Progressive displaying in \gls{PNG} (click in the image).}
+  \label{fig:PNG_progressive}
+\end{figure}
   
 \section{\popup{Animated}{Also called ``motion''.} PNG}
 \begin{itemize}
 \item A \gls{APNG} is sequence of images in a \gls{PNG} file
   \cite{wikipedia_APNG}.
 \end{itemize}
-\begin{center}
-  \href{https://commons.wikimedia.org/wiki/Category:Animated_PNG_files#/media/File:201805_human_skeleton_anim.png}{\includegraphics[width=5cm]{human_skeleton_anim}} \\
-  (Click in the image)
-\end{center}
+\begin{figure}[H]
+  \vspace{-2ex}
+  \centering
+  \href{https://commons.wikimedia.org/wiki/Category:Animated_PNG_files#/media/File:201805_human_skeleton_anim.png}{\includegraphics[width=5cm]{human_skeleton_anim}}
+  \caption{An animated \gls{PNG} (click in the image).}
+  \label{fig:PNG_animated}
+\end{figure}
 
 \section{Image metadata}
 \begin{itemize}

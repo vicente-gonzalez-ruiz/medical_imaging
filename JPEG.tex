@@ -7,11 +7,14 @@
 \item Developed by the \gls{JPEG} (\href{https://www.itu.int}{ITU}),
   in 1992 \cite{wikipedia_JPEG}.
 \end{itemize}
-\vspace{-2ex}
-\begin{center}
-  \href{https://en.wikipedia.org/wiki/Magnetic_resonance_imaging_of_the_brain#/media/File:MRI_of_Human_Brain.jpg}{\includegraphics[width=4.0cm]{MRI_of_Human_Brain}}\\
-  (click on the image)
-\end{center}
+
+\begin{figure}[H]
+  \vspace{-2ex}
+  \centering
+  \href{https://en.wikipedia.org/wiki/Magnetic_resonance_imaging_of_the_brain#/media/File:MRI_of_Human_Brain.jpg}{\includegraphics[width=4.0cm]{MRI_of_Human_Brain}}
+  \caption{A \gls{JPEG} version of a medical image.}
+  \label{fig:JPEG_example}
+\end{figure}
 
 \section{Lossy compression of color natural images}
 \begin{itemize}
@@ -19,10 +22,14 @@
   \item Raster images with up to $(2^{16}-1)\times (2^{16}-1)$ pixels.
   \item Pixels must be gray-scale or \gls{RGB}, 8 bits/channel.
 \end{itemize}
-\vspace{-2ex}
-\begin{center}
-  \href{https://www.thewebmaster.com/jpeg-definitive-guide/}{\includegraphics[width=8.5cm]{JPEG_Quality_vs_Size}}
-\end{center}
+
+\begin{figure}[H]
+  \vspace{-0ex}
+  \centering
+  \href{https://www.thewebmaster.com/jpeg-definitive-guide/}{\includegraphics[height=\textheight]{JPEG_Quality_vs_Size}}
+  \caption{The lossy effect in a \gls{JPEG} image.}
+  \label{fig:JPEG_lossy}
+\end{figure}
 
 \section{Algorithm}
 \begin{enumerate}
@@ -37,33 +44,37 @@
 \item Entropy encode the quantized coefficients.
 \end{enumerate}
 
-\section*{}
-\begin{itemize}
-\item A graphic description of a compression of a gray-scale image.
-\end{itemize}
-\vspace{-2ex}
-\begin{center}
-  \href{https://link.springer.com/article/10.1007/s40799-019-00358-4}{\includegraphics[width=8.5cm]{JPEG}}
-\end{center}
+\begin{figure}[H]
+  \vspace{-2ex}
+  \centering
+  \href{https://link.springer.com/article/10.1007/s40799-019-00358-4}{\includegraphics[height=\textheight]{JPEG}}
+  \caption{The \gls{JPEG} compression scheme.}
+  \label{fig:JPEG_compressor}
+\end{figure}
 
-\section{Artifacts}
-\begin{itemize}
-\item The human eye is sensitive to the 8x8-blockiness.
-\end{itemize}
-\vspace{-2ex}
-\begin{center}
-  \href{https://thesai.org/Publications/ViewPaper?Volume=6&Issue=4&Code=ijacsa&SerialNo=16}{\includegraphics[width=10cm]{JPEG_blocking}}
-\end{center}
+\section{Blocking}
+\begin{figure}[H]
+  \vspace{-2ex}
+  \centering
+  \href{https://thesai.org/Publications/ViewPaper?Volume=6&Issue=4&Code=ijacsa&SerialNo=16}{\includegraphics[height=\textheight]{JPEG_blocking}}
+  \caption{\gls{JPEG} blocking artifacts.}
+  \label{fig:JPEG_blocking}
+\end{figure}
 
 \section{Progressive rendering}
 \begin{itemize}
-\item Optional. Blocks are reconstructed coefficient-by-coefficient following the Zig-Zag ordering.
+\item Optional. Blocks are reconstructed coefficient-by-coefficient following the zig-zag ordering.
 \item During a progressive visualization, blocks display higher
-  spatial frequencies.
+  spatial frequencies, progressively, in each rendering.
 \end{itemize}
-\begin{center}
+
+\begin{figure}[H]
+  \vspace{-2ex}
+  \centering
   \href{https://es.m.wikipedia.org/wiki/Archivo:Zigzag_scanning.jpg}{\includegraphics[width=8cm]{Zigzag_scanning}}
-\end{center}
+  \caption{Progressive visualization in \gls{JPEG}.}
+  \label{fig:JPEG_progressive}
+\end{figure}
 
 \section{Metadata}
 \begin{itemize}
