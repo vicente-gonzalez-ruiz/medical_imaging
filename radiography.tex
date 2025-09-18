@@ -83,7 +83,7 @@
 \vspace{-1ex}
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=8cm]{ionization-diagram}
+  \includegraphics[width=10cm]{ionization-diagram}
   \caption{Ionization
     \cite{Perakende_ionization}.\label{fig:ionization}}
 \end{figure}
@@ -113,50 +113,53 @@
 \item In radiology, artifacts come from hardware failure, operator
   error (including the interaction/control with/of the patient) and
   software (post-processing) artifacts.
-\item Only in digital radiology.
 \end{itemize}
 
-\section*{}
-\subsection{Motion blur}
+%\section*{}
+\newpage
+\subsection*{Motion blur}
 \vspace{-1ex}
-\begin{figure}[!h]
+\begin{figure}[H]
   \centering
-  \includegraphics[width=3.5cm]{motion_blur_2}
+  \includegraphics[width=4.5cm]{motion_blur_2}
   \caption{The image unsharpness was caused by patient movement
     \cite{radiology_key}.\label{fig:motion_blur}}
 \end{figure}
 
-\section*{}
-\subsection{Static electricity}
+%\section*{}
+\newpage
+\subsection*{Static electricity}
 \vspace{-1ex}
-\begin{figure}[!h]
+\begin{figure}[H]
   \centering
-  \includegraphics[width=7cm]{static-electricity}
-  \caption{\cite{radiopaedia}.\label{fig:static_electricity}}
+  \includegraphics[width=8cm]{static-electricity}
+  \caption{Dissipation of static charges when the image is taken \cite{radiopaedia}.\label{fig:static_electricity}}
 \end{figure}
 
-\section*{}
-\subsection{Dead pixel}
+%\section*{}
+\newpage
+\subsection*{Dead pixel}
 \vspace{-1ex}
-\begin{figure}[!h]
+\begin{figure}[H]
   \centering
   \begin{tabular}{cc}
-    \includegraphics[width=5cm]{dead-pixel-artifact_frontal} &
-                                                               \includegraphics[width=5cm]{dead-pixel-artifact_oblique}
+    \includegraphics[width=6cm]{dead-pixel-artifact_frontal} &
+                                                               \includegraphics[width=6cm]{dead-pixel-artifact_oblique}
   \end{tabular}                                                
-  \caption{Dead pixels are always white. \cite{radiopaedia}.\label{fig:dead_pixel}}
+  \caption{Dead pixels are always white and always located at the same coordinates. \cite{radiopaedia}.\label{fig:dead_pixel}}
 \end{figure}
 
-\section*{}
-\subsection{Under- and over-exposure}
+%\section*{}
+\newpage
+\subsection*{Under- and over-exposure}
 \begin{itemize}
 \item In digital radiology (down), the detector always generates a good contrast.
 \item The main drawback is that, under-exposure usually have more noise.
 \end{itemize}
 \vspace{-1ex}
-\begin{figure}[!h]
+\begin{figure}[H]
   \centering
-    \includegraphics[width=9cm]{X-ray_exposure}
+    \includegraphics[width=11cm]{X-ray_exposure}
     \caption{Exposure impact (up: analog, down: digital)
       \cite{VELDKAMP2009209}.\label{fig:exposure}}
 \end{figure}
@@ -168,10 +171,10 @@
 \item Makes use of much lower x-ray energies\\ than general purpose
   radiography.
 \end{itemize}
-\vspace{-18ex}
-\begin{figure}[!h]
+\vspace{-24ex}
+\begin{figure}[H]
   \begin{flushright}
-    \includegraphics[width=4.5cm]{normal_mammogram}
+    \includegraphics[width=5.5cm]{normal_mammogram}
     \end{flushright}
     \caption{Mamogram \cite{CDC_mammograms}.\label{fig:mamogram}}
 \end{figure}
@@ -194,29 +197,27 @@
 \end{itemize}
 
 \section{Quantum noise}
+\label{sec:radiography_quantum_noise}
 \begin{itemize}
 \item Quantum noise is the most common noise in X-rays imaging.
-\item It is directly related to photon counting (fewer photons
-  $\rightarrow$ more noise).
-\item More evident (lower \gls{SNR}) at low radiation doses.
-\end{itemize}
-\vspace{-1ex}
-\begin{figure}[!h]
+\vspace{1ex}
+\begin{figure}[H]
   \centering
-    \includegraphics[width=10cm]{quantum_noise_X-rays}
+    \includegraphics[width=0.9\textwidth]{quantum_noise_X-rays}
     \caption{Quantum noise in radiology
       \cite{CHANDRA2020107426}.\label{fig:quantum_noise_X-rays}}
 \end{figure}
-
-\label{sec:radiography_quantum_noise}
-\begin{itemize}
+\item It is directly related to photon counting (fewer photons
+  $\rightarrow$ more noise).
+\item More evident (lower \gls{SNR}) at low radiation doses.
 \item The amplitude of quantum noise depends on the (clean) signal amplitude.  
+\newpage
 \item On average, quantum noise appears on all the frequencies and is typically \href{https://en.wikipedia.org/wiki/Colors_of_noise}{colored}.
 \end{itemize}
 \vspace{-1ex}
-\begin{figure}[!b]
+\begin{figure}[H]
   \centering
-    \includegraphics[width=6cm]{quantum_noise_mammography}
+    \includegraphics[width=7.5cm]{quantum_noise_mammography}
     \caption{Average quantum noise spectrum (up), some examples in mammograms (below) 
       \cite{saunders2007does}.\label{fig:quantum_noise_X-rays_spectrum}}
 \end{figure}
