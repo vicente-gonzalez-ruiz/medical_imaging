@@ -45,7 +45,7 @@
     average).} MCs and a motion vector per MC, at
   \href{https://en.wikipedia.org/wiki/Motion_compensation}{half-pel
     accuracy}.
-\item Divide each MC in 8x8 blocks.
+\item Divide each MC in $8\times 8$ blocks.
 \item Transform each block using the \gls{DCT}.
 \item Quantize the \gls{DCT} coefficients. /* Lossy */
 \item \popup{Entropy encode}{Using a combination of RLE and Huffman
@@ -53,16 +53,19 @@
   data (motion vectors and reference frames).
 \end{enumerate}
 
-\section*{}
-\begin{itemize}
-\item A graphic description of a compression of a gray-scale sequence of images.
-\end{itemize}
-\vspace{-2ex}
-\begin{center}
-  \href{https://w3.ual.es/~vruiz/Docencia/Apuntes/Coding/Video/02-MPEG1/index.html}{\includegraphics[width=8.5cm]{MPEG-1_compressor}}
-\end{center}
+\begin{figure}[H]
+  \vspace{-2ex}
+  \centering
+  \href{https://w3.ual.es/~vruiz/Docencia/Apuntes/Coding/Video/02-MPEG1/index.html}{\includegraphics[height=\textheight]{MPEG-1_compressor}}
+  \caption{The \gls{MPEG} compressor.}
+  \label{fig:MPEG_compressor}
+\end{figure}
 
-\section{Blocking artifacts}
-\begin{center}
-  \href{https://filmora.wondershare.com/video-editing/video-compression-artifacts.html}{\includegraphics[width=8.5cm]{MPEG_artifacts}}
-\end{center}
+\section{Blocking effect}
+\begin{figure}[H]
+  \vspace{-2ex}
+  \centering
+  \href{https://filmora.wondershare.com/video-editing/video-compression-artifacts.html}{\includegraphics[height=0.9\textheight]{MPEG_artifacts}}
+  \caption{\gls{MPEG} compression artifacts.}
+  \label{fig:MPEG_artifacts}
+\end{figure}

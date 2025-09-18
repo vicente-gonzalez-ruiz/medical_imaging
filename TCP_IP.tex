@@ -6,31 +6,36 @@
   \popup{reliable}{Ordered and error-free.}, data delivery between
   \popup{networked entities}{Computer applications, ...}
   \cite{wikipedia_TCP}.
-\end{itemize}
-
-\section{Bidirectional communication}
-\begin{itemize}
-\item Both entities can send and receive data during a given interval or time.
+\item Bidirectional communication: Both entities can send and receive
+  data during a given interval or time.
 \end{itemize}
 
 \section{Steps and timmings}
 \begin{itemize} 
 \item The entities must follow a sequence of steps and waitings to ensure the communication.
+\begin{figure}[H]
+  \vspace{-0ex}
+  \centering
+  \href{https://www.ibm.com/support/pages/flowchart-tcp-connections-and-their-definition}{\includegraphics[height=5.5cm]{Flowchart_TCP}}
+  \caption{States (and how are the transition between them) of the
+    entities that use the \gls{TCP}.}
+  \label{fig:TCP_states}
+\end{figure}
 \end{itemize}
-\vspace{-2ex}
-\begin{center}
-  \href{https://www.ibm.com/support/pages/flowchart-tcp-connections-and-their-definition}{\includegraphics[height=6.0cm]{Flowchart_TCP}}
-\end{center}
+
 
 \section{Transmission control}
 \begin{itemize} 
 \item The \popup{correct transmission of data is controlled}{Also
     called ``flow control''.} by the receiver.
+\begin{figure}[H]
+  \vspace{-0ex}
+  \centering
+  \href{https://ieeexplore.ieee.org/document/8668433}{\includegraphics[height=5.5cm]{TCP_timeline}}
+  \caption{A time-line of a \gls{TCP} interaction.}
+  \label{fig:TCP_interaction}
+\end{figure}
 \end{itemize}
-\vspace{-2ex}
-\begin{center}
-  \href{https://ieeexplore.ieee.org/document/8668433}{\includegraphics[height=6.0cm]{TCP_timeline}}
-\end{center}
 
 \section{\gls{IP}}
 \begin{itemize}
@@ -53,6 +58,13 @@
     choosing which output link it will use to retransmit each packet
     that arrives.}. This behaviour is known as the \textbf{datagram
     transmission model}.
+\begin{figure}[H]
+  \vspace{1ex}
+  \centering
+  \includegraphics[height=0.65\textheight]{router}
+  \caption{A router.}
+  \label{fig:router}
+\end{figure}
 \end{itemize}
 
 \section{Public and private IP addresses}
