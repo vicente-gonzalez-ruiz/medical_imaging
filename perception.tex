@@ -4,62 +4,55 @@
 \begin{figure}[H]
   %\vspace{-2ex}
   \centering
-  \includegraphics[width=0.9\textwidth]{horizontal}
-  \caption[Perception of lightness is not linear (1).]{In each row, the \popup{gradient}{The amount of change.} is 1 (0 in each column).}
+  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/horizontal_vertical.ipynb}{\includegraphics[width=\textwidth]{horizontal}}
+  \caption[Perception of lightness (brightness) is not linear (1).]{In each row, the \popup{gradient}{The amount of change.} is 1 from left to right (0 in each column).}
   \label{fig:HVS_no_linear}
 \end{figure}
 
 \begin{figure}[H]
   %\vspace{-2ex}
   \centering
-  \includegraphics[width=0.9\textwidth]{horizontal_vertical}
-  \caption[Perception of lightness is not linear (2).]{In each row and column, the \popup{gradient}{The amount of change.} 1.}
+  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/horizontal_vertical.ipynb}{\includegraphics[width=\textwidth]{horizontal_vertical}}
+  \caption[Perception of lightness is not linear (2).]{In each row and column, the \popup{gradient}{The amount of change.} 1 from top to bottom and left to right .}
   \label{fig:HVS_no_linear}
 \end{figure}
 
-\section{Perception of the luminance VS the frequency}
-\begin{itemize}
-\item The perception of a change of the intensity varies with the spatial frequency.
+\section{Perception of the lightness decreases with the spatial frequency}
 \begin{figure}[H]
   %\vspace{-2ex}
   \centering
-  \includegraphics[width=0.65\textwidth]{CSF3}
-  \caption{The \gls{CSF}.}
+  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/CSF.ipynb}{\includegraphics[width=0.60\textwidth]{CSF}}
+  \caption[Lightness VS spatial frequency (the \gls{CSF}).]{The
+    \gls{CSF}. Going from top to bottom, the gradient is 1 verticall
+    for all the columns. Horizontally, the spatial frequency increases
+    from left to right.}
   \label{fig:CSF}
 \end{figure}
-\end{itemize}
 
-\section{Perception of the \popup{luma}{Luminance.} VS the neighborhood}
-\begin{itemize}
-\item The perception of the intensity depends the neighbour pixels.
+\section{Perfection of lightness depends on the luminance of the context}
 \begin{figure}[H]
   %\vspace{-2ex}
   \centering
-  \includegraphics[width=0.8\textwidth]{linear3}
-  \caption[Effect of the neighborhood in the perception of the luminance (1).]{Effect of the neighborhood in the perception of the luminance (in each block, all the pixels have the same intensity).}
-  \label{fig:luminance_vs_neighbor_1}
+  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/stairs.ipynb}{\includegraphics[width=\textwidth]{stairs}}
+  \caption[Lightness VS surrounding luminance (1).]{All the pixels of a block have the same value.}
+  \label{fig:stairs}
 \end{figure}
-\end{itemize}
 
-\section*{}
-\begin{itemize}
-\item The perception of the intensity depends the neighbour pixels.
 \begin{figure}[H]
   %\vspace{-2ex}
   \centering
-  \includegraphics[width=1.0\textwidth]{contraste_simultaneo}
-  \caption[Effect of the neighborhood in the perception of the luminance (2).]{Effect of the neighborhood in the perception of the luminance (all the internal squares have the same intensity).}
-  \label{fig:luminance_vs_neighbor_2}
+  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/same_squares.ipynb}{\includegraphics[width=0.8\textwidth]{same_squares}}
+  \caption[Lightness VS surrounding luminance (2).]{All the internal squares have \popup{the same luminance}{All the pixels of all the squares have the same pixel value}.}
+  \label{fig:squares}
 \end{figure}
-\end{itemize}
 
 \section{Perception of the luma VS the visualization time}
 \begin{itemize}
 \item The perception of the intensity depends the visualization time.
 \begin{figure}[H]
-  %\vspace{-2ex}
+  \vspace{-0ex}
   \centering
-  \includegraphics[width=0.4\textwidth]{punto_y_difuminado}
+  \includegraphics[width=0.35\textwidth]{punto_y_difuminado}
   \caption[Effect of visualization time in the perception of the luminance.]{Effect of the visualization time in the perception of the luminance (look to the central point for a while).}
   \label{fig:luminance_vs_visualization_time}
 \end{figure}
