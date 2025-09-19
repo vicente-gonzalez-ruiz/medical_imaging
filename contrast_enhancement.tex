@@ -1,18 +1,21 @@
 \chapter{Image contrast enhancement}
 
 \section{Objective}
-The primary objective of medical image enhancement is to improve the
-visual quality of an image, enabling physicians to more accurately
-observe and interpret critical details. Enhancements such as
-brightness adjustment, contrast optimization, edge sharpening, and
-other visual refinements can significantly aid in this process.
+\begin{itemize}
+\item The primary objective of medical image enhancement is to improve
+  the visual quality of an image, enabling physicians to more
+  accurately observe and interpret critical details.
+\item Enhancements such as brightness adjustment, contrast
+  optimization, edge sharpening, and other visual refinements can
+  significantly aid in this process.
+\end{itemize}
 
 \section{Pixel normalization}
 \begin{itemize}
-\item Also called contrast stretching, is a pixel-wise linear
-  transformation that enhance the contrast by spreading out the
-  intensity values over the full available range of pixel values
-  (usually [0, 255]).
+\item Also called contrast stretching \cite{gonzalez2009digital}, is a
+  pixel-wise linear transformation that enhance the contrast by
+  spreading out the intensity values over the full available range of
+  pixel values (usually [0, 255]).
 \item Let $x_i$ the input pixel intensity, the new value is
   \begin{equation}
     y_i = \frac{(x_i - x_{\min})}{(x_{\max} - x_{\min})} \times 255
@@ -20,13 +23,20 @@ other visual refinements can significantly aid in this process.
   where $r_{\text{min}}$ and $r_{\text{max}}$ are the minimum and
   maximum input intensity values.
 \end{itemize}
-\begin{center}
-  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/pixel_normalization.ipynb}{\includegraphics[width=12cm]{pixel_normalization}}
-\end{center}
+
+\begin{figure}[H]
+  \vspace{-0ex}
+  \centering
+  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/pixel_normalization.ipynb}{\includegraphics[width=10cm]{pixel_normalization}}
+  \caption{Effects of pixel normalization (contrast stretching).}
+  \label{fig:pixel_normalization}
+\end{figure}
 
 \section{Gamma correction}
 
-corrects for the fact that displays (monitors, projectors, etc.) and human vision do not respond linearly to intensity values.
+\begin{itemize}
+\item Corrects for the fact that displays (monitors, projectors, etc.) and
+human vision do not respond linearly to intensity values.
 
 \begin{equation}
 s = c \cdot r^{\gamma}
@@ -39,14 +49,26 @@ Where:
     \item $c$ = normalization constant (often $1$)
     \item $\gamma$ = gamma value (controls brightness/contrast)
 \end{itemize}
-\begin{center}
-  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/gamma_correction.ipynb}{\includegraphics[width=12cm]{gamma_correction}}
-\end{center}
+
+\begin{figure}[H]
+  \vspace{-0ex}
+  \centering
+  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/gamma_correction.ipynb}{\includegraphics[width=10cm]{gamma_correction}}
+  \caption{Effects of gamma correction.}
+  \label{fig:gamma correction}
+\end{figure}
+
+\end{itemize}
 
 
 \section{Histogram equalization}
 
-Histogram equalization redistributes the intensity values of an image so that the histogram (distribution of pixel intensities) becomes more uniform. The goal is to increase the overall contrast, especially in areas that are too dark or too bright.
+\begin{itemize}
+\item Histogram equalization \cite{gonzalez2009digital}
+  redistributes the intensity values of an image so that the histogram
+  (distribution of pixel intensities) becomes more uniform.
+\item The goal is to increase the overall contrast, especially in
+  areas that are too dark or too bright.
 
 % Histogram Equalization Formulation
 Let an image have $L$ intensity levels $0, 1, 2, \dots, L-1$.
@@ -76,17 +98,24 @@ where
     \item $s_k$ = new intensity after histogram equalization
 \end{itemize}
 
-\begin{center}
-  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/equalized_histogram.ipynb}{\includegraphics[width=12cm]{equalized_histogram}}
-\end{center}
+\begin{figure}[H]
+  \vspace{-0ex}
+  \centering
+  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/equalized_histogram.ipynb}{\includegraphics[width=10cm]{equalized_histogram}}
+  \caption{Effects of histogram equalization.}
+  \label{fig:histogram_equalization}
+\end{figure}
+
+\end{itemize}
 
 %section{Sharpening}
 
-\section{Homomorphic filtering}
+\section{Homomorphic filtering \cite{gonzalez2009digital}}
 
 % Homomorphic Filtering Formulation
-
-An image can be modeled as the product of illumination and reflectance:
+\begin{itemize}
+\item An image can be modeled as the product of illumination and
+  reflectance \cite{wikipedia_luminance}:
 \[
 f(x, y) = i(x, y) \cdot r(x, y)
 \]
@@ -123,7 +152,12 @@ s(x, y) = \mathcal{F}^{-1}\{S(u, v)\}
 f_{\text{enhanced}}(x, y) = \exp(s(x, y))
 \]
 
-\begin{center}
-  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/homomorphic_filtering.ipynb}{\includegraphics[width=12cm]{homomorphic_filtering}}
-\end{center}
+\begin{figure}[H]
+  \vspace{-0ex}
+  \centering
+  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/homomorphic_filtering.ipynb}{\includegraphics[width=10cm]{homomorphic_filtering}}
+  \caption{Effects of homomorfic enhancement.}
+  \label{fig:homomorphic_filtering}
+\end{figure}
 
+\end{itemize}
