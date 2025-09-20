@@ -1,20 +1,38 @@
 \chapter{Segmentation}
 
-% 3D surface reconstruction (ultrasound)
+\section{Where?}
+\begin{itemize}
+\item Used in the identifcation anatomical structures, lesions, or regions of interest.
+\item Example: 3D surface reconstruction (ultrasound).
+\end{itemize}
+  
+\section{Types of segementation}
 
-Thresholding: Based on intensity (simple, but ultrasound intensities can vary a lot).
+\begin{itemize}
+\item \textbf{Semantic}: Find objects inside an image and classify them according to predetermined categories.
+\item \textbf{Instance}: Distinguish amount the object of the same category.
+\item \textbf{Panoptic}: A particular case of instance segmentation where all the pixels of the image are classified.
+\end{itemize}
 
-Region Growing: Start from seed points inside the face region and expand.
+\href{https://www.labellerr.com/blog/semantic-vs-instance-vs-panoptic-which-image-segmentation-technique-to-choose/}{\includegraphics[width=0.9\textwidth]{semantic_vs_instance_vs_panoptic}}
 
-Machine Learning / Deep Learning: Modern approaches use CNNs or U-Nets to segment anatomical structures directly in 3D.
-
-Identifying specific regions such as tumors, organs, or vessels.
-
-Can be done via thresholding, region growing, watershed, or deep learning–based methods (e.g., U-Net).
-
-watershed segmentation
+\section{Thresholding}
+\begin{itemize}
+\item Decide the classification by comparing the $I(x,y)$ pixel values with a threshold $t$, generating the binarized image
+  \begin{equation}
+    O(x,y) = \begin{cases*}
+      1 & {\text if}\quad $I(x,y)>t$ \\
+      0 & {\text otherwise}
+    \end{cases*} 
+  \end{equation}
+  where $O(x,y)$ are the output pixel values.
+\end{itemize}
 
 \section{U-Net segmentation}
+
+\begin{itemize}
+\item A machine learning technique based on deep \glspl{CNN}.
+\end{itemize}
 
 \href{https://github.com/byrkbrk/unet-implementation?tab=readme-ov-file}{unet-implementation}
 
