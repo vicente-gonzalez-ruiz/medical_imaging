@@ -43,7 +43,7 @@
     0, and its entropy is smaller than the original MCs (this means
     that a residue MCs is more compressible than an original MC, on
     average).} MCs and a motion vector per MC, at
-  \href{https://en.wikipedia.org/wiki/Motion_compensation}{half-pel
+  \href{https://en.wikipedia.org/wiki/Motion_compensation}{half-\gls{PEL}
     accuracy}.
 \item Divide each MC in $8\times 8$ blocks.
 \item Transform each block using the \gls{DCT}.
@@ -63,9 +63,9 @@
 
 \section{Blocking effect}
 \begin{figure}[H]
-  \vspace{-2ex}
+  \vspace{-0ex}
   \centering
-  \href{https://filmora.wondershare.com/video-editing/video-compression-artifacts.html}{\includegraphics[height=0.9\textheight]{MPEG_artifacts}}
+  \href{https://filmora.wondershare.com/video-editing/video-compression-artifacts.html}{\includegraphics[height=0.8\textheight]{MPEG_artifacts}}
   \caption{\gls{MPEG} compression artifacts.}
   \label{fig:MPEG_artifacts}
 \end{figure}

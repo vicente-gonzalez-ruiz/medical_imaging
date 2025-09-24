@@ -35,7 +35,7 @@
 \begin{enumerate}
 \item Convert from the \gls{RGB} color space to the \gls{YCbCr} color
   space. Only if the input image is in color.
-\item Subsample the crominance (Cr and Cb channels). /* Lossy step */
+\item Subsample the chrominance (Cr and Cb channels). /* Lossy step */
 \item Divide each channel in blocks of size 8x8. \popup{The rest of
     steps work by blocks}{This makes it possible to work at the block
     level regardless of the image size.}.
@@ -79,7 +79,7 @@
 \section{Metadata}
 \begin{itemize}
 \item \gls{JPEG} images can store metadata as
-  \href{https://en.wikipedia.org/wiki/Exif}{Exif} data (see the
+  \href{https://en.wikipedia.org/wiki/Exif}{\gls{Exif}} data (see the
   \href{https://gitlab.com/TNThieding/exif/-/blob/master/docs/api_reference.rst?ref_type=heads}{Exif
     implementation}). In the Table~\ref{tab:JPEG_metadata} there are
   some of the supported fields:
@@ -97,7 +97,7 @@
         Software & Software used to process the image \\
         Orientation & Of the camera when the image was taken \\
         DateTimeOriginal & Date and time the image was originally captured \\
-        ExposureTime & hutter speed \\
+        ExposureTime & shutter speed \\
         FNumber & Lens aperture setting \\
         FocalLength & Focal length of the lens \\
         UserComment & User's comments about the image

@@ -56,7 +56,7 @@
 \newacronym{SNR}{SNR}{{Signal-to-Noise Ratio}}
 \newacronym{PNI}{PNI}{{Planar Nuclear Imaging}}
 \newacronym{CT}{CT}{{Computed Tomography}}
-\newacronym{LAC}{LAC}{{Linear Attenuacion Coefficient}}
+\newacronym{LAC}{LAC}{{Linear Attenuation Coefficient}}
 \newacronym{PET}{PET}{{Positron Emission Tomography}}
 \newacronym{SPECT}{SPECT}{{Single Photon Emission Computed Tomography}}
 \newacronym{MRI}{MRI}{{Magnetic Resonance Imaging}}
@@ -96,19 +96,21 @@
 \newacronym{JPEG}{JPEG}{{Joint Photographic Expert Group}}
 \newacronym{ITU}{ITU}{{International Telecommunication Union}}
 \newacronym{RGB}{RGB}{{Red, Green, Blue}}
-\newacronym{YCbCr}{YCbCr}{{Y-luminance, blue-Crominance, red-Crominance}}
+\newacronym{YCbCr}{YCbCr}{{Y-luminance, blue-Chrominance, red-Chrominance}}
 \newacronym{DCT}{DCT}{{Discrete Cosine Transform}}
+\newacronym{Exif}{Exif}{Exchangeable image file format}
 
 \newacronym{ISO}{ISO}{{International Organization for Standardization}}
 \newacronym{IEC}{IEC}{{International Electrotechnical Commission}}
 \newacronym{CIE}{CIE}{{Commission Internationale de l´Éclairage}}
-\newacronym{CIELAB}{CIELAB}{{CIE L*a*b*: L*-luminance, a*-chrominance, b*-crominance}}
-\newacronym{sRGB}{sRGB}{{standard Red, Green, Blue}xs}
+\newacronym{CIELAB}{CIELAB}{{CIE L*a*b*: L*-luminance, a*-chrominance, b*-chrominance}}
+\newacronym{sRGB}{sRGB}{{standard Red, Green, Blue}}
 \newacronym{DWT}{DWT}{{Discrete Wavelet Transform}}
 \newacronym{ROI}{ROI}{{Region Of Interest}}
 \newacronym{EBCOT}{EBCOT}{{Embedded Block Coding with Optimal Truncation}}
 \newacronym{JPIP}{JPIP}{{JPeg2000 Interactive Protocol}}
 \newacronym{SPIHT}{SPIHT}{{Set Partitioning In Hierarchical Trees}}
+\newacronym{PEL}{PEL}{{Picture ELement}}
 
 \newacronym{MPEG}{MPEG}{{Moving Picture Experts Group}}
 \newacronym{DVB}{DVB}{{Digital Video Broadcasting}}
@@ -197,45 +199,47 @@
   to click on the corresponding link.} on Google Colab the
   \href{https://en.wikipedia.org/wiki/Notebook_interface}{notebook}s
   used in medical imaging.
+\item \textbf{ImageJ}\footnote{\url{https://imagej.net}}: A open-source
+  application to visualize and process 2D and 3D images.
 \end{enumerate}
 
 \part{Acquisition of medical images}
-%\input{acquisition}
-%\input{ultrasound}
-%\input{radiography}
-%\input{CT}
-%\input{PNI}
-%\input{SPECT}
-%\input{PET}
-%\input{MRI}
+\input{acquisition}
+\input{ultrasound}
+\input{radiography}
+\input{CT}
+\input{PNI}
+\input{SPECT}
+\input{PET}
+\input{MRI}
 
 \part{Storage of medical Images}
-%\input{storage}
-%\input{PNG}
-%\input{JPEG}
-%\input{JPEG2000}
-%\input{MPEG}
-%\input{AVC}
-%\input{HEVC}
-%\input{VVC}
-%\input{DICOM_formats}
+\input{storage}
+\input{PNG}
+\input{JPEG}
+\input{JPEG2000}
+\input{MPEG}
+\input{AVC}
+\input{HEVC}
+\input{VVC}
+\input{DICOM_formats}
 
 \part{Transmission of medical images}
-%\input{transmission}
-%\input{TCP_IP}
-%\input{WWW}
-%\input{DICOM_transmission}
+\input{transmission}
+\input{TCP_IP}
+\input{WWW}
+\input{DICOM_transmission}
 
 \part{Visualization of medical images}
-%\input{visualization}
-%\input{perception}
-%\input{DICOM_visualization}
+\input{visualization}
+\input{perception}
+\input{DICOM_visualization}
 
 \part{Processing of medical images}
-%\input{contrast_enhancement} % Dealing with underexposure and overexposure.
-%\input{denoising}
-%\input{super-resolution}
-%\input{segmentation}
+\input{contrast_enhancement} % Dealing with underexposure and overexposure.
+\input{denoising}
+\input{super-resolution}
+\input{segmentation}
 \input{registration}
 
 %\input{sharpening} % Enhancement: shapering, histogram equalization, normalization

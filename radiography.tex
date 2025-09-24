@@ -1,13 +1,15 @@
 \chapter{Radiography}
-\vspace{-47ex}\hspace{38ex}
-\includegraphics[width=10cm]{Knie-roentgen-r-seite} % https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Knie-roentgen-r-seite.jpg/800px-Knie-roentgen-r-seite.jpg
+\vspace{-35ex}
+\begin{flushright}
+  \includegraphics[width=5cm]{Knie-roentgen-r-seite} % https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Knie-roentgen-r-seite.jpg/800px-Knie-roentgen-r-seite.jpg
+\end{flushright}
 
 \section{X-ray and radiography}
 \begin{itemize}
 \item Radiography (X-ray 2D \popup{projection}{Radiography is also a
-    projection imaging modality, meaning that each point on the image
-    corresponds to information along a straight line through the
-    patient}) is a transmission imaging modality where X-rays are
+  projection imaging modality, meaning that each point on the image
+  corresponds to information along a straight line through the
+  patient}) is a transmission imaging modality where X-rays are
   emitted from a \popup{source}{An X-rays generator.}, pass through
   the patient, and are detected on the other side using a flat
   (usually \popup{digital TFT}{In digital X-ray detectors, a TFT array
@@ -45,7 +47,7 @@
   exponentially attenuated when they travel across the tissues \cite{wikipedia_LAC}.
 \item To simplify numerical analysis and processing, we don't work
   directly with the attenuation coefficients but with the \glspl{LAC}, which
-  are obtained applitying a logarithm operation.
+  are obtained applying a logarithm operation.
 \item For example, the numerical values used in
   Section~\ref{sec:FBP_example} are the result of computing the
   logarithm of the \popup{measured}{Returned by the detector.}
@@ -54,7 +56,7 @@
 
 \section{Why are we ``transparent''?}
 \begin{itemize}
-\item The \popup{fast ondulatory movement of X-ray-photons}{From 30
+\item The \popup{fast undulatory movement of X-ray-photons}{From 30
     petahertz (PHz)}{3x10$^{16}$ Hz.} to \popup{30 exahertz
     (EHz)}{3x10$^{19}$ Hz} makes them capable of \popup{penetrating
     soft tissues}{The higher the frequency of the X-rays photons, the
@@ -102,7 +104,7 @@
       defective cells, damage to DNA at locations responsible for
       controlling cell division (e.g., oncogenes or tumour suppressor
       genes) could potentially lead to the formation of a tumour or
-      cancer}, and \popup{tissue disfunction}{If there is ellular
+      cancer}, and \popup{tissue dysfunction}{If there is cellular
       dysfunction, tissues can lose function and finally generate
       organ failure.}.
   \end{enumerate}
@@ -176,7 +178,7 @@
   \begin{flushright}
     \includegraphics[width=5.5cm]{normal_mammogram}
     \end{flushright}
-    \caption{Mamogram \cite{CDC_mammograms}.\label{fig:mamogram}}
+    \caption{Mammogram \cite{CDC_mammograms}.\label{fig:mamogram}}
 \end{figure}
 
 \section{Fluoroscopy}
@@ -193,7 +195,7 @@
 \item Compared to ``one-shot'' radiography, the images are more noisy.
 \item
   \href{https://en.wikipedia.org/wiki/Fluoroscopy#/media/File:Normal_barium_swallow_animation.gif}{Swallowing
-    of varium} \cite{Wikipedia_Fluoroscopy}.
+    of barium} \cite{Wikipedia_Fluoroscopy}.
 \end{itemize}
 
 \section{Quantum noise}

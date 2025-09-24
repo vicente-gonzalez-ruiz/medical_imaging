@@ -2,18 +2,75 @@
 
 \section{Why?}
 \begin{itemize}
-\item Image registration is a digital image processing technique that
-  helps us align different images (for example, \gls{CT} and \gls{MRI}
-  of the same scene.
-\item Another use is to do image averaging to increase the \gls{SNR}.
+\item Image registration \cite{Oliveira25012014} is a digital image
+  processing technique that helps us align different images (for
+  example, \gls{CT} and \gls{MRI} of the same scene.
+\item For example, the registered images can be averaged to increase
+  the \gls{SNR}.
 \end{itemize}
 
-\begin{center}
-  \href{https://3dqlab.stanford.edu/image-registration/}{\includegraphics[width=12cm]{image_registration_example}}
-\end{center}
+\begin{figure}[H]
+  \vspace{-0ex}
+  \centering
+  \begin{tabular}{ccc}
+    \href{https://d2rfm59k9u0hrr.cloudfront.net/medpix/img/full/synpic50411.jpg}{\includegraphics[width=0.25\textwidth]{a1}} & \href{https://d2rfm59k9u0hrr.cloudfront.net/medpix/img/full/synpic50412.jpg}{\includegraphics[width=0.25\textwidth]{a2}} & \href{sec:ImageJ_registration}{\includegraphics[width=0.25\textwidth]{a3}} \\
+    Reference & To warp & Projection
+  \end{tabular}
+  \caption[Image registration example.]{Image registration
+    example. Images source:
+    \url{https://medpix.nlm.nih.gov/case?id=414ff6ec-e857-40da-ac84-d3dba505a08a}.}
+  \label{fig:image_registration}
+\end{figure}
+%https://medpix.nlm.nih.gov/case?id=d9f68ce4-ee14-49ea-a50a-19e70dabd239
+%https://medpix.nlm.nih.gov/case?id=414ff6ec-e857-40da-ac84-d3dba505a08a
 
+\section{Registration with ImageJ}
+\label{sec:ImageJ_registration}
+\begin{itemize}
+  \item ImageJ
+    \cite{abramoff2004image}\footnote{\url{https://imagej.net/ij}} is
+    an open-source, Java-based software for processing and analyzing
+    2D and 3D scientific images.
+\begin{figure}[H]
+  \vspace{-0ex}
+  \centering
+  \includegraphics[width=0.75\textwidth]{ImageJ}
+  \caption{ImageJ icon and main window.}
+  \label{fig:ImageJ}
+\end{figure}
+  \item To register 2 images there are
+    \href{https://imagej.net/imaging/registration}{several}
+    \popup{plugins}{A source code Java extension which incorporate
+      extra functionality to the basic program}.
+\end{itemize}
 
-\begin{verbatim}
+\begin{itemize}
+\item To install a plugin\footnote{\url{https://imagej.net/plugins}} do:
+  \begin{enumerate}
+  \item Go to the plugins Web page: \url{https://imagej.net/plugins}.
+  \item Click in \href{https://imagej.net/list-of-extensions}{List of Extensions}: \url{https://imagej.net/list-of-extensions}.
+  \item Search for TurboReg: \url{https://imagej.net/plugins/turboreg}.
+  \item Follow the link to the BIG website: \url{https://bigwww.epfl.ch/thevenaz/turboreg/}.
+  \item Download the .zip file: \url{http://bigwww.epfl.ch/thevenaz/turboreg/turboreg.zip}.
+  \item Unzip it.
+  \item Open ImageJ.
+  \item Go to \texttt{Plugins} $\rightarrow$ \texttt{Install ...}.
+  \item Select the file \texttt{TurboReg\_.jar}.
+  \end{enumerate}
+  \newpage
+\item To use the TurboReg plugin:
+  \begin{enumerate}
+  \item Load the reference image. For example, \href{https://d2rfm59k9u0hrr.cloudfront.net/medpix/img/full/synpic50411.jpg}{this image}.
+  \item Load the image to register. For example, \href{https://d2rfm59k9u0hrr.cloudfront.net/medpix/img/full/synpic50412.jpg}{this image}.
+  \item Go to \texttt{Pugins} $\rightarrow$ \texttt{TurboReg}.
+  \item Configure and run it.
+  \item Save the image, if you are happy with it: \texttt{File}
+    $\rightarrow$ \texttt{Save As} $\rightarrow$ (chose the output file
+    format).
+  \end{enumerate}
+\end{itemize}
+
+\begin{comment}
 # https://www.geeksforgeeks.org/python/image-registration-using-opencv-python/
 
 import cv2
@@ -71,4 +128,5 @@ transformed_img = cv2.warpPerspective(img1_color,
 # Save the output.
 cv2.imwrite('output.jpg', transformed_img)
 
-\end{verbatim}
+\end{comment}
+

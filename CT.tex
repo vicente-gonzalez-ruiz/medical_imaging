@@ -87,10 +87,10 @@ attenuation measurements.
 \begin{enumerate}
 \item \textbf{Parallel-beam}: The X-rays are parallel and the detector
   is organized as a 1D array.
-\item \textbf{Fan-beam}: The X-rays form a fan with the vertice in the
+\item \textbf{Fan-beam}: The X-rays form a fan with the vertex in the
   emitter in a line and the detector is organized as a 1D array.
 \item \textbf{Cone-beam}: The X-rays form a cone with the
-  vertice in the emitter, and the detector is a 2D array.
+  vertex in the emitter, and the detector is a 2D array.
 \end{enumerate}
 \end{itemize}
 \vspace{-1ex}
@@ -122,13 +122,13 @@ attenuation measurements.
 
 \section{Sinogram}
 \begin{itemize}
-\item In parallel- and fan-beam scaners, the projections
+\item In parallel- and fan-beam scanners, the projections
   are (1D) lines and the set of all projections for the same Z-plane
   form a 2D image called \popup{\emph{sinogram}}{The Radon transform
     describes how CT projections are mathematically related to the
     scanned object. Back-projection is the reconstruction method that
     (with filtering) approximates the inverse Radon transform to
-    recover the object from its projections.}. In cone-beam scaners,
+    recover the object from its projections.}. In cone-beam scanners,
   the sinogram is a 3D cube \cite{wikipedia2025radom_transform}.
 \begin{figure}[H]
 \vspace{-1ex}
@@ -140,7 +140,7 @@ attenuation measurements.
 \end{itemize}
 
 \begin{itemize}
-\item The CT scaner generates a \popup{collection}{usually thousands}
+\item The CT scanner generates a \popup{collection}{usually thousands}
   of projections that need to be processed to obtain the 3D
   reconstruction. See this
   \href{https://en.wikipedia.org/wiki/Radon_transform#/media/File:Radon_transform_sinogram.gif}{GIF
@@ -152,7 +152,7 @@ attenuation measurements.
   \begin{tabular}{cc}
     \includegraphics[height=5.0cm]{Two_Squares_Phantom} & \includegraphics[height=5.0cm]{Sinogram_-_Two_Square_Indicator_Phantom}
   \end{tabular}
-  \caption{a 2D phatom (left) and its sinogram (right)
+  \caption{a 2D phantom (left) and its sinogram (right)
     \cite{wikipedia2025radom_transform}.\label{fig:sinogram_phantom}}
 \end{figure}
 
@@ -169,7 +169,7 @@ attenuation measurements.
 \section{Filtered Back-Projection (FBP)}
 \begin{itemize}
 \item The tomogram structure accumulates in each voxel the
-  constribution of each projection \cite{abdulla2025acquiring2} (see
+  contribution of each projection \cite{abdulla2025acquiring2} (see
   Figure~\ref{fig:CT_reconstruction})), that previously has been
   \popup{filtered}{The filtering is usually performed in the Fourier
     domain, where the convolution is a linear-time operation. The FFT
@@ -222,7 +222,7 @@ attenuation measurements.
     the input image is the tomogram that we want to reconstruct.} is
   its sinogram.
 \item The inverse Radon transform, by definition, inputs a sinogram
-  and outpus the original image.
+  and outputs the original image.
 \end{itemize}
 
 \section{FFT-based inverse Radon transform}
