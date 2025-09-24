@@ -12,8 +12,8 @@
 \section{Objective}
 \begin{itemize}
 \item Super-resolution is an mage processing technique that
-  increases the perceived quality by means of ``frabricaing''
-  (possiblely \popup{unreal}{Invented.}) new visual information.
+  increases the perceived quality by means of ``fabricating''
+  (possibly \popup{unreal}{Invented.}) new visual information.
 \item Even knowing this fact, it can help in medical imaging
   diagnosis.
 \end{itemize}
@@ -118,7 +118,7 @@ i = \lfloor x \rfloor, \quad j = \lfloor y \rfloor, \quad
   \item \textbf{Discriminator} ($D_\phi$): Try to determine if the generated
     image is real or not.
   \end{enumerate}
-\item In each iteration, and independtly of who wins, both, the
+\item In each iteration, and independently of who wins, both, the
   discriminator and the generator are retrained (updated) considering
   the result.
 \item The training ends when generator has \popup{no
@@ -146,11 +146,11 @@ images and close to 0 for fake HR images. We have that:
   \popup{expectation}{Basically the mean.} of the sequence of values
   $x$ where $x_i$ is a HR image.
 \item $G_\theta(I_{\text{LR}})$ is the fake image.
-\item $ D_\phi(G_\theta(I_{\text{LR}}))$ is the discriminator decission for the fake image.
+\item $ D_\phi(G_\theta(I_{\text{LR}}))$ is the discriminator decision for the fake image.
 \item $\log(1 - D_\phi(G_\theta(I_{\text{LR}})))$ is very negative if
-  the decission is one (the generated image is fake and I guess that
-  is real), and is zero if the decission is 0 (the generated image is
-  fake and I guess that is fake). Therefore, each time the
+  the decision is one (the generated image is fake, and I guess that
+  is real), and is zero if the decision is 0 (the generated image is
+  fake, and I guess that is fake). Therefore, each time the
   discriminator fails, the objective is \popup{reduced}{Remember that
     we want to maximize this function.}.
 \item $\log D_\phi(I_{\text{HR}})$ is \popup{zero}{Good :-)} if the
