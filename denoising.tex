@@ -252,24 +252,19 @@
 \begin{itemize}
 \item Using
   \href{https://en.wikipedia.org/wiki/Backpropagation}{back-propagation}
-  the neurons learn which must be the weights between them to
-  minimize the \popup{error}{Some definition of the error, for
-    example, the MSE.} between the input and the output. In our
-  case, the \popup{error}{The difference between the input and the
-    output.} is the noisy image. Therefore, the neurons learn how to
-  get rid of the noise.
-\item Therefore, in an U-Net denoiser, the popup{output}{Of the last
-  layer.} \popup{feature map}{The 2D array (image) with the
-  output of each neuron in a channel.} is the denoised image.
+  the neurons learn which must be the weights between them to minimize
+  the \popup{error}{Some definition of the error, for example, the
+    MSE.} between the input and the output (the
+  \popup{output}{Of the last layer.} \popup{feature map}{The 2D array
+    (image) with the output of each neuron in a channel.} is the
+  denoised image). In our case, the \popup{error}{The difference
+    between the input and the output.} is the noise. Therefore, the
+  neurons learn how to get rid of the noise.
 \item
   \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/U_Net.ipynb}{Here}
   you have a toy example of an U-Net that can help to understand all
-  these concepts and the potential of the \gls{AI}-based denoising
+  these concepts, and the potential of the \gls{AI}-based denoising
   techniques.
-\end{itemize}
-
-\begin{itemize}
-\item U-shaped.
 \end{itemize}
 
 \begin{figure}[H]
