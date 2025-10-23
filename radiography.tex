@@ -29,9 +29,9 @@
 \begin{itemize}
 \item The X-ray attenuation of different tissues (e.g., bone, soft
   tissue, air) modify the homogeneous distribution of X-rays that
-  enters the patient X-ray, forming the image in the detector
-  \cite{bushberg2011essential} (see
-  Fig.~\ref{fig:Attenuation-of-X-rays}).
+  enters the patient (see
+  Fig.~\ref{fig:Attenuation-of-X-rays}), forming the image in the detector
+  \cite{bushberg2011essential}.
 \end{itemize}
 \vspace{-1ex}
 \begin{figure}[!h]
@@ -44,7 +44,8 @@
 \section{\glsentrylong{LAC} (\glsentryshort{LAC})}
 \begin{itemize}
 \item The X-rays are
-  exponentially attenuated when they travel across the tissues \cite{wikipedia_LAC}.
+  exponentially attenuated when they travel across the tissues \cite{wikipedia_LAC} (see
+  Fig.~\ref{fig:Attenuation-of-X-rays}).
 \item To simplify numerical analysis and processing, we don't work
   directly with the attenuation coefficients but with the \glspl{LAC}, which
   are obtained applying a logarithm operation.
@@ -57,8 +58,8 @@
 \section{Why are we ``transparent''?}
 \begin{itemize}
 \item The \popup{fast undulatory movement of X-ray-photons}{From 30
-    petahertz (PHz)}{3x10$^{16}$ Hz.} to \popup{30 exahertz
-    (EHz)}{3x10$^{19}$ Hz} makes them capable of \popup{penetrating
+    petahertz (PHz, 3x10$^{16}$ Hz) to 30 exahertz
+    (PHz, 3x10$^{19}$ Hz)} makes them capable of \popup{penetrating
     soft tissues}{The higher the frequency of the X-rays photons, the
     higher their energy and the higher their penetration capability.}.
 \end{itemize}
@@ -97,8 +98,8 @@
   \begin{enumerate}
   \item \textbf{Short-term effects} (usually under high doses):
     \href{https://en.wikipedia.org/wiki/Radiation_burn}{burns},
-    sickness.
-  \item \textbf{Long-term effects}:Damage to DNA, could suffer
+    \href{https://en.wikipedia.org/wiki/Sickness}{sickness}.
+  \item \textbf{Long-term effects}: Damage to DNA, which could suffer
     \popup{mutations}{Although heavily irradiated cells often die
       during mitosis, preventing the propagation of seriously
       defective cells, damage to DNA at locations responsible for
