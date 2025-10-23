@@ -38,17 +38,17 @@
 \item Corrects for the fact that displays (monitors, projectors, etc.) and
 human vision do not respond linearly to intensity values.
 
+\item It is defined as
 \begin{equation}
-s = c \cdot r^{\gamma}
+s = c \cdot r^{\gamma},
 \end{equation}
-
-Where:
-\begin{itemize}
-    \item $r$ = input pixel intensity (normalized to $[0,1]$)
-    \item $s$ = output pixel intensity (normalized to $[0,1]$)
-    \item $c$ = normalization constant (often $1$)
-    \item $\gamma$ = gamma value (controls brightness/contrast)
-\end{itemize}
+where:
+\begin{enumerate}
+\item $r$ = input pixel intensity (normalized to $[0,1]$)
+\item $s$ = output pixel intensity (normalized to $[0,1]$)
+\item $c$ = normalization constant (often $1$)
+\item $\gamma$ = gamma value (controls brightness/contrast)
+\end{enumerate}
 
 \begin{figure}[H]
   \vspace{-0ex}
@@ -73,30 +73,31 @@ Where:
 % Histogram Equalization Formulation
 Let an image have $L$ intensity levels $0, 1, 2, \dots, L-1$.
 
-1. Probability of intensity $r_k$:
+\begin{enumerate}
+  \item The probability of intensity $r_k$ is
 \[
 p(r_k) = \frac{n_k}{N}
 \]
 where 
-\begin{itemize}
-    \item $n_k$ = number of pixels with intensity $r_k$
-    \item $N$ = total number of pixels in the image
-\end{itemize}
+\begin{enumerate}
+\item $n_k$ = number of pixels with intensity $r_k$.
+\item $N$ = total number of pixels in the image.
+\end{enumerate}
 
-2. Cumulative distribution function (CDF):
+\item Cumulative distribution function (CDF), defined by
 \[
-c(r_k) = \sum_{j=0}^{k} p(r_j)
+c(r_k) = \sum_{j=0}^{k} p(r_j).
 \]
 
-3. Mapping to new intensity:
+\item Mapping to new intensity, what is
 \[
-s_k = (L-1) \cdot c(r_k)
+s_k = (L-1) \cdot c(r_k),
 \]
 where 
-\begin{itemize}
-    \item $r_k$ = original intensity
-    \item $s_k$ = new intensity after histogram equalization
-\end{itemize}
+\begin{enumerate}
+\item $r_k$ = original intensity.
+\item $s_k$ = new intensity after histogram equalization.
+\end{enumerate}
 
 \begin{figure}[H]
   \vspace{-0ex}
@@ -106,6 +107,7 @@ where
   \label{fig:histogram_equalization}
 \end{figure}
 
+\end{enumerate}
 \end{itemize}
 
 %section{Sharpening}
@@ -115,16 +117,16 @@ where
 % Homomorphic Filtering Formulation
 \begin{itemize}
 \item An image can be modeled as the product of illumination and
-  reflectance \cite{wikipedia_luminance}:
+  reflectance \cite{wikipedia_luminance} as
 \[
-f(x, y) = i(x, y) \cdot r(x, y)
+f(x, y) = i(x, y) \cdot r(x, y).
 \]
 where
-\begin{itemize}
-    \item $f(x, y)$ = observed image intensity
-    \item $i(x, y)$ = illumination component (slow-varying, low-frequency)
-    \item $r(x, y)$ = reflectance component (details, high-frequency)
-\end{itemize}
+\begin{enumerate}
+\item $f(x, y)$ = observed image intensity.
+\item $i(x, y)$ = illumination component (slow-varying, low-frequency).
+\item $r(x, y)$ = reflectance component (details, high-frequency),
+\end{enumerate}
 
 \textbf{Step 1: Logarithmic transformation}
 \[

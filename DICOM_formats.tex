@@ -21,7 +21,7 @@
 \item A DICOM file, such as a single CT slice, consists of two
   distinct parts:
   \begin{enumerate}
-  \item The \textbf{header} is a block of data that contains specific
+  \item The \textbf{header}, which is a block of data that contains specific
     \popup{information}{Such as name, age, gender, date of birth, and
       technical data about the image (device used, resolution, codec,
       etc.).}  that complements the image
@@ -102,6 +102,7 @@
 \end{verbatim}
 
 Where the file \texttt{DICOMDIR} defines the content of the rest of the file system:
+
 \begin{verbatim}
 (0004,1130) DICOMDIR FILE
     (0004,1200) Patient Record: John Doe

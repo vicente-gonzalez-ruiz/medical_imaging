@@ -11,7 +11,7 @@
 
 \section{Objective}
 \begin{itemize}
-\item Super-resolution is an mage processing technique that
+\item Super-resolution is an image processing technique that
   increases the perceived quality by means of ``fabricating''
   (possibly \popup{unreal}{Invented.}) new visual information.
 \item Even knowing this fact, it can help in medical imaging
@@ -73,7 +73,7 @@ i = \lfloor x \rfloor, \quad j = \lfloor y \rfloor, \quad
   \label{fig:bilinear_interpolation}
 \end{figure}
 
-\section{\gls{ESRGAN} \cite{wang2018esrga}}
+\section{\gls{ESRGAN} \cite{wang2018esrgan}}
 \begin{itemize}
 \item ESRGAN is a \popup{deep}{349 convolutional layers.} \gls{CNN}
   $G_\theta$ trained with adversarial and perceptual losses to
@@ -186,7 +186,7 @@ and $\lambda_{\text{pix}}$ are three hyperparameters that control the
 weight of each loss, $\theta$ represents the parameter of the
 generator, $\Phi(\cdot)$ a feature extraction function (usually the
 output of an intermediate layer), $\big\|\cdot\big\|_2^2$ the squared
-Euclidean norm (\gls{MSE}). and $\|\|_1$ is the \popup{L1 norm}{called the
+Euclidean norm (close to the \gls{MSE}). and $\|\cdot\|_1$ is the \popup{L1 norm}{called the
   Manhattan norm or taxicab norm}.
 
 \end{itemize}
