@@ -1,0 +1,62 @@
+Responde verdadero o falso. Si se clasifica como falsa, razónese dónde está el error en la afirmación.
+
+1. El error de cuantización depende de la frecuencia de muestreo.
+
+2. Considerando únicamente una fuente de ruido Gaussiano, el nivel de ruido (Gaussiano) en un pixel de una imagen no depende del nivel de intensidad de dicho pixel.
+
+3. En la práctica el ruido presente en una imagen médica puede ser una mezcla de diferentes tipos de ruido, entre los que podemos destacar ruido electrónico y ruido cuántico.
+
+4. El ruido de cuantización no depende de la señal cuantizada.
+
+5. Gracias al efecto Doppler es posible estimar la dirección de la sangre durante una ecografía.
+
+6. El ruido de tipo speckle se debe a la superposición de señales que se reflejan de forma aletoria.
+
+7. Los tejidos absorben las radiaciones ionizantes (por ejemplo, los rayos X) linearmente con la distancia que viajan dichas radiaciones.
+
+8. Un filtro de Wiener puede corregir el "motion blur" generado en una radiografía cuando el paciente se mueve durante la exposición.
+
+9. La SNR (signa-to-noise ratio) en una radiografía disminuye con el tiempo de exposición del paciente a los rayos X.
+
+10. La SNR (signa-to-noise ratio) en una radiografía disminuye con la intensidad de los rayos X a los que se somete un paciente.
+
+11. En fluoroscopía, la SNR (signa-to-noise ratio) es baja porque los pacientes suelen moverse continuamente.
+
+12. En una mamografía la piel aparece más intensidad (claridad implica mayor atenuación) porque absorbe mejor la radiación X que los tejidos internos de la mama.
+
+13. La principal fuente de ruido en radiografía suele ser de tipo cuántico (Poisson).
+
+14. En una región de una radiografía donde hay mucha atenuación (la image es más posee mayor intensidad luminosa), el nivel de ruido cuántico suele ser menor.
+
+15. Un colimador es básicamente un dispositivo que sólo deja pasar aquellos fotones que viajan una determinada dirección.
+
+16. Una imagen de radiografía (clásica) es básicamente un sinograma (en el contexto de la tomografía computerizada).
+
+17. La transformada de Fourier de una imagen es su sinograma.
+
+18. La transformada inversa de Radon de un sinograma es una imagen interpretable en el misma sentido que puede interpretarse una radiografía.
+
+19. La transformda inversa de Fourier puede usarse para convertir las filas de un sinograma (que previamente ya se encuentran en el espacio de Fourier) debidamente orientados (formando una circunferencia) en una imagen en el dominio del espacio.
+
+20. El ruido cuántico en tomografía computerizada genera el mismo efecto visual que en radiografía clásica.
+
+21. SPECT y PET son ambas técnicas de tomografía por emisión nuclear para obtener información funcional. Sin embargo, como PET utiliza la detección de coincidencias por aniquilación (ACD) en lugar de colimadores, los tiempos de medida suelen ser más cortos en PET que en SPECT.
+
+22. Cada punto ($K_x$​, $K_y$​) en el espacio-$K$ almacena la intensidad de la señal para una combinación específica de frecuencia espacial (determinada por la codificación de frecuencia) y fase espacial (determinada por la codificación de fase).
+
+23. Cada coeficiente complejo que se almacena en el espacio-$K$ posee una amplitud que representa la intensidad de la señal de retorno recibida y una fase que es el resultado del desfase colectivo (suma) de todas las señales recibidas para una determinada combinación de gradientes de codificación.
+
+24. En MRI, un tomograma 2D (imagen interpretable en el dominio del espacio) se obtiene cuando se calcula la transformada directa de Fourier del contenido del K-space.
+
+25. En MRI, debido a que el slice finalmente visualizado es el resultado de mostrar el módulo de los números complejos resultantes de aplicar la transformada de Fourier inversa al contenido del espacio-$K$, el ruido afecta fundamentalmente a aquellas regiones del tomograma reconstruído donde la señal es más baja, ya que su media no es cero. Por ese motivo, en las regiones donde no hay señal, si hay ruido, el tono de gris reconstruído nunca es cero, disminuyendo así el contraste.
+
+26. La mayoría de los compresores de imágenes con pérdida de información quantizan los coeficientes resultantes de aplicar alguna transformada lineal (como la transformada discreta del Conseno) porque de esta forma tienden a preservarse las bajas frecuencias (frente a las altas), lo que ayuda a minimizar la percepción del ruido de cuantización.
+
+27. El sistema visual humano tiende a sobrevalorar (incrementar al nivel percibido de) la intensidad luminosa cuando en las regiones próximas hay (realmente) una alta intensidad luminosa.
+
+28. La corrección del gamma de una imagen tiende a incrementar el nivel de intensidad de aquellos pixels que tienen menor intensidad luminosa.
+
+29. El filtrado homomórfico (aplicado a una imagen) ayuda a realzar las bajas frecuencias de la imagen.
+
+30. En general, la super-resolución en imágenes usando redes neuronales incrementa el rango de frecuencias espaciales de las imágenes.
+
