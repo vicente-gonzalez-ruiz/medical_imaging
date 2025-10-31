@@ -22,7 +22,7 @@ Responde verdadero o falso. Si se clasifica como falsa, razónese dónde está e
 
 11. En fluoroscopía, la SNR (signa-to-noise ratio) es baja porque los pacientes suelen moverse continuamente.
 
-12. En una mamografía la piel aparece más intensidad (claridad implica mayor atenuación) porque absorbe mejor la radiación X que los tejidos internos de la mama.
+12. En una mamografía la piel aparece con más intensidad (claridad implica mayor atenuación) porque absorbe mejor la radiación X que los tejidos internos de la mama.
 
 13. La principal fuente de ruido en radiografía suele ser de tipo cuántico (Poisson).
 
@@ -50,7 +50,7 @@ Responde verdadero o falso. Si se clasifica como falsa, razónese dónde está e
 
 25. En MRI, debido a que el slice finalmente visualizado es el resultado de mostrar el módulo de los números complejos resultantes de aplicar la transformada de Fourier inversa al contenido del espacio-$K$, el ruido afecta fundamentalmente a aquellas regiones del tomograma reconstruído donde la señal es más baja, ya que su media no es cero. Por ese motivo, en las regiones donde no hay señal, si hay ruido, el tono de gris reconstruído nunca es cero, disminuyendo así el contraste.
 
-26. La mayoría de los compresores de imágenes con pérdida de información quantizan los coeficientes resultantes de aplicar alguna transformada lineal (como la transformada discreta del Conseno) porque de esta forma tienden a preservarse las bajas frecuencias (frente a las altas), lo que ayuda a minimizar la percepción del ruido de cuantización.
+26. La mayoría de los compresores de imágenes con pérdida de información quantizan los coeficientes resultantes de aplicar alguna transformada lineal (como la transformada discreta del Coseno) porque de esta forma tienden a preservarse las bajas frecuencias (frente a las altas), lo que ayuda a minimizar la percepción del ruido de cuantización.
 
 27. El sistema visual humano tiende a sobrevalorar (incrementar al nivel percibido de) la intensidad luminosa cuando en las regiones próximas hay (realmente) una alta intensidad luminosa.
 
