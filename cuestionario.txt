@@ -34,7 +34,7 @@ Responde verdadero o falso. Si se clasifica como falsa, razónese dónde está e
 
 17. La transformada de Fourier de una imagen es su sinograma.
 
-18. La transformada inversa de Radon de un sinograma es una imagen interpretable en el misma sentido que puede interpretarse una radiografía.
+18. La transformada inversa de Radon de un sinograma es una imagen interpretable en el mismo sentido que puede interpretarse una radiografía.
 
 19. La transformda inversa de Fourier puede usarse para convertir las filas de un sinograma (que previamente ya se encuentran en el espacio de Fourier) debidamente orientados (formando una circunferencia) en una imagen en el dominio del espacio.
 
