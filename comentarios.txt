@@ -1,0 +1,245 @@
+Hola,
+
+muchas gracias por vuestras respuestas y disculpas por el
+retraso. Todos vosotros habéis hecho un buen trabajo (de hecho, todos
+tenéis un 10 de puntuación). Enhorabuena.
+
+Sin embargo, tras analizar vuestras respuestas a las cuestiones que os
+planteé, quería haceros algunos comentarios:
+
+1. El error de cuantización depende de la frecuencia del muestreo.
+
+Es falso, no hay relación alguna y todos habéis respondido correctamente.
+
+2. Considerando únicamente una fuente de ruido Gaussiano, el nivel de
+ruido (Gaussiano) en un píxel de una imagen no depende del nivel de
+intensidad de dicho píxel.
+
+En general, esta afirmación es verdadera ... aunque depende de lo que
+considereremos por pixel en una imagen. Si el nivel de intensidad del
+pixel sólo depende del proceso de medición, la afirmación es
+cierta. Sin embargo, como alguno de vosotros ha indicado, si el nivel
+de intensidad depende de alguna transformación matemática intermedia
+entre la medida y el cálculo de la intensidad de los píxeles de la
+imagen, entonces es posible que el ruido generado en un pixel NO sea
+independiente de la señal medida. Esto último pasa, por ejemplo, en
+MRI. Como en la cuestión no se aclara cómo se determina la intensidad
+de los pixels, ambas respuestas las he dado por buenas.
+
+3. En la práctica el ruido presente en una imagen médica puede ser una mezcla
+de diferentes tipos de ruido, entre los que podemos destacar ruido electrónico
+y ruido cuántico.
+
+Cierto.
+
+4. El ruido de cuantización no depende de la señal cuantizada.
+
+En general, esta afirmación es cierta. Sin embargo, ocurre como con la
+pregunta 2, que la pregunta es demasiado genérica. Existen procesos de
+discretización de los posibles valores que puede tomar una señal
+digital (cuantización) donde el error sí depende del valor de la señal
+analógica cuantizada. Por ejemplo, en todos los cuantizadores
+adaptativos (a las características) esta afirmación sería falsa.
+
+5. Gracias al efecto Doppler es posible estimar la dirección de la
+sangre durante una ecografía.
+
+Es correcto. Todos así lo habéis indicado.
+
+6. El ruido de tipo speckle se debe a la superposición de señales que
+se reflejan de forma aleatoria.
+
+Así es.
+
+7. Los tejidos absorben las radiaciones ionizantes (por ejemplo, los
+rayos X) linealmente con la distancia que viajan dichas radiaciones.
+
+Es falso, la atenuación es exponencial con la distancia.
+
+8. Un filtro de Wiener puede corregir el "motion blur" generado en una
+radiografía cuando el paciente se mueve durante la exposición.
+
+Pues sí. ¡Gran invento ... y ya tiene unos años!
+
+9. La SNR (signa-to-noise ratio) en una radiografía disminuye con el
+tiempo de exposición del paciente a los rayos X.
+
+Falso, la SNR aumenta con el tiempo de exposición. Lo malo es que la
+salud del paciente disminuye :-/
+
+10. La SNR (signa-to-noise ratio) en una radiografía disminuye con la
+intensidad de los rayos X a los que se somete un paciente.
+
+También es falso.
+
+11. En fluoroscopia, la SNR (signa-to-noise ratio) es baja porque los
+pacientes suelen moverse continuamente.
+
+Es mentira. La SNR es baja porque ni los tiempos de exposición ni el
+nivel de radiación son altos.
+
+12. En una mamografía la piel aparece con más intensidad (claridad
+implica mayor atenuación) porque absorbe mejor la radiación X que los
+tejidos internos de la mama.
+
+Esta es quizas la pregunta que más os ha despistado (u os ha costado
+contestar de una forma sencilla), probablemente porque la afirmación
+no está debidamente redactada. En una radiografía estándar, mayor
+intensidad luminosa implica menor señal detectada y por tanto mayor
+atenuación. Por eso, la piel se aprecia más brillante que el resto de
+tejidos (es menos transparente a los rayox X). Sin embargo, la
+respuesta depende del "mini-área" que se corresponde con el pixel. Si
+el pixel mide la atenuación sólo en la piel (que es atravesada por los
+rayos X "tangencialmente"), aparece brillante. Por el contrario, si el
+pixel mide la atenuación de la piel y del interior de la mama, el
+pixel será más ocuro (dependiendo de lo que hay en en interior). De
+una forma o de otra, vuestras respuestas han ido en uno u otro
+sentido.
+
+13. La principal fuente de ruido en radiografía suele ser de tipo
+cuántico (Poisson).
+
+Verdadero. Esto se debe principalmente a que siempre se intenta
+minimizar el nivel de radiación.
+
+14. En una región de una radiografía donde hay mucha atenuación (la
+imagen es más clara, posee mayor intensidad luminosa), el nivel de
+ruido cuántico suele ser menor.
+
+Esta afirmación es falsa porque el ruido cuántico es básicamente el
+error que cometemos cuando contamos los fotones que llegan al
+receptor. Si llegan 2 fotones (alta atenuación) y nos equivocamos en
+1, estamos cometiendo un error de 50%. Sin embargo, si llegan 2
+millones de fotones (baja atenuación) y nos equivocamos en 1, el error
+es muy pequeño. Por tanto, el ruido cuántico es mayor en la regiones
+claras de una radiografía.
+
+15. Un colimador es básicamente un dispositivo que sólo deja pasar
+aquellos fotones que viajan una determinada dirección.
+
+Correcto.
+
+16. Una imagen de radiografía (clásica) es básicamente un sinograma
+(en el contexto de la tomografía computerizada).
+
+Falso, la radiografía es el resultado de una única proyección 2D,
+mientras que un sinograma es el resultados de múltiples proyecciones
+1D.
+
+17. La transformada de Fourier de una imagen es su sinograma.
+
+Es falso. La TF de una imagen es su representación en el dominio de la
+frecuencia. Un sinograma (como se indica en la cuestión 16) no tiene
+nada que ver.
+
+19. La transformada inversa de Fourier puede usarse para convertir las
+filas de un sinograma (que previamente ya se encuentran en el espacio
+de Fourier) debidamente orientados (formando una circunferencia) en
+una imagen en el dominio del espacio.
+
+Es correcto. La transformada inversa (rápida) Radon se puede
+implementar como la transformada inversa (rápida) de Fourier 2D de la
+imagen generada por la transformada directa (rápida) de Fourier 1D de
+las diferentes proyecciones que conforman un sinograma, cuando dichas
+proyecciones transformadas se distribuyen radialmente (en el espacio
+de Fourier) en función de los ángulos a las que fueron tomadas.
+
+20. El ruido cuántico en tomografía computerizada genera el mismo
+efecto visual que en radiografía clásica.
+
+Pues sí, porque como la transformada Radon es lineal, el ruido
+cuántico en el dominio de espacio y en el dominio de Fourier tienen
+características similares.
+
+21. SPECT y PET son ambas técnicas de tomografía por emisión nuclear
+para obtener información funcional. Sin embargo, como PET utiliza la
+detección de coincidencias por aniquilación (ACD) en lugar de
+colimadores, los tiempos de medida suelen ser más cortos en PET que en
+SPECT.
+
+Correcto.
+
+22. Cada punto ($K_x$, $K_y$) en el espacio-$K$ almacena la intensidad
+de la señal para una combinación específica de frecuencia espacial
+(determinada por la codificación de frecuencia) y fase espacial
+(determinada por la codificación de fase).
+
+Correcto. Este hecho es el que se utiliza en MRI para rellenar la
+"imagen" en el espacio $K$ (espacio de Fourier).
+
+23. Cada coeficiente complejo que se almacena en el espacio-$K$ posee
+una amplitud que representa la intensidad de la señal de retorno
+recibida y una fase que es el resultado del desfase colectivo (suma)
+de todas las señales recibidas para una determinada combinación de
+gradientes de codificación.
+
+Idem.
+
+24. En MRI, un tomograma 2D (imagen interpretable en el dominio del
+espacio) se obtiene cuando se calcula la transformada directa de
+Fourier del contenido del $K$-space.
+
+Es falso, porque el $K$-space representa frecuencias y fases. Hay que
+usar la transformada inversa de Fourier para reconstruir el
+correspondiente slice del tomograma.
+
+25. En MRI, debido a que el slice finalmente visualizado es el
+resultado de mostrar el módulo de los números complejos resultantes de
+aplicar la transformada de Fourier inversa al contenido del
+espacio-$K$, el ruido afecta fundamentalmente a aquellas regiones del
+tomograma reconstruído donde la señal es más baja, ya que su media no
+es cero. Por ese motivo, en las regiones donde no hay señal, si hay
+ruido, el tono de gris reconstruído nunca es cero, disminuyendo así el
+contraste.
+
+Es correcto.
+
+26. La mayoría de los compresores de imágenes con pérdida de
+información quantizan los coeficientes resultantes de aplicar alguna
+transformada lineal (como la transformada discreta del Coseno) porque
+de esta forma tienden a preservarse las bajas frecuencias (frente a
+las altas), lo que ayuda a minimizar la percepción del ruido de
+cuantización.
+
+Sí, esta es la triquiñuela que aplican la inmensa mayoría de los
+compresores de imágenes irreversibles.
+
+27. El sistema visual humano tiende a sobrevalorar (incrementar al
+nivel percibido de) la intensidad luminosa cuando en las regiones
+próximas hay (realmente) una alta intensidad luminosa.
+
+No, los humanos tendemos a realzar los contrastes y por lo tanto,
+tenemos a sobrevalorar los cambios de intensidad. Por tanto, tendemos
+a infravalorar la intensidad luminosa cuando en las regiones
+colindantes hay una alta intensidad luminosa.
+
+28. La corrección del gamma de una imagen tiende a incrementar el nivel de
+intensidad de aquellos pixels que tienen menor intensidad luminosa.
+
+En la práctica es verdadera, pero esto depende de los parámetros de
+la corrección (si $\gamma$ > 1, la afirmación sería falsa).
+
+29. El filtrado homomórfico (aplicado a una imagen) ayuda a realzar
+las bajas frecuencias de la imagen.
+
+Es falso. Tiende a realzar las fronteras (altas frecuencias).
+
+30. En general, la super-resolución en imágenes usando redes
+neuronales incrementa el rango de frecuencias espaciales de las
+imágenes.
+
+En efecto. Magia.
+
+Comprueba si tu nombre está en  esta lista:
+
+Ernesto Miras Ramos
+ALBERTO RAMOS AGUIRRE
+PABLO NIETO ALARCON
+MARÍA HERRERA
+Inés Nieto Rozas
+RAÚL URREA VARGAS
+NIAMA ZGAT EL HIBA
+
+Si no fuera así, contacta conmigo.
+
+Slds.
