@@ -16,3 +16,7 @@ main.pdf:	*.tex *.bib
 
 clean:
 		rm -f *.aux *.bbl *.blg *.log *.out *.pdf
+
+publish:
+
+		scp main.pdf vruiz@dali.hpca.ual.es:public_html/medical_imaging.pdf
