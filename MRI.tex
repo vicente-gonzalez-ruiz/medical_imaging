@@ -6,6 +6,8 @@
 
 \section{Clinical applications}
 \begin{itemize}
+\item \gls{MRI} detects signals from protons (1 liter of water $\approx 3\times 10^{26}$ protons.
+\item Human body is $\approx 10\%$ water.
 \item \gls{MRI}
   \cite{westbrook2018mri,Wu2022MRI_Physics,thePIRL2018NMR_basics,thePIRL2018SpinEcho,thePIRL2018Fourier,thePIRL2018GRE}
   allows to obtain detailed views of (usually living) samples
@@ -26,6 +28,32 @@
   \includegraphics[width=0.8\textwidth]{mri-machine-axes}
   \caption{Axes used in an MRI machine \cite{abdulla2025MRI_machine}.}
   \label{fig:MRI_axes}
+\end{figure}
+
+\section{Hydrogen nuclei can be considered tiny magnets}
+\begin{itemize}
+\item Hydrogen nuclei act like tiny \popup{magnets}{A hydrogen nucleus
+    contains a single proton so it has a charge of +1. The nucleus
+    also has an intrinsic “spin”. Because they have a charge and
+    motion they create an electric current and this, in turn, creates
+    a magnetic field.} and will be affected by any magnetic field
+  applied to them.
+\item Hydrogen nuclei are \popup{the most useful atoms}{Any nucleus
+    with an odd number of protons can be used (an unpaired proton is
+    needed to provide the magnetic moment due to the spin of the
+    unpaired proton).} to use in \gls{MRI} mainly because they form the
+  majority of atoms in the body.
+\item Most will adopt the low energy state (the direction of $B_0$)
+  but a few in the opposite direction (the high energy state),
+  creating a net longitudinal magnetization (M$_Z$) in the $Z$-axis
+  direction.
+\end{itemize}
+\vspace{-4ex}
+\begin{figure}[!b]
+  \centering
+  \includegraphics[width=0.7\textwidth]{mri-intro-netmag}
+  \caption{Net magnetization under the influence of $B_0$ \cite{abdulla2025MRI_intro}.}
+  \label{fig:MRI-intro-netmag}
 \end{figure}
 
 \section{The magnet responsible for $B_0$}
@@ -77,38 +105,12 @@
   better the strength of the signals, and the higher the \gls{SNR}.
 \end{itemize}
 
-\section{Hydrogen nuclei can be considered tiny magnets}
-\begin{itemize}
-\item Hydrogen nuclei act like tiny \popup{magnets}{A hydrogen nucleus
-    contains a single proton so it has a charge of +1. The nucleus
-    also has an intrinsic “spin”. Because they have a charge and
-    motion they create an electric current and this, in turn, creates
-    a magnetic field.} and will be affected by any magnetic field
-  applied to them.
-\item Hydrogen nuclei are \popup{the most useful atoms}{Any nucleus
-    with an odd number of protons can be used (an unpaired proton is
-    needed to provide the magnetic moment due to the spin of the
-    unpaired proton).} to use in \gls{MRI} mainly because they form the
-  majority of atoms in the body.
-\item Most will adopt the low energy state (the direction of $B_0$)
-  but a few in the opposite direction (the high energy state),
-  creating a net longitudinal magnetization (M$_Z$) in the $Z$-axis
-  direction.
-\end{itemize}
-\vspace{-4ex}
-\begin{figure}[!b]
-  \centering
-  \includegraphics[width=0.7\textwidth]{mri-intro-netmag}
-  \caption{Net magnetization under the influence of $B_0$ \cite{abdulla2025MRI_intro}.}
-  \label{fig:MRI-intro-netmag}
-\end{figure}
-
 \section{Precession}
 \begin{itemize}
 \item Under the influence of $B_0+B_1$, the hydrogen nuclei precess in the Z-axis.
 \item The precession has a characteristic \popup{resonant}{``Larmor''.}
   frequency for each \popup{atom and $B_0+B_1$ intensity}{42 MHz a 1 Tesla
-    in the case of hydrogen}.
+    in the case of hydrogen, 63.9 MHz for 1.5T.}.
 \end{itemize}
 \vspace{-4ex}
 \begin{figure}[!b]
@@ -213,7 +215,7 @@
     signal. Obviously, the sum is also variable over time.}.
 \item Therefore, by modifying $B_0+B_1$ in: (1) amplitude, (2)
   frequency, and (3) phase, we can know the resonating frequency (and
-  phase) of a \popup{3D section}{A cuve of tissue.} of the patient.
+  phase) of a \popup{3D section}{A 3D cube of tissue.} of the patient.
 \end{itemize}
 \vspace{-4ex}
 \begin{figure}[!b]
