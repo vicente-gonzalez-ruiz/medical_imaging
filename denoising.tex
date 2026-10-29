@@ -289,6 +289,21 @@
   \label{fig:patching}
 \end{figure}
 
+\section{Supervised denoising}
+
+\begin{itemize}
+\item The U-Net is trained with pairs of patches (noisy, clean).
+\item We need the clean image and a noisy version of it.
+\end{itemize}
+
+\begin{figure}[H]
+  \vspace{-2ex}
+  \centering
+  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/unet_n2c.ipynb}{\includegraphics[width=8cm]{unet_n2c_comparison}}
+  \caption{\href{https://www.hpca.ual.es/~vruiz/images/lena_512x512_gray.png}{Lena} denoised with an U-Net trained using a supervised strategy.}
+  \label{fig:unet_n2c}
+\end{figure}
+
 \section{Noise2Noise (N2N) denoising}
 
 \begin{itemize}
@@ -297,7 +312,7 @@
 \end{itemize}
 
 \begin{figure}[H]
-  \vspace{2ex}
+  \vspace{-2ex}
   \centering
   \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/unet_n2n.ipynb}{\includegraphics[width=12cm]{unet_n2n_comparison}}
   \caption{\href{https://www.hpca.ual.es/~vruiz/images/lena_512x512_gray.png}{Lena} denoised with an U-Net trained using the Noise2Noise strategy.}
@@ -307,14 +322,14 @@
 \section{Noise2Void (N2V) denoising}
 
 \begin{itemize}
-\item The U-Net tries to predict ``missing'' pixels using the noisy neighborhood.
+\item The U-Net tries to predict ``missing'' (void) pixels using the noisy neighborhood.
 \item Only one noisy instance of the clean image is required.
 \end{itemize}
 
 \begin{figure}[H]
-  \vspace{0ex}
+  \vspace{-1ex}
   \centering
-  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/unet_n2v.ipynb}{\includegraphics[width=8cm]{imgs/unet_n2v_comparison.png}}
+  \href{https://github.com/vicente-gonzalez-ruiz/medical_imaging/blob/main/notebooks/unet_n2v.ipynb}{\includegraphics[width=9cm]{imgs/unet_n2v_comparison.png}}
   \caption{\href{https://www.hpca.ual.es/~vruiz/images/lena_512x512_gray.png}{Lena} denoised with an U-Net trained using the Noise2Void strategy.}
   \label{fig:unet_n2v}
 \end{figure}
