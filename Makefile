@@ -8,7 +8,7 @@ BIBINPUTS += ".:~/bibs:~/home/"
 
 main.pdf:	*.tex *.bib
 		pdflatex main
-		(export BIBINPUTS=${BIBINPUTS}:${BIBS}; bibtex main)
+		(export BIBINPUTS=${BIBINPUTS}:${BIBS}; biber main)
 		pdflatex main
 		makeglossaries main
 		pdflatex main
